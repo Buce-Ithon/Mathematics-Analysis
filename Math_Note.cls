@@ -20,6 +20,11 @@
 \RequirePackage{multirow} %multirow table
 \RequirePackage{colortbl} %custom color of table %command: \columncolor{} \rowcolor{} \cellcolor{}
 \RequirePackage{makecell} %line break within cell
+%\RequirePackage{calligra} %calligraphy font
+%\RequirePackage{urwchancal} %calligraphy font
+%\RequirePackage{enumitem} %enumerate environment
+\RequirePackage{paralist} %compact itemize environment
+\RequirePackage{hyperref} %hyperlink
 \definecolor{red}{RGB}{255,0,0}
 \definecolor{silkred}{RGB}{217, 48, 37}
 \definecolor{green}{RGB}{0,255,0}
@@ -33,17 +38,44 @@
 \definecolor{wikitable2}{HTML}{FFFFE0}
 \definecolor{wikitable3}{HTML}{D0E2FF}
 
+\theoremstyle{definition}
 \newtheorem{prb}{Problem}
+\theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\theoremstyle{definition}
+%\newtheoremstyle{calligra}
+%  {\topsep}   % Space above
+%  {\topsep}   % Space below
+%  {}  % Body font
+%  {}          % Indent amount
+%  {\calligra} % Theorem head font
+%  %{\fontfamily{urwchancal}\selectfont} % Theorem head font
+%  {.}         % Punctuation after theorem head
+%  {.5em}      % Space after theorem head
+%  {}          % Theorem head spec (can be left empty, meaning `normal`)
+%\theoremstyle{calligra}
 \newtheorem{df}{Definition}[section]
 \newtheorem{intro}{Introduction}[section]
 \newtheorem{ex}{Example}[section]
+\theoremstyle{definition}
 \newtheorem*{prb*}{Problem}
+\theoremstyle{remark}
 \newtheorem*{ex*}{Example}
-\newtheorem*{sol}{\hskip 2em Solution}
-\newtheorem*{pf}{\hskip 2em Proof} %Proof within the paragraph, indent the first line by 2 characters
+\newtheorem*{subex*}{\hskip 2em Example}
+\newtheorem*{ssubex*}{\hskip 4em Example}
+\newtheorem*{sol*}{\hskip 2em Solution}
+\newtheorem*{pf*}{Proof}
+\newtheorem*{subpf*}{\hskip 2em Proof} %Proof within the paragraph, indent the first line by 2 characters
+\newtheorem*{ssubpf*}{\hskip 4em Proof}
 %\newtheorem*{prf}{Proof} %Formal Proof, without indents.
+\newtheorem*{pro*}{Proposition}
+\newtheorem*{subpro*}{\hskip 2em Proposition}
+\newtheorem*{ssubpro*}{\hskip 4em Proposition}
+\theoremstyle{definition}
+\newtheorem*{intro*}{Introduction}
 \newtheorem*{prp}{Properties}
-\newtheorem*{nt}{\hskip 2em Note} %Note within the paragraph, indent the first line by 2 characters
-\newtheorem*{nts}{Notes} %Main Notes, without indents.
+\newtheorem*{nt*}{Notes} %Main Notes, without indents.
+\newtheorem*{subnt*}{\hskip 2em Notes} %Note within the paragraph, indent the first line by 2 characters
 %----------------------------------------------------------------%

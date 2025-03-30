@@ -1,4 +1,5 @@
 \documentclass{Math_Note}
+\setlength{\parindent}{2em}
 
 \title{\textbf{Analysis}}
 \author{Buce-Ithon}
@@ -25,20 +26,116 @@
 \setcounter{section}{-1}
 \newpage
 \section{Real Number}
-\S 1. Rational Number Field ($\mathbb{Q}$)
-
-\begin{df}
+\subsection{Rational Number Field}
+\begin{df}[Rational Number]
     A number $r$ is called a \textbf{rational number}, if $r=\frac{p}{q}$, where $p, q\in\mathbb{N}$ and $b\neq 0$.
 
     The set of all rational numbers is denoted by $\mathbb{Q}$, and it is called the \textbf{rational number field}.
 \end{df}
+\begin{nt*}
+    $1^{\circ}$. \textbf{Proof by contradiction}. -- To verify if a number is irrational. 
+    \begin{ssubex*}
+        Prove that $\sqrt{2}$ is irrational.
+    \end{ssubex*}
+    \begin{ssubpf*}
+        \begin{minipage}[t]{0.78\textwidth}
+        Suppose $\sqrt{2}$ is rational, then $\sqrt{2}=\frac{p}{q}$, where $p, q\in\mathbb{N}$ and $q\neq 0$. 
+        Without loss of generality, we assume that $p$ and $q$ are coprime, i.e., $\gcd(p, q)=1$. 
+        Then we have $2=\frac{p^2}{q^2}$, which implies $p^2=2q^2$. 
+        Since $p^2$ is even, $p$ must be even, i.e., $p=2k$ for some $k\in\mathbb{N}$. 
+        Substituting $p=2k$ into $p^2=2q^2$, we have $4k^2=2q^2$, which implies $q^2=2k^2$. 
+        Since $q^2$ is even, $q$ must be even, which contradicts the assumption that $p$ and $q$ are coprime. 
+        Therefore, $\sqrt{2}$ is irrational.
+        \end{minipage}
+   \end{ssubpf*}
+    $2^{\circ}$. First step of Group, Ring and Field.
 
-\begin{nt}
-    $1^{\circ}$. Proof by contradiction. -- To verify if a number is irrational.
-\end{nt}
-
+\end{nt*}
 \begin{prp}
     Basic properties of rational numbers:
+    
+    \textbf{Oder relation}:
+    \begin{enumerate}[{I}-1.]
+        \item (Uniqueness) $\forall a, b\in\mathbb{Q}$, $a<b$, $a=b$, or $a>b$.
+        \item (Transitivity) If $a<b$ and $b<c$, then $a<c$.
+        \item (Density) $\forall a, b\in\mathbb{Q}$, if $a<b$, $\exists c\in\mathbb{Q}$, s.t. $a<c<b$.
+    \end{enumerate}
+
+    (Arithmetic operations)
+
+    \textbf{Adition (\& Subtraction)}:
+    \begin{enumerate}[{II}-1.]
+        \item (Commutativity) $\forall a, b\in\mathbb{Q}$,$a+b=b+a$.
+        \item (Associativity) $\forall a, b, c\in\mathbb{Q}$,$(a+b)+c=a+(b+c)$.
+        \item (Identity$0$) $\forall a\in\mathbb{Q}$, $\exists 0\in\mathbb{Q}$, s.t. $a+0=a$.
+        \item (Inverse) $\forall a\in\mathbb{Q}$, $\exists (-a)\in\mathbb{Q}$, s.t. $a+(-a)=0$.
+        \item ($>, +$) $\forall a, b, c\in\mathbb{Q}$, if $a>b$, then $a+c>b+c$.
+    \end{enumerate}
+
+    \textbf{Multiplication (\& Division)}:
+    \begin{enumerate}[{III}-1.]
+        \item (Commutativity) $\forall a, b\in\mathbb{Q}$,$a\cdot b=b\cdot a$.
+        \item (Associativity) $\forall a, b, c\in\mathbb{Q}$,$(a\cdot b)\cdot c=a\cdot(b\cdot c)$.
+        \item (Identity$1$) $\forall a\in\mathbb{Q}$, $\exists 1\in\mathbb{Q}$, s.t. $a\cdot 1=a$.
+        \item (Inverse) $\forall a\in\mathbb{Q}$, $a\neq 0$, $\exists a^{-1}\in\mathbb{Q}$, s.t. $a\cdot a^{-1}=1$.
+        \item (Distribution) $\forall a, b, c\in\mathbb{Q}$, $a\cdot(b+c)=a\cdot b+a\cdot c$.
+        \item ($>, \cdot$) $\forall a, b, c\in\mathbb{Q}$, if $a>b$ and $c>0$, then $a\cdot c>b\cdot c$.
+    \end{enumerate}
+
+    \textbf{Archimedean axiom}:
+    \begin{enumerate}[{IV}-1.]
+        \item (Archimedean property) $\forall c\in\mathbb{Q}$ and $c>0$, then always $\exists n\in\mathbb{N}$, s.t. $n>c$.
+    \end{enumerate}
 \end{prp}
 
+\subsection{Irrational Number}
+\begin{intro*}
+    From R.Dedekind, the of defining irrational numbers is very simple, i.e. a (real) number that is not a rational number is an irrational number. 
+
+    However, it's not so much easy to implement thie idea using mathematical language. For instance, 1. how should we express the stattement "is not a rational number"? 
+    2. on what base should the irrational numbers be constructed? These problems are the mentors who inspire us to enter the rigorous mathematical definitions.
+\end{intro*}
+\begin{df}[Dedekind Cut]
+    A \textbf{Dedekind cut} is a partition of the rational number field $\mathbb{Q}$ into two non-empty sets $A$ and $A'$, such that
+    \begin{enumerate}[(1)]
+        \item $A\cup A'=\mathbb{Q}$ and $A\cap A'=\emptyset$.
+        \item $\forall a \in A, a' \in A'$, there must be $a<a'$.
+    \end{enumerate}
+    The set $A$ is called the \textbf{lower set} and the set $A'$ is called the \textbf{upper set}.
+\end{df}
+\begin{nt*}
+    $1^{\circ}$. The condition (1) tells us that $\forall r \in \mathbb{Q}$, there must be $r\in A$ or $r\in A'$.
+\end{nt*}
+\begin{prp}
+    Observations of Dedekind cut, there are only 3 types of Dedekind cuts:
+    \begin{enumerate}[1]
+        \item No maximum element in $A$, but a minimum element $r$ in $A'$.
+        \item A maximum element $r$ in $A$, but no minimum element in $A'$.
+        \item No maximum element in $A$, and no minimum element in $A'$.
+    \end{enumerate}
+\end{prp}
+\begin{nt*}
+    $1^{\circ}$. No 4th type of Dedekind cut.
+    \begin{ssubpro*}
+        \begin{minipage}[t]{0.70\textwidth}
+        There doesn't exists a pair of cut, s.t. $A$ has a maximum element and $A'$ has a minimum element.
+        \end{minipage}
+    \end{ssubpro*}
+    \begin{ssubpf*}
+        \begin{minipage}[t]{0.78\textwidth}
+        Proof is simple, if we notice that the inverse proposition is contract to the condition (1) in definition.
+        \end{minipage}
+    \end{ssubpf*}
+    $2^{\circ}$. The 3rd Dedekind cut happends to defining the irrational number (we are looking for).
+    $3^{\circ}$. The aforementioned 3 types of Dedekind cut are just theoretical general cases. And actually in different cases,
+    we can construct different Dedekind cut instances.
+\end{nt*}
+\begin{df}[Irrational Number]
+    Every 3rd type of Dedekind cut corresponds to an \textbf{irrational number $\alpha$}.
+\end{df}
+
+\subsection{Real Number Field}
+\begin{df}[Real Number]
+    A number $a$ is called a \textbf{real number}, if $a$ is either a rational number or an irrational number.
+\end{df}
 \end{document}
