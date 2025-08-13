@@ -1,0 +1,137 @@
+\documentclass{Math_Note}
+\setlength{\parindent}{2em}
+
+\title{\textbf{Mathmatical Analysis Zorich Comprehensions}}
+\author{Buce-Ithon}
+\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+\date{\today}
+
+\begin{document}
+% Title page
+\maketitle
+
+% Content
+\newpage
+\tableofcontents
+\newpage
+
+% Surface-figure
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.24]{"./Figures/preface.jpg"}
+    \caption{One week, one Zorich~}
+\end{figure}
+
+% Chap0-Real Number System
+% \setcounter{section}{-1}
+\newpage
+\section{Multiple Integrals}
+\subsection{The Riemann Integral over an $n$-Dimensional Interval}
+\subsubsection{Comprehensions}
+First, the definition of Riemann integral over $n$-dimention interval is simimiar (at most same) with $1$-dimension condition ($\int_{I}f(x)dx := \lim\limits_{\lambda(P)\to 0}\sigma(f,P,\xi)$),
+$$\int_{I}f(x^1,\cdots,x^n)dx^1\cdots dx^n\ \text{or}\ \int\cdots\int_{I}f(x^1,\cdots,x^2)dx^1\cdots dx^n$$
+Then, introduce the nessasary condition of it ($f\in\mathcal{R}(I)\implies f\ \text{is bounded on}\ I$).
+After that, book gives some properties (Lemmas) about the set of measure zero (same with $1$-dimension condition), and developes the Cantor Theorem (about uniform continuity of continuous functions on compact set).
+At last, we're given 2 criterions (nessasary and sufficient) of the Riemann integral (Darboux Criterion, Lebesgue Criterion). 
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{ex*}
+Let $f:I\to\mathbb{R}$ is a continuous real-value function on $I\subset\mathbb{R}^{n-1}$, then it's graph is a set measure zero in $n$-dimension.
+\end{ex*}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{lem}
+/Development of Cantor Theorem/ If the relation $\omega(f;x) < w_0$ holds at each point of a compact set 
+$K$ for the function $f : K \to \mathbb{R}$, then for every $\varepsilon > 0$ there exists $\delta > 0$ such 
+that $\omega(f; U_{\delta}(x)) < w_0 + \varepsilon$ for each point $x \in K$.
+\end{lem}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+(Lebesgue's criterion). $f \in \mathcal{R}(I) = (f$ is bounded on $I) \land$ 
+$(f$ is continuous almost everywhere on $I)$.
+\end{thm}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+(Darboux Criterion) $f\in\mathcal(I)\Leftrightarrow(f\ is\ bounded\ on\ I)\wedge(\underline{\mathcal{J}}=\overline{\mathcal{J}})$, 
+where $\underline{\mathcal{J}}=\sup\limits_P s(f,P),\ \overline{\mathcal{J}}=\inf\limits_P S(f,P)$.
+\end{thm}
+\end{minipage}}
+\newpage
+\subsubsection{Problems Sets}
+\begin{prb}
+\begin{enumerate}
+  \item[a)] Show that a set of measure zero has no interior points.
+  \item[b)] Show that not having interior points by no means guarantees that a set is of measure zero.
+  \item[c)] Construct a set having measure zero whose closure is the entire space $\mathbb{R}^n$.
+  \item[d)] A set $E \subset I$ is said to have content zero if for every $\varepsilon > 0$ it can be covered by a finite system of intervals $I_1, \ldots, I_k$ such that $\sum_{i=1}^k |I_i| < \varepsilon$. Is every bounded set of measure zero a set of content zero?
+  \item[e)] Show that if a set $E \subset \mathbb{R}^n$ is the direct product $\mathbb{R} \times e$ of the line $\mathbb{R}$ and a set $e \subset \mathbb{R}^{n-1}$ of $(n-1)$-dimensional measure zero, then $E$ is a set of $n$-dimensional measure zero.
+\end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{pf*}
+\begin{enumerate}
+  \item[a)] [Proof by contradiction] If $E$ has a point $x_0$ as an interior point, then there exists a ball $B(x_0, r)$ such that $B(x_0, r) \subset E$. Since the ball has positive measure, it follows that $E$ cannot have measure zero.
+  \item[b)] [Counterexample] Consider the irrational numbers $\mathbb{R} \setminus \mathbb{Q}$, which have no interior points in $\mathbb{R}$ but are not of measure zero.
+  \item[c)] /inspired by b)/ Consider the set $E = \mathbb{Q}^n$, the set of all points in $\mathbb{R}^n$ with rational coordinates. The closure of $E$ is $\mathbb{R}^n$, and $E$ has measure zero since it can be covered by countably many intervals whose total length can be made arbitrarily small.
+  \item[d)] [Principle] No, since the Lebesgue measure zero set can be covered by at most countable intervals (which means measure $\mu=o(1)\cdot\mathcal{O}(1)$), while a set of content zero can be covered by a finite number of intervals (which means the content (also a kind of measure) sometimes is $\mathcal{O}(1)\cdot\mathcal{O}(1)$). [Example] The $\mathbb{Q}\cap[0,1]$ and Cantor set are sets of measure zero but none of content zero.
+  \item[e)] From the construction of the product measure $\lambda_n$ (Lebesgue measure of $\mathbb{R}^n$) /Lemma1/ if $A \in B(\mathbb{R}^k)$ and $B \in B(\mathbb{R}^{n-k})$, ($0 < k < n$), then $\lambda_n(A \times B) = \lambda_k(A) \lambda_{n-k}(B)$. So here (using also that /Lemma2/ if $E_m \uparrow E$, $\lim_{m \to +\infty} \lambda_n(E_m) = \lambda_n(E)$) $\lambda_n(E) = \lambda_n(\mathbb{R} \times e)$ $= \lim_{m \to +\infty} \lambda_n((-m, m) \times e)$ 
+  $= \lim_{m \to +\infty} \lambda_1((-m, m)) \times \lambda_{n-1}(e)$ $= \lim_{m \to +\infty} \lambda_1((-m, m)) \times 0$ $= 0$.
+\end{enumerate}
+\begin{nt*}
+1. The proof of e) /Lemma2/ could found in \textit{Real and Complex Analysis} by Walter Rudin, Theorem 1.19(Page 16), based on the (positive) measure definition (countable additive of disjoint countable measurable sets).
+\end{nt*}
+\end{pf*}
+\end{minipage}}
+\newpage
+\begin{prb}
+\begin{enumerate}
+  \item [a)] Construct the analogue of the Dirichlet function in $\mathbb{R}^{n}$ and show that a bounded function $f:I\to\mathbb{R}$ equal to zero at almost every point of the interval $I$ may still fail to belong to $\mathcal{R}(I)$.
+  \item [b)] Show that if $f\in\mathcal{R}(I)$ and $f(x)=0$, at almost all points of the interval $I$, then $\int\limits_{I}f(x)\,{\rm d}x=0$.
+\end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{pf*}
+\begin{enumerate}
+  \item[a)] [Counterexample] Consider $\mathcal{D}^n=\begin{cases} 1 & \text{ if } x\in\mathbb{Q}^n \\ 0 & \text{ if } x\in\mathbb{R}^n\backslash\mathbb{Q}^n \\\end{cases}$, the discontinuous set is $\mathcal{R}^n$.
+  \item[b)] /by definition/ $\int_{I}f(x)dx=\lim\limits_{\lambda(P)\to 0}\sum\limits_{\xi_i\in P}f(\xi_i)\Delta(x_i)=\lim\limits_{\lambda(P)\to 0}\sum\limits_{\xi_i\in A\cap P}f(\xi_i)\Delta(x_i)+\lim\limits_{\lambda(P)\to 0}\sum\limits_{\xi_j\in B\cap P}f(\xi_j)\Delta(x_i)=\mathcal{O}(1)\cdot o(1)+o(1)\cdot\mathcal{O}(1)$, where $A=\{\cup[x_k,x_{k+1}]\subset P:\forall k,\ \exists \xi\in[x_k,x_{k+1}],\ s.t.\ f(\xi)\neq 0\}$ and $B=I\backslash A$. 
+\end{enumerate}
+\end{pf*}
+\end{minipage}}
+\begin{prb}
+There is a small difference between our earlier definition of the Riemann integral on a closed interval $I \subset \mathbb{R}$ and Definition 7 for the integral over an interval of arbitrary dimension. This difference involves the definition of a partition and the measure of an interval of the partition. Clarify this nuance for yourself and verify that
+$$\int_a^b f(x) dx = \begin{cases} \int_I f(x) dx & \text{ if } a < b \\ - \int_I f(x) dx & \text{ if } a > b \end{cases}$$
+where $I$ is the interval on the real line $\mathbb{R}$ with endpoints $a$ and $b$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{pf*}
+Just understand it, it's not hard.
+%The difference is that in the earlier definition, the partition is a finite set of points dividing the interval into subintervals, while in Definition 7, the partition can be any finite collection of intervals. The measure of an interval in $\mathbb{R}$ is simply its length, which is the difference between its endpoints.
+%To verify the integral equality, we can consider the definition of the Riemann integral over an interval $I = [a, b]$:
+%$$\int_I f(x) dx = \lim_{\lambda(P) \to 0}\sum_{\xi_i \in P} f(\xi_i) \Delta(x_i)$$
+%where $P$ is a partition of the interval $I$ and $\Delta(x_i)$ is the length of the subintervals. If $a < b$, then the integral is computed directly over the interval $[a, b]$. If $a > b$, we can redefine the integral as:
+%$$\int_a^b f(x) dx = -\int_b^a f(x) dx = -\lim_{\lambda(P) \to 0}\sum_{\xi_i \in P} f(\xi_i) \Delta(x_i)$$
+%where $P$ is a partition of the interval $[b, a]$. This shows that the integral is negative when the limits are reversed, confirming the equality.
+\end{pf*}
+\end{minipage}}
+\begin{prb}
+\begin{enumerate}
+  \item [a)] Prove that a real-valued function $f : I \to \mathbb{R}$ defined on an interval $I \subset \mathbb{R}^n$ is integrable over that interval if and only if for every $\varepsilon > 0$ there exists a partition $P$ of $I$ such that $S(f; P) - s(f; P) < \varepsilon$.
+  \item [b)] Using the result of a) and assuming that we are dealing with a real-valued function $f : I \to \mathbb{R}$, one can simplify slightly the proof of the sufficiency of the Lebesgue criterion. Try to carry out this simplification by yourself.
+\end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{pf*}
+\begin{enumerate}
+  \item[a)] /by The Darboux Criterion/ $f\in\mathcal(I)\Leftrightarrow(f\ is\ bounded\ on\ I)\wedge(\underline{\mathcal{J}}=\overline{\mathcal{J}})$, where $\underline{\mathcal{J}}=\sup\limits_P s(f,P),\ \overline{\mathcal{J}}=\inf\limits_P S(f,P)$. Notice that $\forall \varepsilon >0,\ \exists P,\ s.t.\ S(f,P)-s(f,P)<\varepsilon \Leftrightarrow \underline{\mathcal{J}}=\overline{\mathcal{J}}$ (proof is similiar with 1-dimention condition), which is what we need to prove.
+  \item[b)] [Segmented estimation] Sufficiency: procedure is same with book, a) just simplify the last step.
+\end{enumerate}
+\end{pf*}
+\end{minipage}}
+
+
+\end{document}
