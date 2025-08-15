@@ -175,6 +175,33 @@ similiar with $\frac 1 2 \oint_S x dy-y dx=\iint_D 1 dxdy$ or $\oint_S x dy=\iin
 \textcolor{skycyan}{Variable Substitution in Double Integral}\\
 $$\iint_D f(x,y) dxdy=\begin{cases} x=x(\xi,\eta)\\ y=y(\xi,\eta) \end{cases}=\iint_{\Delta} f(x(\xi,\eta),y(\xi,\eta))|\frac{D(x,y)}{D(\xi,\eta)}| d\xi d\eta$$
 \end{minipage}}
+\subsection{Surface Integral}
+\subsubsection{Definition and basics}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$S=\lim\limits_{\lambda\to 0}\sum\limits_i T_i$, where $T_i$ is the projection area of $S_i$ on the tangent plane at point $M_i\in S_i$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250815_5.png"}
+\end{figure}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculte Surface Integral}(Omit matrix-vector operations)\\
+$$S=\lim\limits_{\lambda\to 0}\sum\limits_i T_i=\iint_{\Delta} \sqrt{A^2+B^2+C^2} du dv=\iint_{\Delta} \sqrt{EG-F^2} du dv$$
+where $A=\begin{vmatrix} y_u' & z_u'\\ y_v' & z_v' \end{vmatrix},\ B=\begin{vmatrix} z_u' & x_u'\\ z_v' & x_v' \end{vmatrix},\ C=\begin{vmatrix} x_u' & y_u'\\ x_v' & y_v' \end{vmatrix}$, 
+$E=\sum\limits_{x,y,z} x_u'^2,\ F=\sum\limits_{x,y,z} x_u'x_v',\ G=\sum\limits_{x,y,z} x_v'^2$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Procedure:} \\
+$\forall M_1\in S'$, the coordinates of its projection $M_1'$ on $T'$ are $\begin{cases} \xi=\xi(u,v)\\ \eta=\eta(u,v)\\ \zeta=\zeta(u,v) \end{cases}$, 
+then $S_T'=\iint_{\Delta}|\frac{D(\xi,\eta)}{D(u,v)}| du dv$, then the results could appear after a series of matrix-vector operations.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250815_6.png"}
+\end{figure}
+\end{minipage}}
 
 \newpage
 \section{Multiple Integrals}
