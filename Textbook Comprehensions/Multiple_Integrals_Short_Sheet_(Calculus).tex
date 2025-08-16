@@ -1,0 +1,377 @@
+%\documentclass{Math_Note}
+%\setlength{\parindent}{2em}
+
+%\begin{document}
+
+% \setcounter{section}{-1}
+\newpage
+\section{Multiple Integrals Short Sheet (Calculus)}
+\subsection{Development of $1$-dim Reimann Integral-Line Integral}
+\subsubsection{Intrduction ($ds$)}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Introduction}\\
+$I=\int_{C} f(x,y) \, ds,\ C:r=r(\theta),\ \theta \in [\theta_{1},\theta_{2}]$\\
+$C:\left\{\begin{matrix} x=r(\theta)\cos\theta \\ y=r(\theta)\sin\theta \end{matrix}\right. ,\ f(x,y)=f(r\cos\theta,r\sin\theta)$\\
+$ds=\sqrt{ x'(\theta)^{2}+y'(\theta)^{2} }d\theta=\sqrt{ r'^{2}+r^{2} }d\theta$\\
+$I=\int_{\theta_{1}}^{\theta_{2}} f(r\cos\theta,r\sin\theta)\sqrt{ r'^{2}+r^{2} } \, d\theta$
+\end{minipage}}
+\subsubsection{I-Line Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$I=\int_{C} f(x,y) \, ds=\left[\left\{\begin{matrix} x=\varphi(t) \\ y=\psi(t) \end{matrix}\right.\right]=\int_{D_{t}} f(\varphi(t),\psi(t))\sqrt{ \varphi'(t)^{2}+\psi'(t)^{2} } \, dt$
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{A mean value property}\\
+$\rho(x,y)=f(x,y),\ \int_{C(A,B)} f(x,y) \, ds=M,\ \int_{C(C,D)} f(x,y) \, ds=m$\\
+$\frac{\int_{C(C,D)} f(x,y) \, ds}{\int_{C(A,B)} f(x,y) \, ds} = \frac{\int_{C(C,D)} C \, ds}{\int_{C(A,B)} C \, ds} = \frac{S_{CD}}{S_{AB}}$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250809_1.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{II-Line Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$I=\int_{C} f(x,y) \, dx=[x=\varphi(t),y=\psi(t)]=\int_{D_{t}} f(\varphi(t),\psi(t))\varphi'(t) \, dt$\\
+$I=\int_{C} f(x,y) \, dy=[x=\varphi(t),y=\psi(t)]=\int_{D_{t}} f(\varphi(t),\psi(t))\psi'(t) \, dt$\\
+$I=\int_{C} P \, dx+Q \, dy=[x=\varphi(t),y=\psi(t)]=\int_{D_{t}} [P\varphi'+Q\psi'] \, dt$\\
+\end{minipage}}
+\subsubsection{Calculate area using II-Line Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculate}\\
+$D=-\int_{C} y \, dx=\int_{C} x \, dy=\frac{1}{2}\int_{C} x \, dy - y \, dx$, where $C$ is a simple closed cure with positive direction.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250809_2.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Conditions for curve integrals to be independent of the path}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Theorem}\\
+In simply connected space $D$ and given a path $C:A\to B$, II-line integral $\int_{C} P \, dx+Q \, dy$ is dependent of the integration path $C:A\to B$ 
+i.f.f. $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Proof idea}\\
+Necessity "$\Rightarrow$": \\
+By studying the differentiation method (partial differentiation with respect to $x$ and $y$) of $F(x, y) = \int_{(x_0, y_0)}^{(x, y)} P  dx + Q  dy$ and the primitive function of $P  dx + Q  dy$ (regarding it as the total differential of some function) (i.e., $\exists \Phi$ such that $P = \frac{\partial \Phi}{\partial x}$, $Q = \frac{\partial \Phi}{\partial y}$ and $\int_C P  dx + Q  dy = \Phi(x, y) \big|_{(x_A, y_A)}^{(x_B, y_B)}$), 
+we can conclude that the necessary and sufficient condition for $\int_C P  dx + Q  dy$ to be path-independent is that $P  dx + Q  dy$ ($= d\Phi(x)$) is an exact differential. The latter implies $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ (necessity). \\
+Sufficiency "$\Leftarrow$": \\
+Fix $y \in [c, d]$, integrate $P = \frac{\partial \Phi}{\partial x}$ on $[x_0, x] \subset D$, then $\Phi(x, y) = \int_{x_0}^x P  dx + \Phi(x_0, y)$.
+Also, fix $x = x_0$, integrate $Q = \frac{\partial \Phi}{\partial y}$ on $[y_0, y] \subset D$, then $\Phi(x_0, y) = \int_{y_0}^y Q(x_0, y)  dy + \Phi(x_0, y_0)$.\\
+Then $\Phi(x, y) = \int_{x_0}^x P(x, y)  dx + \int_{y_0}^y Q(x_0, y)  dy + \Phi(x_0, y_0)$ or $\Phi(x, y) = \int_{y_0}^y Q(x, y)  dy + \int_{x_0}^x P(x, y_0)  dx + \Phi(x_0, y_0)$, which satisfies $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$.
+\end{minipage}}
+\subsection{$2$-dim Multiple Integral}
+\subsubsection{Definition}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$\iint_{P} f(x,y) dP=\lim\limits_{ \lambda=\max_{i}\{P_{i}\} \to 0 } \sum\limits_{i} f(\xi_{i},\eta_{i})\Delta P_{i}=V$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{"./Figures/250809_3.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Calculate: $2$-dim Multiple Integral $\to$ Iterated Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{$2$-dim Multiple Integral $\to$ Iterated Integral}\\
+\underline{Rectangle $P=[a,b]\times[c,d]$}: \\
+If $\iint_P f(x,y) dP$ exists and $I_1=\int_a^b f(x,y) dx$ exists $\forall y \in [c,d]$, then
+$\iint_P f(x,y) dP=\int_c^d dy \int_a^b f(x,y) dx\ .$\\
+If $\iint_P f(x,y) dP$ exists and $I_2=\int_c^d f(x,y) dy$ exists $\forall x \in [a,b]$, then
+$\iint_P f(x,y) dP=\int_a^b dx \int_c^d f(x,y) dy\ .$ \\
+$\implies$ If $I_1$ and $I_2$ exist, then $\iint_P f(x,y) dP=\int_a^b dx \int_c^d f(x,y) dy=\int_c^d dy \int_a^b f(x,y) dx$.\\
+\underline{Curved trapezoid $P=[a,b]\times[y_0(x),Y(x)]$ or $P=[x_0(y),X(y)]\times[c,d]$}: \\
+If $\iint_P f(x,y) dP$ exists and $I_2=\int_{y_0(x)}^{Y(x)} f(x,y) dy$ exists $\forall x \in [a,b]$, then
+$\iint_P f(x,y) dP=\int_a^b dx \int_{y_0(x)}^{Y(x)} f(x,y) dy\ .$\\
+If $\iint_P f(x,y) dP$ exists and $I_1=\int_{x_0(y)}^{X(y)} f(x,y) dx$ exists $\forall y \in [c,d]$, then
+$\iint_P f(x,y) dP=\int_c^d dy \int_{x_0(y)}^{X(y)} f(x,y) dx\ .$ \\
+$\implies$ If $I_1$ and $I_2$ exist, then $\iint_P f(x,y) dP=\int_a^b dx \int_{y_0(x)}^{Y(x)} f(x,y) dy=\int_{y_0(x)}^{Y(x)} dy \int_a^b f(x,y) dx$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{"./Figures/250815_1.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Green's Formula: $2$-dim Multiple Integral $\longleftrightarrow$ II-Line Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Green's Formula}\\
+$$\iint_{D} (\frac{\partial P}{\partial x}-\frac{\partial Q}{\partial y}) \, dx dy=\oint_{C=\partial D} P \, dy+Q \, dx$$
+or 
+$$\iint_{D} (\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}) \, dx dy=\oint_{C=\partial D} P \, dy-Q \, dx$$
+where $D$ is a simply connected domain in $\mathbb{R}^2$ with boundary $C=\partial D$ and $P, Q$ are continuously differentiable functions on $D$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Proof idea}\\
+$P, Q, \frac{\partial P}{\partial x}, \frac{\partial Q}{\partial y}$ continuously on $D$, $\partial D \triangleq C$.\\
+$\iint_{D} \frac{\partial P}{\partial x} dx dy = \int_c^d dy \int_{x_0(y)}^{X(y)} \frac{\partial P}{\partial x} dx = \int_c^d [P(X(y), y) - P(x_0(y), y)] dy = \oint_{\partial D} P(x,y) dy$\\
+$\iint_{D} \frac{\partial Q}{\partial y} dx dy = \int_a^b dx \int_{y_0(x)}^{Y(x)} \frac{\partial Q}{\partial y} dy = \int_a^b [Q(x, Y(x)) - Q(x, y_0(x))] dx = - \oint_{\partial D} Q(x,y) dx$
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250815_2.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Variable Substitution in Double Integrals}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Intro}\\
+$D=\oint_{S=\partial D} x dy=\left[\begin{cases} x=x(\xi,\eta)\\ y=y(\xi,\eta) \end{cases}\right]=\oint_{\Sigma=\partial\Delta} x(\xi,\eta)\frac{\partial y}{\partial \xi} d\xi + x(\xi,\eta)\frac{\partial y}{\partial \eta} d\eta=\iint_{\Delta} \frac{D(x,y)}{D(\xi,\eta)} d\xi d\eta$
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Analysis}\\
+As we could see, the essential of $\begin{cases} x=x(\xi,\eta)\\ y=y(\xi,\eta) \end{cases}$ actually is coordinate transform between the $x,y$-plane and the $\xi,\eta$-plane.\\
+$D=\oint_S x dy=\left[\begin{cases} x=x(\xi,\eta)\\ y=y(\xi,\eta) \end{cases},\begin{cases} \xi=\xi(t)\\ \eta=\eta(t) \end{cases} \right]=\int_{\alpha}^{\beta}x(\xi(t),\eta(t))(\frac{\partial y}{\partial\xi}\xi'(t)+\frac{\partial y}{\partial\eta}\eta'(t))dt=\oint_{\Sigma}x(\xi,\eta)\frac{\partial y}{\partial\xi}d\xi+x(\xi,\eta)\frac{\partial y}{\partial\eta}d\eta$,
+let $x(\xi,\eta)\frac{\partial y}{\partial\xi} \triangleq P(x,y),\ x(\xi,\eta)\frac{\partial y}{\partial\eta} \triangleq Q(x,y)$, then $D=\oint_{\Sigma} P d\xi + Q d\eta=(\frac{\partial P}{\partial\eta}=\frac{\partial Q}{\partial\xi},\ \text{using Greeni's formula})= \iint_{\Delta}(\frac{\partial Q}{\partial \xi}-\frac{\partial P}{\partial \eta}) d\xi d\eta=\iint_{\Delta}\frac{D(x,y)}{D(\xi,\eta)} d\xi d\eta$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Figures for aforementioned analysis}\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{"./Figures/250815_3.png"}
+\end{figure}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Idea of Analysis}: \\
+Using $\begin{cases} x=x(\xi,\eta)=x(\xi(t),\eta(t))\\ y=y(\xi,\eta)=y(\xi(t),\eta(t)) \end{cases}$ (coordinate transform with parameterization), transform the II-line integration $\oint_Sx dy$ (or $-\oint_S y dx$, or $\frac{1}{2}\oint_S x dy - y dx$) on $x,y$-plane 
+to the II-line integral $\oint_\Sigma P(\xi,\eta)d\xi+Q(\xi,\eta)d\eta$, then using Green's formula to transform it to double integral $\iint_\Delta(\frac{\partial Q}{\partial \xi}-\frac{\partial P}{\partial \eta})d\xi d\eta$ on $\xi,\eta$-plane, following is how we 
+calculate the double integral (often transform it to iterated integral $\int_{D\xi} d\xi \int_{\eta_0(\xi)}^{\eta(\xi)} (\frac{\partial Q}{\partial \xi}-\frac{\partial P}{\partial \eta})d\xi$, or others).\\
+/\textcolor{skycyan}{Shortly,} calculate the area of $D$ on $x,y$ plane: coordinate transform with parameterization $\to$ Green's formula $\to$ Double integration calculate/ \\
+\textcolor{skycyan}{Comparison}: \\
+Recaping the previous $D=\frac 1 2 \oint_S x dy - y dx$, the original calculation method for this II-line integral is that find thier parametric equation $\begin{cases} x=x(t)\\ y=y(t) \end{cases}, t\in[a,b]$ for different (closed) curve $S$, then substitute into the 
+calculation.From here, we could see that the essense of II-line integral is definite integral and has chirality.\\
+However, "coordinate transform + Green's formula" method: $D=\iint_{\Delta}\frac{D(x,y)}{D(\xi,\eta)} d\xi d\eta$ as long as we master the coordinate transformation of a type of shape equation, we can easily calculate the results. Although there is a parameterization 
+in the derivation, it is not reflected in the result (it can be seen from the process that if the parameterization is continued, it will be the result of the II-line integral in $\xi,\eta$-plane). In essence, the area is calculated as the volume with the same value, 
+similiar with $\frac 1 2 \oint_S x dy-y dx=\iint_D 1 dxdy$ or $\oint_S x dy=\iint_D 1 dxdy$ (If you unfold the left and right sides under the curved trapezoid, you can find the consistency.), it's just that the physical meanings of the two equations are different.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{"./Figures/250815_4.png"}
+\end{figure}
+/\textcolor{skycyan}{Note}: The choice of which method should be based on which is more convenient, parametric equations or coordinate transformations./
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Variable Substitution in Double Integral}\\
+$$\iint_D f(x,y) dxdy=\begin{cases} x=x(\xi,\eta)\\ y=y(\xi,\eta) \end{cases}=\iint_{\Delta} f(x(\xi,\eta),y(\xi,\eta))|\frac{D(x,y)}{D(\xi,\eta)}| d\xi d\eta$$
+\end{minipage}}
+\subsection{Surface Integral}
+\subsubsection{Definition and basics}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$S=\lim\limits_{\lambda\to 0}\sum\limits_i T_i$, where $T_i$ is the projection area of $S_i$ on the tangent plane at point $M_i\in S_i$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250815_5.png"}
+\end{figure}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculte Surface Integral}(Omit matrix-vector operations)\\
+$$S=\lim\limits_{\lambda\to 0}\sum\limits_i T_i=\iint_{\Delta} \sqrt{A^2+B^2+C^2} du dv=\iint_{\Delta} \sqrt{EG-F^2} du dv$$
+where $A=\begin{vmatrix} y_u' & z_u'\\ y_v' & z_v' \end{vmatrix},\ B=\begin{vmatrix} z_u' & x_u'\\ z_v' & x_v' \end{vmatrix},\ C=\begin{vmatrix} x_u' & y_u'\\ x_v' & y_v' \end{vmatrix}$, 
+$E=\sum\limits_{x,y,z} x_u'^2,\ F=\sum\limits_{x,y,z} x_u'x_v',\ G=\sum\limits_{x,y,z} x_v'^2$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Procedure:} \\
+$\forall M_1\in S'$, the coordinates of its projection $M_1'$ on $T'$ are $\begin{cases} \xi=\xi(u,v)\\ \eta=\eta(u,v)\\ \zeta=\zeta(u,v) \end{cases}$, 
+then $S_T'=\iint_{\Delta}|\frac{D(\xi,\eta)}{D(u,v)}| du dv$, then the results could appear after a series of matrix-vector operations.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.36]{"./Figures/250815_6.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Surface Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{I-Surface Integral}\\
+\begin{equation*}
+    \begin{split}
+      I &= \iint_S f(x,y,z)\, ds \\
+        &= [x=x(u,v),y=y(u,v),z=z(u,v), /parameterization/ \\
+        &\ \ \ dS=\sqrt{A^2+B^2+C^2}\, du\, dv=\sqrt{EG-F^2}\, du\, dv] \\
+        &= \iint_{\Delta} f(x(u,v),y(u,v),z(u,v)) \sqrt{A^2+B^2+C^2}\, du\, dv \\
+        &= \iint_{\Delta} f(x(u,v),y(u,v),z(u,v)) \sqrt{EG-F^2}\, du\, dv
+    \end{split}
+\end{equation*}
+\textcolor{softcyan}{Special case}: \\
+If $u=x,\ v=y,\ z=z(x,y)$, \\
+\begin{equation*}
+  \begin{split}
+    I &= \iint_{\Delta} f(x,y,z(x,y)) \sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2} \, dx \, dy \\
+      &= \iint_{\Delta} f(x,y,z(x,y)) \frac{dx\, dy}{|\cos(v)|}
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{II-Surface Integral} \\
+\begin{equation*}
+  \begin{split}
+    I &= \iint_S f(x,y,z)\, dx\, dy = \text{or} \iint_S f(x,y,z)\, dy\, dz = \text{or} \iint_S f(x,y,z)\, dz\, dx \\
+      &\text{or} \iint_S P \, dy\, dz + Q \, dz\, dx + R \, dx\, dy
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Connection between I and II-Surface Integrals} \\
+\begin{equation*}
+  \begin{split}
+    \underset{(II)}{\iint_S f(x,y,z)\, dx\, dy} &= \underset{(I)}{\iint_S f(x,y,z) \cos(v) \, ds} \\
+    &\text{(Calculate it: parameterize to get double integral)} \\
+    &= [x=x(u,v),y=y(u,v),z=z(u,v), /parameterize/ \\
+    \cos&(v)= \pm\frac{C}{\sqrt{A^2+B^2+C^2}},\ dS=\sqrt{A^2+B^2+C^2}\, du\, dv] \\
+    &= \pm\iint_{\Delta} f(x(u,v),y(u,v),z(u,v))\cdot C \, du\, dv
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\newline\newline
+or
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{equation*}
+  \begin{split}
+    \underset{(II)}{\iint_S P \, dy\, dz + Q \, dz\, dx + R \, dx\, dy} &= \underset{(I)}{\iint_S P\cos(\lambda)+Q\cos(\mu)+R\cos(\nu) \, dS} \\
+    \text{(Calculate it: }&\text{parameterize to get double integral)} \\
+    &= [\begin{cases} x=x(u,v)\\ y=y(u,v)\\ z=z(u,v) \end{cases} /parameterize/ \\
+    &\ \ \ \cos(\lambda)=\pm\frac{A}{\sqrt{A^2+B^2+C^2}},\cdots, \\
+    &\ \ \ dS=\sqrt{A^2+B^2+C^2}\, du\, dv] \\
+    &= \pm\iint_{\Delta} [P\cdot A+Q\cdot B+R\cdot C] \, du\, dv \\
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\subsubsection{Calculate Volume using Surface Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculate Volume using Surface Integral}\\
+\begin{equation*}
+  \begin{split}
+    V &= \iint_D Z(x,y) \, dx \, dy-\iint_D z_0(x,y) \, dx \, dy \\
+    &= \iint_{S_2} z \, dx \, dy+\iint_{S_1} z \, dx \, dy \\
+    &= \iint_S z \, dx \, dy\ (S=S_1+S_2+S_3,\ \text{outside}) \\
+    or &= \iint_S x \, dy \, dz \\
+    or &= \iint_S y \, dz \, dx \\
+    or &= \frac{1}{3}\iint_S (x \, dy \, dz + y \, dz \, dx + z \, dx \, dy)
+  \end{split}
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.48]{"./Figures/250816_1.png"}
+\end{figure}
+\end{minipage}}
+\subsubsection{Stoke's Formula: II-Surface Integral $\longleftrightarrow$ II-Line Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Stoke's Formula $\Leftarrow$ Development of Green's Formula}\\
+$\int_{L=\partial S} P \, dx + Q \, dy + R \, dz = \iint_S (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) \, dx \, dy + (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) \, dy \, dz + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}) \, dz \, dx$
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Proof idea}\\
+Using Green's formula on LHS as parameterizing $[x=x(u,v), y=y(u,v), z=z(u,v)]$, it's easy to prove.
+\end{minipage}}
+\subsection{$3$-dim Multiple Integral}
+\subsubsection{Definition and basics}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+$\iiint_{V} f(x,y,z) \, dV = \lim\limits_{\lambda\to 0} \sum\limits_i f(x_i, y_i, z_i) \Delta V_i$.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculate}\\
+\begin{equation*}
+  \begin{split}
+    \iiint_{V} f(x,y,z) \, dV &= \int_a^b dx \iint_{P_yz} f(x,y,z) \, dy \, dz \\
+    & (\iint_{P_yz} f(x,y,z) \, dy \, dz \ \exists) \\
+    &= \int_a^b dx \int_c^d dy \int_e^f f(x,y,z) \, dz \\
+    & (\int_e^f f(x,y,z) \, dz \ \exists) \\
+    \text{also} &= \iint_{P_xy} \, dx \, dy \int_e^f f(x,y,z) \, dz \\
+  \end{split}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \iiint_{V} f(x,y,z) \, dV &= \int_{x_0}^{X} dx \iint_{P_yz} f(x,y,z) \, dy \, dz \\
+    & (\iint_{P_yz} f(x,y,z) \, dy \, dz \ \exists) \\
+    &= \int_{x_0}^{X} \, dx \int_{y_0}^{Y(x)} \, dy \int_{z_0(x,y)}^{Z_(x,y)} f(x,y,z) \, dz \\
+    & (\int_{z_0(x,y)}^{Z_(x,y)} f(x,y,z) \, dz \ \exists) \\
+    \text{also} &= \iint_{P_xy} \, dx \, dy \int_{z_0(x,y)}^{Z_(x,y)} f(x,y,z) \, dz \\   
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\subsubsection{Gauss's Formual $3$-dim Multiple Integral $\longleftrightarrow$ II-Surface Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Gauss's Formula: $\Leftarrow$ Dimension-increasing version of Stokes' formula}\\
+\begin{equation*}
+  \begin{cases}
+    \iiint_{V} \frac{\partial R}{\partial z} \, dx \, dy \, dz = \iint_{S=\partial V} R \, dx \, dy \\
+    \iiint_{V} \frac{\partial P}{\partial x} \, dy \, dz \, dx = \iint_{S=\partial V} P \, dy \, dz \\
+    \iiint_{V} \frac{\partial Q}{\partial y} \, dz \, dx \, dy = \iint_{S=\partial V} Q \, dz \, dx
+  \end{cases}
+\end{equation*}
+$\Sigma : \implies \iiint_{V} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) \, dx \, dy \, dz = \iint_{S=\partial V} P \, dy \, dz + Q \, dz \, dx + R \, dx \, dy$
+\ \ (S is alonge the outside)
+\end{minipage}}
+\subsubsection{Variable Substitution in $3$-dim Multiple Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Intro}\\
+\begin{equation*}
+  \begin{split}
+    V &= \iint_S z \, dx \, dy \\
+      & \text{(coordinate transform)} \\
+      &= \iint_{E} z\cdot\frac{D(x,y)}{D(u,v)} \, du \, dv \\
+      &= \iint_{E} z\cdot\left[\frac{D(x,y)}{D(\xi,\eta)}\frac{D(\xi,\eta)}{D(u,v)}+\frac{D(x,y)}{D(\eta,\zeta)}\frac{D(\eta,\zeta)}{D(u,v)}+\frac{D(x,y)}{D(\zeta,\xi)}\frac{D(\zeta,\xi)}{D(u,v)}\right] \, du \, dv \\
+      & \text{(II-Surface Integral) (using Green's formula)} \\
+      &= \iint_{\Sigma} z\frac{D(x,y)}{D(\xi,\eta)} \, d\xi \, d\eta + z\frac{D(x,y)}{D(\eta,\zeta)} \, d\eta \, d\zeta + z\frac{D(x,y)}{D(\zeta,\xi)} \, d\zeta \, d\xi \\
+      &= \iiint_{\Delta} \left(\frac{\partial}{\partial \zeta}\left[z\frac{D(x,y)}{D(\xi,\eta)}\right]+\frac{\partial}{\partial \xi}\left[z\frac{D(x,y)}{D(\eta,\zeta)}\right]+\frac{\partial}{\partial \eta}\left[z\frac{D(x,y)}{D(\zeta,\xi)}\right]\right) \, d\xi \, d\eta \, d\zeta \\
+      & \text{(rearrange)} \\
+      &= \iint_{\Delta} |\frac{D(x,y,z)}{D(\xi,\eta,\zeta)}| \, d\xi \, d\eta \, d\zeta
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Variable Substitution in $3$-dim Multiple Integral}\\
+\begin{equation*}
+  \begin{split}
+    \iiint_D &f(x,y,z) \, dx \, dy \, dz \\
+    &= \left[ \begin{cases} x=x(\xi,\eta,\zeta)\\ y=y(\xi,\eta,\zeta)\\ z=z(\xi,\eta,\zeta) \end{cases} /parameterize/ \right] \\
+    &= \iiint_{\Delta} f(x(\xi,\eta,\zeta),y(\xi,\eta,\zeta),z(\xi,\eta,\zeta)) \cdot |\frac{D(x,y,z)}{D(\xi,\eta,\zeta)}| \, d\xi \, d\eta \, d\zeta \\
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\subsection{$n$-dim Multiple Integral}
+\subsubsection{Definition and basics}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Definition}\\
+\begin{equation*}
+  \int_{I} f(x^1,\cdots,x^n) \, dx^1 \cdots dx^n = \lim\limits_{\lambda(P)\to 0} \sigma(f,P,\xi)
+\end{equation*}
+where $I$ is an $n$-dimensional interval, $P$ is a partition of $I$, $\lambda(P)$ is the measure of $P$, and $\sigma(f,P,\xi)$ is the Riemann sum.
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Calculate}\\
+\begin{equation*}
+  \begin{split}
+    \int_{I} f(x^1,\cdots,x^n&) \, dx^1 \cdots dx^n \\
+    &\text{(Special)} \\
+    &= \int_{a_1}^{b_1} dx^1 \int_{a_2}^{b_2} dx^2 \cdots \int_{a_n}^{b_n} f(x^1,\cdots,x^n) \, dx^n \\
+    &\text{(General)} \\
+    &= \int_{x_1}^{X_1} dx^1 \int_{x_2(x_1)}^{X_2(x_1)} dx^2 \cdots \int_{x_n(x_1,\cdots,x_{n-1})}^{X_n(x_1,\cdots,x_{n-1}} f(x^1,\cdots,x^n) \, dx^n
+  \end{split}
+\end{equation*}
+\end{minipage}}
+\subsubsection{Variable Substitution in $n$-dim Multiple Integral}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Variable Substitution in $n$-dim Multiple Integral}\\
+\begin{equation*}
+  \begin{split}
+    \int_{I} f(x^1,\cdots,x^n&) \, dx^1 \cdots dx^n \\
+    &= \left[ \begin{cases} x^1=x^1(\xi^1,\cdots,\xi^n)\\ x^2=x^2(\xi^1,\cdots,\xi^n)\\ \cdots\\ x^n=x^n(\xi^1,\cdots,\xi^n) \end{cases} /parameterize/ \right] \\
+    &= \int_{\Delta} f(x^1(\xi^1,\cdots,\xi^n),\cdots,x^n(\xi^1,\cdots,\xi^n)) |\frac{D(x)}{D(\xi)}| \, d\xi^1 \cdots d\xi^n
+  \end{split}
+\end{equation*}
+where $\frac{D(x)}{D(\xi)}=\frac{D(x^1,\cdots,x^n)}{D(\xi^1,\cdots,\xi^n)}$ is the Jacobian determinant of the transformation.
+\end{minipage}}
+
+%\end{document}
