@@ -44,6 +44,7 @@
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{cor}{Corollary}[section]
+\newtheorem{df*}{Definition}
 \theoremstyle{definition}
 %\newtheoremstyle{calligra}
 %  {\topsep}   % Space above

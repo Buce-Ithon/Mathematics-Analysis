@@ -22,8 +22,11 @@
     \caption{One week, one Zorich~}
 \end{figure}
 
+% Fichtenholz, Gr. M. "Calculus Tutorial (III)" Summary
 \include{./Multiple_Integrals_Short_Sheet_(Calculus).tex}
 
+% Zorich "Mathematical Analysis (II)" Comprehensions
+% Chapter 11
 \newpage
 \section{Multiple Integrals}
 \subsection{The Riemann Integral over an $n$-Dimensional Interval}
@@ -133,5 +136,92 @@ Just understand it, it's not hard.
 \end{pf*}
 \end{minipage}}
 
+\newpage
+\subsection{The Integral over a Set}
+\subsubsection{Comprehensions}
+This part is not very long and mainly revolves around the concept of "admissible set". \\
+First, the book introduces the concept (i.e. definition) of "admissible set" and some (operational) properties of it. Then, using a characteristic function $\chi_E$ of set $E$, we're 
+given the definition of the integral over a set $E$ and the corresponding Lebesgue's Criterion (over "admissible set"). At last, the book also gives the Jordan  measure (or volume) 
+of a bounded set $E$ (actually it's only well defined for "admissible set").
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{df*}
+An \underline{admissible set} is a \underline{bounded} set $E \subset \mathbb{R}^n$ s.t. $\partial E$ is \underline{measure zero} in sense of Lebesgue.
+\end{df*}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{lem}
+$\forall$ sets $E,\ E_1,\ E_2 \subset\mathbb{R}^n$, 
+\begin{enumerate}
+  \item[a)] $\partial E$ is the closed set on $\mathbb{R}^n$.
+  \item[b)] $\partial (E_1\cup E_2),\ \partial (E_1\cap E_2),\ \partial (E_1\backslash E_2) \subset \partial E_1 \cup \partial E_2$.
+  \item[c)] Finite union or intersection of admissible sets is still admissible set, the difference of admissible sets is still admissible set.
+\end{enumerate}
+\begin{nt*}
+1. Generally, for infinite admissible sets, Lemma 2.2 c) is not true. \\
+2. The boundary of admissible set is compact on $\mathbb{R}^n$ (closed and bounded).
+\end{nt*}
+\end{lem}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{df*}
+The integral of $f$ over $E$ is given by $\int_{E} f(x) dx := \int_{\Gamma \supset E} f \chi_E(x) dx$, where $I$ is any interval containing $E$. If the integral exists, we say $f\in\mathcal{R}(E)$. \\
+$\chi_E(x) = \begin{cases} 1 & x \in E \\ 0 & x \notin E \end{cases}$ is the characteristic function of set $E$ and $f_{\chi_E}(x) = \begin{cases} f(x) & x \in E \\ 0 & x \notin E \end{cases}$.
+\end{df*}
+\begin{nt*}
+1. $\chi_E(x)$ is interrupted only on the boundary $\partial E$. The points of discontinuity of $f_{\chi_E}(x)$ are either points of discontinuity of $f$ on $E$, 
+or the result of discontinuities of $\chi_E$, in which case they lie on $\partial E$.\\
+2. $\forall I_1,\ I_2 \supset E$, integrals $\int_{I_1} f_{\chi_E}(x) dx$ and $\int_{I_2} f_{\chi_E}(x) dx$ either both exist (then values are equal) or both fail to exist.
+\end{nt*}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+A function $f: E \to \mathbb{R}$ is integrable over an admissible set if and only if it is bounded and continuous at almost all points of $E$.
+\end{thm}
+\begin{nt*}
+1. Compared with $f$, $f_{\chi_E}$ may have additional points of discontinuity only on the $\partial E$.
+\end{nt*}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{df*}
+The (Jordan) measure or content of a bounded set $E \subset \mathbb{R}^n$ is $\mu(E) := \int_E 1 \cdot dx = \int_{I\supset E} \chi_E(x) dx$, provided this Riemann integral exists.
+\end{df*}
+\begin{nt*}
+1. Only admissible sets, are measurable in the sense of aformentioned definition.
+\end{nt*}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Comprehensions for Definition 3}(From Book.) \\
+The geometric meaning of $\mu(E)$ (if $E$ is admissible) could be seen in following way:
+$$\mu(E) = \int_{I\supset E} \chi_E(x) dx = \underline{\int}_{I\supset E} \chi_E(x) dx = \overline{\int}_{I\supset E} \chi_E(x) dx$$
+Due to Darboux Criterion and Theorem, $\mu(E)$ is the common limit as $\lambda(P) \to 0$ of the volumes of polyhedra inscribed in 
+and circumscribed about $E$, in agreement with the accepted idea of the volume of simple solids $E \subset \mathbb{R}^n$. \\
+Why the $\mu(E)$ is called Jordan measure? \\
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{df*}
+A set $E \subset \mathbb{R}^n$ is \underline{a set of measure zero in the sense of} \underline{Jordan} or a set of content zero if for every 
+$\varepsilon > 0$ it can be covered by a finite system of intervals $I_1, \ldots, I_k$ s.t. $\sum_{i=1}^{k} |I_i| < \varepsilon$.
+\end{df*}
+\end{minipage}}
+\newline
+Compared with measure zero in the sense of Lebesgue, a requirement that the covering be finite appears here, shrinking the class of sets of Lebesgue measure zero. 
+For example, the set of rational points is a set of measure zero in the sense of Lebesgue, but not in the sense of Jordan. \\
+In order for the least upper bound of the contents of polyhedra inscribed in a bounded set $E$ to be the same as the greatest lower bound of the contents of polyhedra 
+circumscribed about $E$ (and to serve as the measure $\mu(E)$ or content of $E$), it is obviously necessary and sufficient that the boundary $\partial E$ of $E$ have 
+measure 0 in the sense of Jordan. That is the motivation for the following definition. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{df*}
+A set $E$ is Jordan-measurable if it is bounded and its boundary $\partial E$ has Jordan measure zero.
+\end{df*}
+\end{minipage}}
+\newline
+Hence, the class of Jordan-measurable subsets is precisely the class of admissible sets. That's the reason the measure $\mu(E)$ 
+defined earlier can be called (and is called) the Jordan measure of the (Jordan-measurable) set $E$.
+\end{minipage}}
 
 \end{document}
