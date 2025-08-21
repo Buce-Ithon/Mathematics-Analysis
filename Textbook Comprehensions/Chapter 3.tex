@@ -106,6 +106,100 @@ $\pmod{\pi}$, which means $g(n)$ tends to $\infty$ "densely".), so the range of 
 \end{pf*}
 \end{minipage}}
 
+\begin{prb}
+    (C3S1Q5)
+    \begin{enumerate}
+        \item[a)] $1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}+\frac{1}{n!n}=3-\frac{1}{1\cdot 2\cdot 2!}-\cdots-\frac{1}{(n-1)\cdot n\cdot n!}$ holds, as $n\geq 2$.
+        \item[b)] $e=3-\sum_{n=0}^{\infty} \frac{1}{(n+1)\cdot (n+2)\cdot (n+2)!}$.
+        \item[c)] For computing $e$,$e\approx 1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}+\frac{1}{n!n}$ is much better than $e\approx 1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{pf*}
+\begin{enumerate}
+    \item[a)] $1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} + \frac{1}{n!n} + \frac{1}{1\cdot 2\cdot 2!} + \cdots + \frac{1}{(n-1)\cdot n\cdot n!}$ 
+    $=\left[ \frac{1}{n!} + \frac{1}{n!n} + \frac{1}{(n-1)n\cdot n!} - \frac{1}{(n-1)\cdot (n-1)!} \right]$ 
+    $=1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{(n-1)!} + \frac{1}{(n-1)\cdot (n-1)!} + \frac{1}{1\cdot 2\cdot 2!} + \cdots + \frac{1}{(n-2)\cdot (n-1)\cdot (n-1)!}$ 
+    $=\cdots = 1 + \frac{1}{1!} + \frac{1}{1\cdot 1!} = 3$
+    \item[b)] $\lim_{n\to\infty} 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} + \frac{1}{n!n}$ and 
+    $\lim_{n\to\infty} 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$, $\Delta_n = \frac{1}{n!n} = o(1), n\to\infty.$
+    \item[c)] Since both $1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} + \frac{1}{n!n}$ and $1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$ are monotonically increasing 
+    $\to e$, and the former has an extra term $\frac{1}{n!n}$ thus it grows faster (i.e., converges faster). To estimate the difference in convergence speed, we just need to find the maximum 
+    $k \in \mathbb{N}^+$ such that $\frac{1}{n!n} \geq \frac{1}{(n+1)!} + \cdots + \frac{1}{(n+k)!}$.\\
+    (Actually, $\forall n \geq 2, k \in \mathbb{N}^+$ i.e $Max{k} = +\infty$)
+\end{enumerate}
+\end{pf*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S1Q6) \\
+    Given$S_p(a, b) = \left( \frac{a^p + b^p}{2} \right)^{\frac{1}{p}}, p \neq 0, a, b > 0$, prove: 
+    \begin{enumerate}
+        \item[a)] $\forall p \neq 0, a, b > 0, S_p(a, b) \in [a, b]$;
+        \item[b)] $\lim_{n \to \infty} S_n(a, b) = b, \lim_{n \to \infty} S_{-n}(a, b) = a$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] It is sufficient to define the order relation of $a$ and $b$, for example: without loss of generality, assume $a < b$.
+    \item[b)] It is sufficient to define the relative size relationship of $a$ and $b$ (i.e., what is commonly called substitution or elimination by increment), for example: without loss of 
+    generality, let $b = \lambda a$.
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Thoughts:} \\
+(\textcolor{cyan}{Trick}) When a problem has multiple ($\geq 2$) variables, it may be helpful to look for connections between these seemingly "independent" variables 
+(for example, in question 6.b) of this section).
+\end{minipage}}
+
+\begin{prb}
+    (C3S1Q7) (Classical problem) \\
+    If $a>0$, then sequence $x_{n+1} = \frac{1}{2}\left(x_n + \frac{a}{x_n}\right)$ converges to $\sqrt{a}$.   
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+$x_{n+1}=\frac{1}{2}\left( x_{n}+ \frac{a}{x_{n}} \right) \geq \sqrt{a},\ n \geq 1$, i.e. $\forall x_{1}>0,\ x_{2} \geq \sqrt{a}$. \\
+$[$Induction$]$ then $\{x_{n}\}_{n=2}^{\infty}$ monotonically decrease, $\lim_{n\to\infty} x_{n+1}=\lim_{n\to\infty} \frac{1}{2}\left( x_{n}+\frac{1}{x_{a}} \right)=\sqrt{a}$.
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Thoughts:} \\
+(\textcolor{cyan}{Experience}) An experienced student, upon seeing a recurrence relation, can immediately guess that the problem will most likely require the use of methods like the Weierstrass theorem to 
+first determine convergence, and then take the limit on both sides of the equation. \\
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+(\textcolor{cyan}{Tip}) If starting from a general problem-solving approach, the first step is usually to determine the basic properties of the sequence (positivity/negativity, monotonicity, parity, periodicity 
+(or these properties starting from a certain term), etc.), and then consider which method to use to address convergence (general → Cauchy convergence criterion, monotonic → Weierstrass theorem) 
+and other issues.
+\end{minipage}}
+\newline\newline
+(Follow-up Question) \\
+Please estimate the convergence rate, i.e., the dependence of $x_n - \sqrt{a}$ on $n$.
+
+\begin{prb}
+    (C3S1Q8)
+    \begin{enumerate}
+        \item[a)] (Faulhaber's formula) $S_{k}(n)=\sum_{i=1}^{n} i^k=\frac{1}{k+1}\sum_{r=0}^{k}C_{k+1}^{r}B_{r}n^{k+1-r}$, $B_{r}$ is Bernoulli number.
+        \item[b)] $\lim_{ n \to \infty } \frac{S_{k}(n)}{n^{k+1}} = \frac{1}{k+1}$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] This part is a little hard, because to wholy solving it,  we needs expotential generating function with indeterminate $z$: $G(z,n)=\sum_{k=0}^{\infty}S_{k}(n) \frac{1}{k!} z^k$. You could get it from wikipedia.
+    \item[b)] Method1. $\lim_{ n \to \infty } \frac{S_{k}(n)}{n^{k+1}} = \lim_{ n \to \infty } \frac{1}{n}\sum_{i=1}^{n} \frac{i^k}{n^k} = \int_{0}^{1} x^k dx = \frac{1}{k+1}$ (Riemann sum) \\
+    Method2. $\lim_{ n \to \infty } \frac{S_{k}(n)}{n^{k+1}} = \lim_{ n \to \infty } \frac{(n+1)^k}{(n+1)^{k+1}-n^{k+1}}$ (Stolze-Cesaro Lemma) $=\lim_{ n \to \infty } \frac{1}{(n+1)-\left( \frac{n}{n+1} \right)^k\cdot n} 
+    = \lim_{ n \to \infty } \frac{1}{1+n\left[ 1-\left( \frac{n}{n+1} \right)^k \right]}$ (order estimation) $=\lim_{ n \to \infty } \frac{1}{1+n\left[ 1-\left( 1-k\cdot \frac{1}{n+1}+O\left( \frac{1}{n^{2}} \right) \right) 
+    \right]} = \lim_{ n \to \infty } \frac{1}{1+ \frac{n}{n+1}\cdot k+O\left( \frac{1}{n} \right)}=\frac{1}{1+k}$. 
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
 \subsubsection{$\xi.2$ The Limit of a Function}
 
 
