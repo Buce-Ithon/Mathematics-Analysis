@@ -1,0 +1,95 @@
+%\documentclass{Math_Note}
+%\setlength{\parindent}{2em}
+
+%\title{\textbf{Mathmatical Analysis Zorich Comprehensions Chapter 2}}
+%\author{Buce-Ithon}
+%\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+%\date{\today}
+
+%\begin{document}
+% Title page
+%\maketitle
+
+% Content
+%\newpage
+%\tableofcontents
+%\newpage
+
+% \setcounter{section}{-1}
+\newpage
+\section{Chapter2. The Real Numbers}
+\subsection{Comprehensions}
+The main content covers the basic properties of real numbers, the definitions and properties of 
+rational and irrational numbers, natural numbers and mathematical induction, and, most importantly, 
+several equivalence principles describing the completeness of real numbers (more generally, the density of 
+real numbers). (Zorich calls these fundamental lemmas, which serve as the foundation for constructing 
+real number theory, but calling them principles is fine.) Finally, some information on Cantor's set theory is added.
+
+The method of describing the completeness of real numbers using Didekind partitioning, which we learned in 
+Fehkingoltz's "Calculus Tutorial (I)" can also be incorporated into this.
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Basic Lemmas of the Real Number Completeness Theorem}
+\begin{enumerate}
+    \item[1.] (The least upper (lower) bound principle) Every non-empty set of real numbers that is bounded from above 
+    (below) has a unique upper (lower) bound.
+    \item[2.] (Cauchy-Cantor Principle) (The nested interval lemma) The set of closed intervals on the real number axis 
+    whose length $\to 0$ determines a unique point (a common point that belongs to all these closed intervals).
+    \item[3.] (Borel-Lebesgue Principle) (The finite covering lemma) Every system of open intervals covering a closed 
+    interval contains a finite subcovering.
+    \item[4.] (The Bolzano-Weierstrass Principle) (The limit point lemma) Every bounded infinite set of real numbers has 
+    at least one limit point.
+\end{enumerate}
+\begin{nt*}
+1. If the length of the closed intervals is not approaching $0$, there are still existing common points, but they are 
+not unique. \\
+2. If infinite is limit point, then the Bolzano-Weierstrass Principle is suit for unbounded infinite set of real numbers.
+\end{nt*}
+\end{minipage}}
+\newline\newline
+2 important properties of natural numbers $\mathbb{Q}$.
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{2 Important Properties of Natural Numbers}
+\begin{enumerate}
+    \item[Thm1.] (The Foundamental Theorem of Arithmetic) $\forall n\in\mathbb{N}$, it could be represented uniquely as: 
+    $n=p_1^{\alpha_1}\cdots p_k^{\alpha_k}$, where $p_j$ are different prime numbers, $\alpha_j$ are positive integers.
+    \item[Thm2.] (The Principle of Archimedes) Given $h>0$, then $\forall x\in\mathbb{R}$, $\exists$ unique $k\in\mathbb{Z}$, s.t. 
+    $(k-1)h\leq x\leq kh$.
+\end{enumerate}
+\end{minipage}}
+\newline\newline
+Cantor Set Theory.
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Countable and Uncountable Sets}
+\begin{enumerate}
+    \item[Proposition 1.] card(Countable Set)=card($\mathbb{N}$)=$\aleph_0$, card(Uncountable Set)=card($\mathbb{R}$)=$\aleph_1$ 
+    (cardinality of the continuum).
+    \item[Proposition 2.] Any subset of a at most countable set (card($X$)$\leq$card($\mathbb{N}$)) is at most countable; the at most 
+    countable union of at most countable sets is at most countable.
+    \item[Proposition 3.] (Corollary) The direct sum (or direct product) of countable sets is countable. (Corollary) The set of 
+    natural numbers or algebraic numbers is countable.
+    \item[Thm 1.] (Cantor's Theorem) card($\mathbb{N}$) < card($\mathbb{R}$).
+    \item[Proposition 4.] (Corollary) the irrational numbers or transcendental numbers exisst, and the set of all of them is uncountable.
+\end{enumerate}
+\end{minipage}}
+
+\newpage
+\subsection{Problems Sets}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{An interesting example-the Cantor set}
+\begin{ex*}
+    Let $x\in[0,1]\subset\mathbb{R}$, its ternary expansion is $x=0.a_1a_2a_3\cdots\, (a_i\in\{0,1,2\})$ satisfying: 
+    $\forall i\in\mathbb{N},a\neq 1$, then the set of all such elements is called the Cantor set.
+\end{ex*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{nt*}
+    The Cantor set is uncountable (It's easy: the elements of it can be onto mapped to all binary decimals on $[0,1]$), 
+    and we'll then learn: Cantor et is maesure zero in sense of Lebesgue.
+\end{nt*}
+\end{minipage}}
+
+%\end{document}
