@@ -1,0 +1,59 @@
+%\documentclass{Math_Note}
+%\setlength{\parindent}{2em}
+
+%\title{\textbf{Mathmatical Analysis Zorich Comprehensions Chapter 4}}
+%\author{Buce-Ithon}
+%\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+%\date{\today}
+
+%\begin{document}
+% Title page
+%\maketitle
+
+% Content
+%\newpage
+%\tableofcontents
+%\newpage
+
+% \setcounter{section}{-1}
+\newpage
+\section{Chapter 4.Continuous Functions}
+\subsection{Comprehensions}
+This chapter discusses the continuity of functions (including discontinuities when not continuous). First, we define the concepts of continuity at a point, continuity on an interval, and one-sided continuity, 
+and introduces the concept of points of discontinuity ($2$ types: depending on whether the one-sided limits exist). Further, it defines the stronger concept of uniform continuity. Then, it presents the arithmetic 
+operations and composition of continuous functions, and provides $3$ global properties of continuous functions (on closed intervals: 1. Bolzano-Cauchy intermediate value theorem, 2. Weierstrass extreme value theorem 
+(boundedness), 3. Cantor-Heine uniform continuity theorem). Additionally, Zorich also covers the continuity of monotonic functions in the book (which is special as before) (types of discontinuities for monotonic 
+functions (only the first kind) and their number (at most countable), and the relationship between continuity and the range (intermediate value property) for monotonic functions derived from this). Finally, it 
+introduces the inverse function theorem, which is very intuitively understood (on closed intervals: existence $\Leftrightarrow$ injective $\Leftrightarrow$ strictly monotonic, preserving continuity).
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Continuity of 2 Special fuctions: }
+\begin{enumerate}
+    \item[1.] Dirichlet function $\mathcal{D}(x) = \begin{cases} 1, & x \in \mathbb{Q} \\ 0, & x \in \mathbb{R} \setminus \mathbb{Q} \end{cases}$ \\
+    Equivalent expression: $\forall x \in \mathbb{R}, \mathcal{D}(x) = \lim_{k \to \infty} (\lim_{j \to \infty} (\cos(k!x))^{2j})$ \\
+    Properties: Every point is a discontinuity point of the second kind (no limit anywhere, discontinuous, non-differentiable); has every positive rational number as its period (thus no minimal positive period); 
+    not Riemann integrable on any bounded interval, but Lebesgue integrable on $[0,1]$.
+    \item[2.] Riemann function $\mathcal{R}(x) = \begin{cases} \frac{1}{n}, & x = \frac{m}{n} \in \mathbb{Q} \setminus \{0\} \\ 0, & x \in \mathbb{R} \setminus \mathbb{Q} \cup \{0\} \end{cases}$ \\
+    The number-theoretic essence of the first kind discontinuity points of the Riemann function: $\forall a \in \mathbb{R}, N \in \mathbb{N}$, in $U(a)$ there are only finitely many rational numbers $m/n$ 
+    (assumed to be in irreducible form) with $n < N$, i.e., $\frac{1}{n} > \frac{1}{N}$. \\
+    Properties: $\mathcal{R}(x)$ is continuous at all irrational points and has first kind discontinuities at all rational points; the Riemann function is Riemann integrable.
+\end{enumerate}
+\end{minipage}}
+
+\subsection{Problems Sets}
+\begin{prb}
+    (C4S2Q1)
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item [a)] $f \in C(A), B \subset A \implies f|_B \in C(B)$.
+    \item [b)] $f : E_1 \cup E_2 \to \mathbb{R}$, satisfying $f|_{E_i} \in C(E_i), i = 1, 2 \nRightarrow f \in C(E_1 \cup E_2)$, counterexample: $f(x) = \tan x$.
+    \item [c)] $\forall N > 0, \{ \frac{m}{n} : n < N, (m, n) = 1, m, n \in \mathbb{Z}^+ \}$ is a finite set, i.e. $\exists U(x; \delta) (\forall x \in (0, 1))$ such that $\forall x_1, x_2 
+    \in U(x; \delta), |R(x_1) - R(x_2)| \leq \frac{1}{N} < \varepsilon$ (Cauchy convergence criterion), then $\forall x_0 \in [0, 1], \lim_{x \to x_0} R(x) = 0$. (The proof method is consistent with 
+    the discussion of discontinuity points of the Riemann function in Example 2 of C4 Summary.)
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+%\end{document}
