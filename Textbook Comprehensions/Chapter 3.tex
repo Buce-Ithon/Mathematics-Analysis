@@ -115,7 +115,7 @@ $\pmod{\pi}$, which means $g(n)$ tends to $\infty$ "densely".), so the range of 
     \end{enumerate}
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
-\begin{pf*}
+\begin{qsol*}
 \begin{enumerate}
     \item[a)] $1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} + \frac{1}{n!n} + \frac{1}{1\cdot 2\cdot 2!} + \cdots + \frac{1}{(n-1)\cdot n\cdot n!}$ 
     $=\left[ \frac{1}{n!} + \frac{1}{n!n} + \frac{1}{(n-1)n\cdot n!} - \frac{1}{(n-1)\cdot (n-1)!} \right]$ 
@@ -128,7 +128,7 @@ $\pmod{\pi}$, which means $g(n)$ tends to $\infty$ "densely".), so the range of 
     $k \in \mathbb{N}^+$ such that $\frac{1}{n!n} \geq \frac{1}{(n+1)!} + \cdots + \frac{1}{(n+k)!}$.\\
     (Actually, $\forall n \geq 2, k \in \mathbb{N}^+$ i.e $Max{k} = +\infty$)
 \end{enumerate}
-\end{pf*}
+\end{qsol*}
 \end{minipage}}
 
 \begin{prb}
@@ -140,13 +140,13 @@ $\pmod{\pi}$, which means $g(n)$ tends to $\infty$ "densely".), so the range of 
     \end{enumerate}
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
-\begin{sol*}
+\begin{qsol*}
 \begin{enumerate}
     \item[a)] It is sufficient to define the order relation of $a$ and $b$, for example: without loss of generality, assume $a < b$.
     \item[b)] It is sufficient to define the relative size relationship of $a$ and $b$ (i.e., what is commonly called substitution or elimination by increment), for example: without loss of 
     generality, let $b = \lambda a$.
 \end{enumerate}
-\end{sol*}
+\end{qsol*}
 \end{minipage}}
 \newline\newline
 \fbox{\begin{minipage}{0.95\textwidth}
@@ -160,10 +160,10 @@ $\pmod{\pi}$, which means $g(n)$ tends to $\infty$ "densely".), so the range of 
     If $a>0$, then sequence $x_{n+1} = \frac{1}{2}\left(x_n + \frac{a}{x_n}\right)$ converges to $\sqrt{a}$.   
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
-\begin{sol*}
+\begin{qsol*}
 $x_{n+1}=\frac{1}{2}\left( x_{n}+ \frac{a}{x_{n}} \right) \geq \sqrt{a},\ n \geq 1$, i.e. $\forall x_{1}>0,\ x_{2} \geq \sqrt{a}$. \\
 $[$Induction$]$ then $\{x_{n}\}_{n=2}^{\infty}$ monotonically decrease, $\lim_{n\to\infty} x_{n+1}=\lim_{n\to\infty} \frac{1}{2}\left( x_{n}+\frac{1}{x_{a}} \right)=\sqrt{a}$.
-\end{sol*}
+\end{qsol*}
 \end{minipage}}
 \newline\newline
 \fbox{\begin{minipage}{0.95\textwidth}
@@ -201,6 +201,202 @@ Please estimate the convergence rate, i.e., the dependence of $x_n - \sqrt{a}$ o
 \end{minipage}}
 
 \subsubsection{$\xi.2$ The Limit of a Function}
+\begin{prb}
+    (C3S2Q1) \\
+    Porve that: 
+    \begin{enumerate}
+        \item[a)] there $\exists$ a unique function defined on $\mathbb{R}$ satisfying : 
+        $f(1) = a$ (where $a > 0, a \neq 1$), $f(x_1) \cdot f(x_2) = f(x_1 + x_2)$, $\lim_{x \to x_0} f(x) = f(x_0)$.
+        \item[b)] there $\exists$ a unique function defined on $\mathbb{R}^+$ satisfying : 
+        $f(a) = 1$ (where $a > 0, a \neq 1$), $f(x_1) + f(x_2) = f(x_1 \cdot x_2)$, $\lim_{x \to x_0} f(x) = f(x_0)$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+By substitution (for example: $x \triangleq e^{\xi}$, etc.), transform the given variant of the Cauchy equation back into the form $f(x + y) = f(x) + f(y)$ (uniqueness is obtained from the equation itself and continuity, and 
+the method has been provided in the discussion of the corresponding equation in Fikhtengoltz's "Calculus Tutorial (I)").
+\end{qsol*}
+\end{minipage}}
 
+\begin{prb}
+    (C3S2Q2) \\
+    \begin{enumerate}
+        \item[a)] Provide an isomorphism mapping between the group $(\mathbb{R}, +)$ and the group $(\mathbb{R}^+, \cdot)$;
+        \item[b)] Prove that $(\mathbb{R}, +)$ and the group $(\mathbb{R} \setminus {0}, \cdot)$ are not isomorphic.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $\forall x, y \in \mathbb{R}$, if $\varphi(x + y) = \varphi(x) \cdot \varphi(y)$, then $\varphi(x) = e^{cx}$;
+    \item[b)] From the fact that "isomorphism not only is a bijection but also preserves the group operation", if $\varphi: \mathbb{R} \to \mathbb{R} \setminus {0}$ exists, then from $\varphi(0) = 1$, it follows that 
+    $\varphi(x) \cdot \varphi(-x) = \varphi(0) = 1$.
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q3)
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $\lim\limits_{ x \to +0 }x^{x}=\lim\limits_{ x \to +0 }e^{ x\ln(x) }=\lim\limits_{ t \to +\infty }e^{ -\frac{\ln(t)}{t} }=1$; 
+    \item[b)] $\lim\limits_{ x \to +\infty } x^{\frac{1}{x}} = \lim\limits_{ x \to +\infty }e^{\frac{\ln(x)}{x}} = 1$; 
+    \item[c)] $\lim\limits_{ x \to 0 } \frac{\log_{a}(1+x)}{x} = \lim\limits_{ x \to 0 } \frac{1}{\ln a} \cdot \frac{\ln(1+x)}{x}$ $= \left[ \ln(1+x)=x-\frac{1}{2}x^{2}+O(x^{3}) \right] = \frac{1}{\ln a}$; 
+    \item[d)] $\lim\limits_{ x \to 0 } \frac{a^x-1}{x} = [a^x-1 \triangleq t] = \lim\limits_{ x \to 0 } \frac{t}{\log_{a}(1+t)} = \ln a$. 
+\end{enumerate}
+\end{qsol*}
+\begin{nt*}
+Both a) and b) used $\lim_{ x \to +\infty } \frac{\log_{a}x}{x^{\alpha}} = 0,\ \alpha>0$.
+\end{nt*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q4) \\
+    Prove: $1+\frac{1}{2}+\cdots+\frac{1}{n}=\ln n+c+o(1),\ n\to \infty$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+Using $\ln(n+1)-\ln n=\ln \frac{n+1}{n}=\ln\left( 1+\frac{1}{n} \right)=\frac{1}{n}+O\left( \frac{1}{n^{2}} \right),\ n\to \infty$, then $\Sigma$ them.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q5)
+    \begin{enumerate}
+        \item[a)] If two positive term series $\sum_{n=1}^{\infty} a_n$ and $\sum_{n=1}^{\infty} b_n$ satisfy: $a_n \sim b_n, n \to \infty$, then these two series have the same convergence behavior;
+        \item[b)] The series $\sum_{n=1}^{\infty} \sin \frac{1}{n^p}$ converges only when $p > 1$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] $a_n \sim b_n$ i.e. $\forall \varepsilon > 0, \exists N > 0, s.t. \forall n > N, |\frac{a_n}{b_n} - 1| < \varepsilon$ i.e. 
+    $1 - \varepsilon < \frac{a_n}{b_n} < 1 + \varepsilon, \forall n > N, \text{take a specific } \varepsilon = \varepsilon_0, \text{then}$ 
+    $(1 - \varepsilon_0)b_n < a_n < (1 + \varepsilon_0)b_n. \text{Convergence/divergence is thereby controlled.}$
+    \item[b)] $p > 0 : \sin \frac{1}{n^p} \sim \frac{1}{n^p}$ Two positive term series have the same convergence behavior, the convergence/divergence of the latter can be given by the Cauchy condensation test 
+    (see Summary C3S1 for details) \\ $p = 0 : \sin \frac{1}{n^p} = \sin 1 > 0$ diverges \\ $p < 0 : \sum_{n=1}^\infty \sin \frac{1}{n^p} = [q \triangleq -p > 0] = \sum_{n=1}^\infty \sin n^q$ diverges (Essentially, 
+    $\{n^q (\text{mod } \pi)\}$ is dense on $[0, \pi]$, details in (C3S1Q3 variants).
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q6)
+    \begin{enumerate}
+        \item[a)] If $\forall n \in \mathbb{N}$ we have $a_n \geq a_{n+1} > 0$, and the series $\sum_{n=1}^{\infty} a_n$ converges, then $a_n = o\left(\frac{1}{n}\right)$, $n \to \infty$;
+        \item[b)] If $b_n = o\left(\frac{1}{n}\right)$, then it is always possible to construct a convergent series $\sum_{n=1}^{\infty} a_n$; such that $b_n = o(a_n)$, $n \to \infty$;
+        \item[c)] If the positive term series $\sum_{n=1}^{\infty} a_n$ converges, then the series $\sum_{n=1}^{\infty} A_n$, as $A_n = \sqrt{\sum_{k=n}^{\infty} a_k} - \sqrt{\sum_{k=n+1}^{\infty} a_k}$, 
+        also converges, and $a_n = o(A_n), n \to \infty$;
+        \item[d)] If the positive term series $\sum_{n=1}^{\infty} a_n$ diverges, then the series $\sum_{n=1}^{\infty} A_n$, as $A_n = \sqrt{\sum_{k=1}^{n} a_k} - \sqrt{\sum_{k=1}^{n-1} a_k}$, also diverges, 
+        and $A_n = o(a_n), n \to \infty$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] Applying the Cauchy convergence criterion to the series $\sum_{n=1}^{\infty} a_n$, we have: $\forall \varepsilon > 0, \exists N > 0 \text{ such that } \forall n, m > N, |a_n + \cdots + a_m| < \varepsilon$. 
+    If we set $m = 2n$ and since $a_n$ is monotonically decreasing, then $n a_{2n} < \varepsilon$, i.e. $a_n = o\left(\frac{1}{n}\right)$;
+    \item[b)] Consider alternating series and monotonic sequences: $a_n \triangleq (-1)^n \sup_{k \geq n} b_k$, then $\sum_{n=1}^{\infty} a_n$ converges. (Leibniz Theorem) Or just let $a_n = (-1)^n \frac{1}{n}$.
+    \item[c)] d$)$ Easy to prove. (Cancellation of intermediate terms in summation; rationalization, division).
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{skycyan}{Thoughts:} \\
+From c) and d), it can be seen: there always exists a convergent positive term series that is "larger" than a given convergent positive term series, and there always exists a positive term series that is "smaller" than 
+a given divergent positive term series. \\ There is no unique, universal standard series that can be applied to all comparison tests.
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q7\&Q8)
+    \begin{enumerate}
+        \item[a)] The series $\sum_{n=1}^{\infty} \ln a_n, a_n > 0, n \in \mathbb{N}$ converges i.f.f. the sequence $\{\Pi_n = a_1 \cdots a_n\}$ has a nonzero limit;
+        \item[b)] If the infinite product $\prod_{n=1}^{\infty} e_n$ converges, then $\lim_{n \to \infty} e_n = 1$;
+        \item[c)] The series $\sum_{n=1}^{\infty} \ln (1 + a_n), |a_n| < 1$ converges absolutely i.f.f. the series $\sum_{n=1}^{\infty} a_n$ converges absolutely;
+        \item[d)] The infinite product $\prod_{n=1}^{\infty} e_n, e_n > 0$ converges i.f.f. the series $\sum_{n=1}^{\infty} \ln e_n$ converges;
+        \item[e)] If $e_n = 1 + a_n$ and $a_n$ all have the same sign, then the infinite product $\prod_{n=1}^{\infty} (1 + a_n)$ converges i.f.f. the series $\sum_{n=1}^{\infty} a_n$ converges.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] Easy to prove. $\sum_{n=1}^{\infty} \ln a_n = \ln \prod_{n=1}^{\infty} a_n$ (they have the same convergence behavior).
+    \item[b)] Easy to prove. (If $\prod_{n=1}^{\infty} e_n = c \neq 0$, then $\lim_{n \to \infty} e_n = \lim_{n \to \infty} \frac{\prod_{k=1}^{n} e_k}{\prod_{k=1}^{n-1} e_k} = 1$. Alternatively, take logarithms and apply 
+    the basic properties of series convergence.)
+    \item[c)] If $\sum_{n=1}^{\infty} \ln(1 + a_n)$ converges, then by a) $\prod_{n=1}^{\infty}(1 + a_n)$ has a nonzero limit. Further, by b), $a_n \to 0$ as $n \to \infty$, and since $|\ln(1 + a_n)| \sim \ln(1 + |a_n|) 
+    \sim |a_n|$, it follows (from C3S2Q5 a)) that the statement is proved.
+    \item[d)] Easy to prove. (Same as a))
+    \item[e)] $\ln(1 + a_n) \sim a_n$, so $\prod_{n=1}^{\infty}(1 + a_n)$ converges if and only if $\sum_{n=1}^{\infty} \ln(1 + a_n)$ converges if and only if $\sum_{n=1}^{\infty} a_n$ converges.
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q9)
+    \begin{enumerate}
+        \item[a)] Calculate $\Pi_{n=1}^{\infty}(1+x^{2^{n-1}})$;
+        \item[b)] Caculate $\Pi_{n=1}^{\infty} \cos\left( \frac{x}{2^{n}} \right)$, and prove $\frac{\pi}{2}=\frac{1}{\sqrt{ \frac{1}{2} }\cdot\sqrt{ \frac{1}{2}+\frac{1}{2}\cdot\sqrt{ \frac{1}{2} } }\cdot\sqrt{ 
+        \frac{1}{2}+\frac{1}{2}\cdot\sqrt{ \frac{1}{2}+\frac{1}{2}\cdot \sqrt{ \frac{1}{2} } } }\cdots}$ (Vieta's formula);
+        \item[c)] Find the $f(x)$, s.t. $f(0)=1,\ f(2x)=\cos^{2}x\cdot f(x),\ \lim_{ x \to 0 }f(x)=f(0)$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] From C3S2Q7 e), $\prod_{n=1}^{\infty}(1+x^{2^n-1})$ and $\sum_{n=1}^{\infty}x^{2^n-1}$ have the same convergence behavior, i.e., they converge only when $|x|<1$, and $\prod_{n=1}^{\infty}(1+x^{2^n-1})=\frac{1-x^{2^n}}{1-x}$ 
+    (generalized power series multiplication theorem);
+    \item[b)] $\prod\limits_{n=1}^{\infty}\cos\left(\frac{x}{2^n}\right)=\lim\limits_{n\to\infty}\prod_{k=1}^{n}\cos\left(\frac{x}{2^k}\right)=\lim\limits_{n\to\infty}\frac{\sin\frac{x}{2^n}\prod_{k=1}^{n}\cos\frac{x}{2^k}}{\sin\frac{x}{2^k}}
+    =\lim\limits_{n\to\infty}\frac{\sin x}{2^n\sin\frac{x}{2^n}}=\lim\limits_{n\to\infty}\frac{\sin x}{x}\cdot\frac{\frac{x}{2^n}}{\sin\frac{x}{2^n}}=\frac{\sin x}{x}$ Due to $\cos\frac{x}{2}=\sqrt{\frac{1+\cos x}{2}}$ and (above) 
+    $\prod_{n=1}^{\infty}\cos\frac{x}{2^n}=\frac{\sin x}{x}$ (let $x=\frac{\pi}{2}$), Vieta's formula is proved;
+    \item[c)] Using the recurrence relation $f(2x)=\cos^2 x \cdot f(x)$ and taking $\frac{x}{2^n}, n=0,1,2,\ldots$ yields, $f(x)=\left(\frac{\sin x}{x}\right)^2.$
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q10)
+    \begin{enumerate}
+        \item[a)] If $\frac{b_n}{b_{n+1}} = 1 + \beta_n, n = 1, 2, \cdots$, and the series $\sum_{n=1}^\infty \beta_n$ converges absolutely, then the limit $\lim_{n \to \infty} b_n = b$ evidently exists;
+        \item[b)] If $\frac{a_n}{a_{n+1}} = 1 + \frac{p}{n} + \alpha_n, n = 1, 2, \cdots$, and the series $\sum_{n=1}^\infty \alpha_n$ converges absolutely, then $a_n \sim \frac{c}{n^p}, n \to \infty$;
+        \item[c)] If $\frac{a_n}{a_{n+1}} = 1 + \frac{p}{n} + \alpha_n, n = 1, 2, \cdots$, and the series $\sum_{n=1}^\infty \alpha_n$ converges absolutely, then the series $\sum_{n=1}^\infty a_n$ converges when $p > 1$ and diverges 
+        when $p \leq 1$ (Gauss's test for absolute convergence of series).
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] From C3S2Q7 and Q8 c), it follows that $\sum_{n=1}^{\infty} \ln(1 + \beta_n) = \sum_{n=1}^{\infty} \ln \left( \frac{b_n}{b_{n+1}} \right)$ and $\sum_{n=1}^{\infty} \beta_n$ have the same convergence behavior, both absolutely convergent.
+    \item[b)] (Good question, good solution) \\ Method 1. Consider $\frac{n^p}{(n+1)^p} \frac{a_n}{a_{n+1}} = \frac{n^p}{(n+1)^p} \left( 1 + \frac{p}{n} + \alpha_n \right) = \left( 1 + \frac{1}{n} \right)^{-p} + \left( 1 + \frac{1}{n} 
+    \right)^{-p} \frac{p}{n} + \left( 1 + \frac{1}{n} \alpha_n \right)^{-p} = \left( 1 - \frac{p}{n} + O\left( \frac{1}{n^2} \right) \right) \left( 1 + \frac{p}{n} \right) + \left( 1 - \frac{p}{n} + O\left( \frac{1}{n^2} \right) \right) \alpha_n 
+    \left[ \triangleq 1 + \theta_n \right]$, \\ $\theta_n = \left( 1 - \frac{p}{n} + O\left( \frac{1}{n^2} \right) \right) \left( 1 + \frac{p}{n} + \alpha_n \right) - 1 = O \left( \frac{1}{n^2} \right) \left( 1 + \frac{p}{n} + \alpha_n \right) - 
+    \frac{p^2}{n^2} + \alpha_n \left( 1 - \frac{p}{n} \right)$, $|\theta_n| \leq |O \left( \frac{1}{n^2} \right) \left( 1 + \frac{p}{n} + \alpha_n \right)| + |\frac{p^2}{n^2}| + |\alpha_n \left( 1 - \frac{p}{n} \right)|$, and $\sum_{n=1}^{\infty} 
+    \alpha_n$ abs. cgt. , then $\sum_{n=1}^{\infty} \theta_n$ abs. cgt. Then due to C3S2Q7 c), $\sum_{n=1}^{\infty} \ln(1 + \theta_n) = \sum_{n=1}^{\infty} \ln \frac{n^p a_n}{(n+1)^p a_{n+1}} = \ln \alpha_1 - 
+    \lim_{n \to \infty} n^p \alpha_n$ abs. cgt. i.e. $n^p \alpha_n \sim c, n \to \infty.$ $(\alpha_n \sim \frac{c}{n^p}).$ \\ 
+    Method 2 (Optimize). Following the first step of Method 1: \\ 
+    $\ln \frac{n^p a_n}{(n+1)^p a_{n+1}} = \ln \frac{\alpha_n}{\alpha_{n+1}} - p \ln \left( 1 + \frac{1}{n} \right)$ $= \ln \left( 1 + \frac{p}{n} + \alpha_n \right) - p \ln \left( 1 + \frac{1}{n} \right)$ $= \frac{p}{n} + \alpha_n + O \left( 
+    \frac{p}{n} + \alpha_n \right)^2 - p \left( \frac{1}{n} + O \left( \frac{1}{n^2} \right) \right)$ $= \alpha_n + O \left( \frac{1}{n^2} \right) + O (\alpha_n) \to$ abs. cgt. going on Method 1.
+    \item[c)] From b) and the convergence behavior of $\sum_{n=1}^{\infty} \frac{1}{n^p}$, it immediately follows.
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C3S2Q11) \\
+    Prove: For any sequence $\{a_n\}$, $\limsup \left( \frac{a_{n+1}}{a_n} \right)^n > e$, and this estimate is the best possible.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+(Great deal: Wonderful observation!) /Contradiction/ \\
+Lemma: $\forall x\in(0,e)$, for sufficiently large $n$, $x^{\frac{1}{n}}<1+\frac{1}{n}$. \\
+If $\varlimsup\limits_{ n \to \infty }\left( \frac{1+a_{n+1}}{a_{n}} \right)^{n}<e,\ a_{n}>0$, then $\exists b$, s.t. $\varlimsup\limits_{ n \to \infty }\left( \frac{1+a_{n+1}}{a_{n}} \right)^{n}<b<e$,
+i.e. $\exists$ sufficient large $n$, s.t. $\left( \frac{1+a_{n+1}}{a_{n}} \right)^{n}<b<e$,
+i.e. (using std::Lemma) $\frac{1+a_{n+1}}{a_{n}}<b^{\frac{1}{n}}<\frac{n+1}{n}$,
+let $b_{n} \triangleq \frac{a_{n}}{n}$, then $b_{n+1}<b_{n}-\frac{1}{n+1}$, increasing to $n+m$ and $\Sigma$ them: $b_{n+m}<b_{n}-\sum_{k=1}^{m} \frac{1}{n+k}$, fixing $b_{n}$ and letting $m\to \infty$ we have $b_{n+m}=\frac{a_{n+m}}{n}\to {-}\infty,
+\ m\to \infty$ which derivate constraction.
+\end{sol*}
+\end{minipage}}
 
 %\end{document}

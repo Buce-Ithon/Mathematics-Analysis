@@ -67,6 +67,7 @@
 \newtheorem*{subex*}{\hskip 2em Example}
 \newtheorem*{ssubex*}{\hskip 4em Example}
 \newtheorem*{sol*}{\hskip 2em Solution}
+\newtheorem*{qsol*}{\hskip 2em Quick Solution}
 \newtheorem*{pf*}{Proof}
 \newtheorem*{subpf*}{\hskip 2em Proof} %Proof within the paragraph, indent the first line by 2 characters
 \newtheorem*{ssubpf*}{\hskip 4em Proof}
