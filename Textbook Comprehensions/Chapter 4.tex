@@ -56,4 +56,123 @@ introduces the inverse function theorem, which is very intuitively understood (o
 \end{qsol*}
 \end{minipage}}
 
+\begin{prb}
+    (C4S2Q2) \\
+    If $f\in C[a,b]$, then $m(x)=\min_{a\leq t\leq x}f(t),\max_{a\leq t\leq x}f(t) \in C[a,b]$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+Note that $m(x) = \min_{a \leq t \leq x} f(t)$, $M(x) = \max_{a \leq t \leq x} f(t) \in C[a, b]$, and since each is monotonic, their ranges can be given. Then, by relating to the relationship 
+between the continuity of monotonic functions and their ranges (intermediate value property), the proof is completed.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q3)
+    \begin{enumerate}
+        \item[a)] On an open interval, the inverse function of a monotonic function exists and is continuous.
+        \item[b)] Construct a monotonic function with a countable set of discontinuities.
+        \item[c)] If $f: X \to Y$ and $f^{-1}: Y \to X$ are inverse functions of each other, and $f$ is continuous at $x_0 \in X$, then it does not imply that $f^{-1}$ is continuous at $y_0 = f(x_0)$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] Extend to the closed interval (taking one-sided limits at the endpoints) using the inverse function theorem, then restrict back to the open interval.
+    \item[b)] $f(x) = [x]$.
+    \item[c)] Actually, such a counterexample comes from the lack of closed interval restriction in the inverse function theorem. If $x_0$ is an isolated point, it is easy to construct an example.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.24]{"./Figures/250805_1.png"}
+\end{figure}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q4) \\
+    \begin{enumerate}
+        \item[a)] if $f \in C[a, b]$ and $g \in C[a, b]$, and, in addition, $f(a) < g(a)$ and $f(b) > g(b)$, then there exists a point $c \in [a, b]$ at which $f(c) = g(c)$;
+        \item[b)] any continuous mapping $f : [0, 1] \rightarrow [0, 1]$ of a closed interval into itself has a fixed point, that is, a point $x \in [0, 1]$ such that $f(x) = x$;
+        \item[c)] if two continuous mappings $f$ and $g$ of an interval into itself commute, that is, $f \circ g = g \circ f$, then they have a common fixed point;
+        \item[d)] a continuous mapping $f : \mathbb{R} \rightarrow \mathbb{R}$ may fail to have a fixed point;
+        \item[e)] a continuous mapping $f : ]0, 1[ \rightarrow ]0, 1[$ may fail to have a fixed point;
+        \item[f)] if a mapping $f : [0,1] \rightarrow [0,1]$ is continuous, $f(0) = 0$, $f(1) = 1$, and $(f \circ f)(x) \equiv x$ on $[0,1]$, then $f(x)\equiv x$;
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] Constrcut $h(x) = f(x) - g(x)$, then Bolzano-Cauchy intermediate value theorem applies.
+    \item[b)] Constrcut $h(x) = f(x) - x$, then disccuss its values at $x=0$ and $x=1$, and using Bolzano-Cauchy IVT.
+    \item[c)] /Insane/ The question should be modified to 'If 2 continuous maps $f$ and $g$ of a line segment into itself commute, i.e. $f\circ g=g\circ f$, then they donn't always have a common
+    fixed point, though for linear maps and polynomials in general we have such a point.' \\
+    /The counterexample was given by W. M. Boyce 1969, the proof for linear maps is easy using [contradiction], the proof for polynomials is a bit of hard \textcolor{silkred}{(wait to add)}./
+    \item[d)] $f(x)=x+1$, $f(x)=e^x$ 
+    \item[e)] $f(x)=\sin \frac{\pi}{2}x$, $f(x)=x^2$ 
+    \item[f)] $1^{\circ}.$ $f$ is injection [contradiction] and surjection $\implies$ bijection, then we could get monotonic; $2^{\circ}.$ $f\equiv x\Leftrightarrow f\leq x \wedge f\geq x$ [contradiction].
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.24\textwidth]{"./Figures/250829_1.png"}
+\end{figure}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q5) \\
+    Show that the set of values of any function that is continuous on a closed interval is a closed interval.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+Weierstrass exreme value theorem + Bolzano-Cauchy intermediate value theorem.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q6) \\
+    Prove the following statements:
+    \begin{enumerate}
+        \item[a)] If a mapping $f : [0, 1] \rightarrow [0, 1]$ is continuous, $f(0) = 0$, $f(1) = 1$, and $f^n(x) := \underbrace{f \circ \ldots \circ f}_{n\ \text{factors}} (x) \equiv x$ on $[0, 1]$, 
+        then $f(x) \equiv x$.
+        \item[b)] If a function $f : [0, 1] \rightarrow [0, 1]$ is continuous and nondecreasing, then $\forall x \in [0, 1]$ at least one of the following situations must occur: either $x$ is 
+        a fixed point, or $f^n(x)$ tends to a fixed point. (Here $f^n(x) = f \circ \ldots \circ f(x)$ is the nth iteration of $f$.)
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] Similiar (almost same) to C4S2Q4-f).
+    \item[b)] $\forall x\in [0,1]$, $x_0=x, x_1=f(x), \cdots, x_n=f^n(x), \cdots$, \\
+    then there are only 2 condition between $x$ and $f(x)$: \\
+    1. $x=f(x)$ i.e. fixed point; \\
+    2. $x\leq f(x)$ or $x\leq f(x)$, from monotonicity of $f(x)$ we know $\{x_n\}_{n=0}^{\infty}$ monotonic and bounded, then due to continuity of $f(x)$ we could find the limit (fixed point).
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q7) \\
+    Let $f : [0, 1] \to \mathbb{R}$ be a continuous function such that $f(0) = f(1)$. Show that
+    \begin{enumerate}
+        \item[a)] $\forall n \in \mathbb{N}$ there $\exists $ a horizontal closed interval of length $\frac{1}{n}$ with endpoints on the graph of this function;
+        \item[b)] if the number $l$ is not of the form $\frac{1}{n}$ there exists a function of this form on whose graph one cannot inscribe a horizontal chord of length $l$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] It $\Leftrightarrow$ $\forall n \in \mathbb{N}$, $\exists x \in [0,1-\frac{1}{n}]$, s.t. $f(x+\frac{1}{n})-f(x)=0$. \\
+    Construct $g(x)=f(x+\frac{1}{n})-f(x)$, $x \in [0,1-\frac{1}{n}]$. \\
+    Consider a partition of $[0,1-\frac{1}{n}]$ with $n$ points: $0, \frac{1}{n}, \dots , 1-\frac{1}{n}$ and their $g(x)$ values: \\
+    $\begin{cases} g(0)=f(\frac{1}{n})-f(0)\\ g(\frac{1}{n})=f(\frac{2}{n})-f(\frac{1}{n})\\ \cdots\\ g(1-\frac{1}{n})=f(1)-f(1-\frac{1}{n}) \end{cases}$, $\Sigma$: $\sum_{k=0}^{n-1}g(\frac{k}{n})=f(1)-f(0)\equiv 0$ \\
+    then $g(0), g(\frac{1}{n}),\dots , g(1-\frac{1}{n})$ either all $0$, or have at least $2$ different signs (then using Bolzano-Cauchy IVT), thus there always $\exists x \in [0,1-\frac{1}{n}]$, s.t. $g(x)=f(x+\frac{1}{n})-f(x)=0$. 
+    \item[b)] $\forall l>0$, consider: $f(x)=\sin^2(\frac{\pi x}{r})-x \sin^2(\frac{\pi}{r}),\ \ x \in [0,1]$ \\
+    Clearly, $f(0)=f(1)$. If $f(x)=f(x+r)$, then $r\sin^2(\frac{\pi}{r})=0$, which means $r=\frac{1}{n},\ n \in \mathbb{N}$. (by Paul Levy) \\
+    /Development: Universal Chord Theorem (by Paul Levy)/
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+
+
 %\end{document}
