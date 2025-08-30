@@ -174,5 +174,22 @@ Weierstrass exreme value theorem + Bolzano-Cauchy intermediate value theorem.
 \end{sol*}
 \end{minipage}}
 
+\begin{prb}
+    (C4S2Q8) \\
+    The modulus of continuity of a function $f : E \to \mathbb{R}$ is the function $\omega(\delta)$ defined for $\delta > 0$ as follows:
+    $\omega(\delta) = \sup\limits_{\begin{subarray}{c}|x_1 - x_2| < \delta \\ x_1, x_2 \in E\end{subarray}} |f(x_1) - f(x_2)|$. \\
+    Thus, the least upper bound is taken over all pairs of points $x_1, x_2$ of $E$ whose distance apart is less than $\delta$. \\
+    Show that: 
+    \begin{enumerate}
+        \item[a)] the modulus of continuity is a nondecreasing nonnegative function having the limit $\omega(+0) = \lim\limits_{\delta \to +0} \omega(\delta)$;
+        \item[b)] for every $\varepsilon > 0$ there exists $\delta > 0$ such that for any points $x_1, x_2 \in E$ the relation $|x_1 - x_2| < \delta$ implies $|f(x_1) - f(x_2)| < \omega(+0) + \varepsilon$;
+        \item[c)] if $E$ is a closed interval, an open interval, or a half-open interval, the relation
+        $\omega(\delta_1 + \delta_2) \leq \omega(\delta_1) + \omega(\delta_2)$
+        holds for the modulus of continuity of a function $f : E \to \mathbb{R}$;
+        \item[d)] the moduli of continuity of the functions $x$ and $\sin(x^2)$ on the whole real axis are respectively $\omega(\delta) = \delta$ and the constant $\omega(\delta) = 2$ as $\delta > 0$;
+        \item[e)] a function $f$ is uniformly continuous on $E$ if and only if $\omega(+0) = 0$.
+    \end{enumerate}
+\end{prb}
+
 
 %\end{document}
