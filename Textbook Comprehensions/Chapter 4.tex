@@ -176,7 +176,7 @@ Weierstrass exreme value theorem + Bolzano-Cauchy intermediate value theorem.
 
 \begin{prb}
     (C4S2Q8) \\
-    The modulus of continuity of a function $f : E \to \mathbb{R}$ is the function $\omega(\delta)$ defined for $\delta > 0$ as follows:
+    The \textit{modulus of continuity} of a function $f : E \to \mathbb{R}$ is the function $\omega(\delta)$ defined for $\delta > 0$ as follows:
     $\omega(\delta) = \sup\limits_{\begin{subarray}{c}|x_1 - x_2| < \delta \\ x_1, x_2 \in E\end{subarray}} |f(x_1) - f(x_2)|$. \\
     Thus, the least upper bound is taken over all pairs of points $x_1, x_2$ of $E$ whose distance apart is less than $\delta$. \\
     Show that: 
@@ -190,6 +190,64 @@ Weierstrass exreme value theorem + Bolzano-Cauchy intermediate value theorem.
         \item[e)] a function $f$ is uniformly continuous on $E$ if and only if $\omega(+0) = 0$.
     \end{enumerate}
 \end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] Consider set $W(\delta)=\{|f(x_1)-f(x_2)|\colon |x_1 - x_2| <\delta, x_1, x_2 \in E\}$, then $\forall \delta_1<\delta_2,\ W(\delta_1)\subseteq W(\delta_2)$, then $\omega(\delta_1)=
+    \sup\limits_{\begin{subarray}{c}|x_1 - x_2| < \delta_1 \\ x_1, x_2 \in E\end{subarray}} |f(x_1) - f(x_2)|\leq \sup\limits_{\begin{subarray}{c}|x_1 - x_2| < \delta_2 \\ x_1, x_2 \in E\end{subarray}} 
+    |f(x_1) - f(x_2)| = \omega(\delta_2)$. \\
+    If $f(x)$ is bounded on $E$, then $\exists$ finite $\omega(+0)=\lim_{\delta \to +0} \omega(\delta)$.
+    \item[b)] By definition of $\omega(+0)=\lim_{\delta \to +0} \omega(\delta)$, $\forall \varepsilon >0,\ \exists \delta >0$ s.t. $|\sup\limits_{\begin{subarray}{c}|x_1 - x_2| < \delta \\ x_1, x_2 \in 
+    E\end{subarray}} |f(x_1) - f(x_2)| - \omega(+0)|<\varepsilon$, expand it. 
+    \item[c)] Using: if $|x-y|<d_1+d_2$, then $\exists z$, s.t. $|x-z|<d_1, |y-z|<d_2$. 
+    \item[d)] $f(x)=x$: manifestly; $f(x)=\sin(x^2)$: essentially, $\forall \varepsilon >0$, $\exists k>0$, s.t. $\sqrt{(2k+1)\pi}-\sqrt{(2k)\pi}<\varepsilon$. 
+    \item[e)] Necessity "$\Rightarrow$": by definition of uniform continuity; Sufficiency "$\Leftarrow$": by contradiction. 
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
 
+\begin{prb}
+    (C4S2Q9) \\
+    Let $f$ and $g$ be bounded functions defined on the same set $X$. The quantity $\Delta = \sup\limits_{x \in X} |f(x) - g(x)|$ is called the \textit{distance} between $f$ and $g$. It shows how well one function 
+    approximates the other on the given set $X$. Let $X$ be a closed interval $[a, b]$. Show that if $f, g \in C[a, b]$, then $\exists x_0 \in [a, b]$, where $\Delta = |f(x_0) - g(x_0)|$, and that such is not 
+    the case in general for arbitrary bounded functions.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    1. $h(x)=|f(x)-g(x)|$ is continuous on $[a,b]$, then by Weierstrass extreme value theorem ($\sup = \max$). \\
+    2. Counterexample: construct using discontinuities.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q10) \\
+    Let $P_n(x)$ be a polynomial of degree $n$. We are going to approximate a bounded function $f : [a, b] \to \mathbb{R}$ by polynomials. Let $$\Delta(P_n) = \sup_{x \in [a, b]} |f(x) - P_n(x)| \ \text{and}\ E_n(f) 
+    = \inf_{P_n} \Delta(P_n),$$ where the infimum is taken over all polynomials of degree $n$. A polynomial $P_n$ is called a \textit{polynomial of best approximation} of $f$ if $\Delta(P_n) = E_n(f)$. \\
+    Show that: 
+    \begin{enumerate}
+        \item[a)] there exists a polynomial $P_0(x) \equiv a_0$ of best approximation of degree zero;
+        \item[b)] among the polynomials $Q_\lambda(x)$ of the form $\lambda P_n(x)$, where $P_n$ is a fixed polynomial, there is a polynomial $Q_{\lambda_0}$ such that $\Delta(Q_{\lambda_0}) = 
+        \min\limits_{\lambda \in \mathbb{R}} \Delta(Q_\lambda)$;
+        \item[c)] if there exists a polynomial of best approximation of degree $n$, there
+        also exists a polynomial of best approximation of degree $n + 1$;
+        \item[d)] for any bounded function on a closed interval and any $n = 0, 1, 2, \ldots$ there exists a polynomial of best approximation of degree $n$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $P_0(x)\equiv a_0=\frac{\sup f(x)+\inf f(x)}{2}$.
+    \item[b)] $\Delta(Q_\lambda)=\sup_{x\in[a,b]}|\lambda P_n(x)-f(x)|$, then discuss the uniform continuity of $\Delta(Q_\lambda)$ w.r.t. $\lambda$.\\
+    \fbox{\begin{minipage}{0.9\textwidth}
+        Lemma. $\sup\limits_{x \in [a,b]}|f-g|\leq \sup\limits_{x \in [a,b]}|f-h|+\sup\limits_{x \in [a,b]}|h-g|,\ \forall f,g,h,\ x\in[a,b]$
+    \end{minipage}}
+    Proof idea: $|f-g|\leq |f-h|+|h-g|$. \\
+    Using Lemma, $\forall \lambda_{i},\ i=1,2$, $\sup\limits_{x \in [a,b]} |f(x)-\lambda_1 P_n(x)|\leq\sup\limits_{x \in [a,b]} |f(x)-\lambda_2 P_n(x)|+\sup\limits_{x \in [a,b]}|\lambda_1 P_n(x)-\lambda_2 P_n(x)|$, 
+    i.e. $|\Delta(Q_{\lambda_1})-\Delta(Q_{\lambda_2})| \leq \sup\limits_{x \in [a,b]}|\lambda_1 P_n(x)-\lambda_2 P_n(x)| = |\lambda_1-\lambda_2|\sup\limits_{x \in [a.b]}|P_n(x)| = \varepsilon \mathcal{O}(1)$. 
+    \item[c)] Hint: $E_n(f)\geq E_{n+1}(f)$, wait to accomplish.
+    \item[d)] Induction using c).
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
 
 %\end{document}
