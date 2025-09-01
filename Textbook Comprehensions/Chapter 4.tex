@@ -244,8 +244,71 @@ Weierstrass exreme value theorem + Bolzano-Cauchy intermediate value theorem.
     Proof idea: $|f-g|\leq |f-h|+|h-g|$. \\
     Using Lemma, $\forall \lambda_{i},\ i=1,2$, $\sup\limits_{x \in [a,b]} |f(x)-\lambda_1 P_n(x)|\leq\sup\limits_{x \in [a,b]} |f(x)-\lambda_2 P_n(x)|+\sup\limits_{x \in [a,b]}|\lambda_1 P_n(x)-\lambda_2 P_n(x)|$, 
     i.e. $|\Delta(Q_{\lambda_1})-\Delta(Q_{\lambda_2})| \leq \sup\limits_{x \in [a,b]}|\lambda_1 P_n(x)-\lambda_2 P_n(x)| = |\lambda_1-\lambda_2|\sup\limits_{x \in [a.b]}|P_n(x)| = \varepsilon \mathcal{O}(1)$. 
-    \item[c)] Hint: $E_n(f)\geq E_{n+1}(f)$, wait to accomplish.
+    \item[c)] Proof idea: /Great idea/ We exploit the existence of a minimum value for a continuous function on a compact set. --> Specifically, we treat the coefficient space of the $n+1$ degree polynomial as a finite-dimensional Euclidean space 
+    and define a continuous error function on this space. Then restrict the coefficients to a compact set, ensuring that the error function reaches its minimum on this set. This minimum is the $n+1$ best approximation error.
     \item[d)] Induction using c).
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Remark:} Whole proof of c) \\
+Assume there exists a degree-$n$ best approximation polynomial $P_n^*$ such that $\Delta(P_n^*) = E_n(f)$. Any degree-$(n+1)$ polynomial can be written as $P_{n+1}(x) = a_0 + a_1 x + \cdots + a_{n+1} x^{n+1}$ with coefficient vector $\mathbf{a} 
+\in \mathbb{R}^{n+2}$. Define the error function $\Phi(\mathbf{a}) = \Delta(P_{n+1}) = \sup\limits_{x \in [a,b]} |f(x) - P_{n+1}(x)|$, which is continuous. \\
+Consider the set $K = { \mathbf{a} \in \mathbb{R}^{n+2} : \Phi(\mathbf{a}) \leq E_n(f) }$. This set is non-empty (since including $P_n^*$ with $a_{n+1}=0$ gives $\Phi(\mathbf{a}) = E_n(f)$), closed (due to continuity of $\Phi$), and bounded 
+(because bounded error implies bounded coefficients in finite dimensions), hence compact. Since $\Phi$ is continuous on $K$, it attains a minimum at some $\mathbf{a}^* \in K$, s.t. $\Phi(\mathbf{a}^*) = E_{n+1}(f)$. Thus, the polynomial $P_{n+1}^*$ 
+corresponding to $\mathbf{a}^*$ is a degree-$(n+1)$ best approximation polynomial.
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q11) \\
+    Prove the following statements.
+    \begin{enumerate}
+        \item[a)] A polynomial of odd degree with real coefficients has at least one real root.
+        \item[b)] If $P_n$ is a polynomial of degree $n$, the function $\text{sgn } P_n(x)$ has at most $n$ points of discontinuity.
+        \item[c)] If there are $n + 2$ points $x_0 < x_1 < \cdots < x_{n+1}$ in the closed interval $[a, b]$ s.t. the quantity
+        $\text{sgn } \left[ \left( f(x_i) - P_n(x_i) \right) (-1)^i \right]$ assumes the same value for $i = 0, \ldots, n + 1$, 
+        then $E_n(f) \geq \min\limits_{0 \leq i \leq n+1} |f(x_i) - P_n(x_i)|$. \\
+        (This result is known as Vallee Poussin's theorem.$^8$ For the definition of $E_n(f)$ see Problem 10.)
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $P_{n+1}(x)=a_{n+1}x^{n+1}+Q_n(x)$, as $\lim\limits_{n \to \infty} \frac{Q_n(x)}{x^{n+1}} = 0$, then $\exists$ sufficiently large $M$, s.t. $P_{n+1}(M)=(a_{n+1}+o(1))M^{n+1}$ $\implies$ $P_{n+1}(M)\cdot P_{n+1}(-M)<0$, then use Bolzano-Cauchy IVT. 
+    \item[b)] Method 1. [Induction]+/differential/+[Contradiction] \\
+    Mehtod 2. /Foundamental Theorem of Algebra/ \\
+    Mehtod 3. /Factorization/ 
+    \item[c)] \textcolor{silkred}{(wait to add)}
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C4S2Q12)
+    \begin{enumerate}
+        \item[a)] Show that for any $n \in \mathbb{N}$ the function $T_n(x) = \cos(n \arccos x)$ defined on the closed interval $[-1, 1]$ is an algebraic polynomial of degree $n$. (These are the Chebyshev polynomials.)
+        \item[b)] Find an explicit algebraic expression for the polynomials $T_1, T_2, T_3$, and $T_4$ and draw their graphs.
+        \item[c)] Find the roots of the polynomial $T_n(x)$ on the closed interval $[-1, 1]$ and the points of the interval where $|T_n(x)|$ assumes its maximum value.
+        \item[d)] Show that among all polynomials $P_n(x)$ of degree $n$ whose leading coefficient is 1 the polynomial $\frac{1}{2^{n-1}}T_n(x)$ is the unique polynomial closest to zero, that is, $E_n(0) = \frac{1}{2^{n-1}}\max_{|x| \leq 1} |T_n(x)| = \frac{1}{2^{n-1}}$. 
+        (For the definition of $E_n(f)$ see Problem 10.)
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] [Induction] $T_1(x)=x,\ T_2(x)=2x^2-1,\ T_n(x)=2xT_{n-1}(x)-T_{n-2}$. 
+    \item[b)] $T_1(x)=x,\ T_2(x)=2x^2-1,\ T_3(x)=4x^3-3x,\ T_4(x)=8x^4-8x^2+1$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.48\textwidth]{"./Figures/250901_1.png"}
+        \caption*{\textit{from Wikipedia}}
+    \end{figure}
+    \item[c)] Roots: $x_k=\cos\frac{\pi(2k-1)}{2n},\ k \in \mathbb{N}^+$; Max points: $x_k=\cos\frac{k\pi}{n},\ k \in \mathbb{N}$.
+    \item[d)] [Conrtradiction] Let's assume that $w_n(x)$ is a polynomial of degree $n$ with leading coefficient 1 with maximal absolute value on the interval $[-1, 1]$ less than $\frac{1}{2^{n-1}}$. \\
+    Define $f_n(x) = \frac{1}{2^{n-1}} T_n(x) - w_n(x)$ \\
+    Because at extreme points of $T_n$ we have $|w_n(x)| < \left| \frac{1}{2^{n-1}} T_n(x) \right|$, and $f_n(x) > 0$ for $x = \cos \frac{2k\pi}{n}$, $f_n(x) < 0$ for $x = \cos \frac{(2k+1)\pi}{n}$. \\
+    From the intermediate value theorem, $f_n(x)$ has at least $n$ roots. However, this is impossible, as $f_n(x)$ is a polynomial of degree $n-1$, so FTA implies it has at most $n-1$ roots.
 \end{enumerate}
 \end{qsol*}
 \end{minipage}}
