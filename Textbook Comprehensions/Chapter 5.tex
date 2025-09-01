@@ -1,0 +1,100 @@
+%\documentclass{Math_Note}
+%\setlength{\parindent}{2em}
+
+%\title{\textbf{Mathmatical Analysis Zorich Comprehensions Chapter 5}}
+%\author{Buce-Ithon}
+%\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+%\date{\today}
+
+%\begin{document}
+% Title page
+%\maketitle
+
+% Content
+%\newpage
+%\tableofcontents
+%\newpage
+
+% \setcounter{section}{-1}
+\newpage
+\section{Chapter 5.Differential Calculus}
+\subsection{Comprehensions}
+1st part: Introduce the definition of functions differentiable at a point and related concepts: differential, derivative and increment. 
+Besides, it also includes the geometrical meaning of them and some calculation examples. 
+After basic definitions, we are given the basic rules of differentiation, including: arithmetic operations, differentiation of composite 
+functions, differentiation of inverse functions, and higer order derivatives (Lebniz's formula). And also derivatives of basic elementary 
+functions. \\
+2nd part: Then we dive into some basic theorems of differential calculus: /All of beging-Most basic/ \underline{Fermat's Lemma}, /Dev on 
+basic-3 Mean Value Theorems/ \underline{Rolle's Theorem} $\to$ \underline{Lagrange's Mean Value Theorem} $\to$ \underline{Cauchy's Mean 
+Value} \underline{Theorem} (due to last 2 of them associated the increment and derivative, they're also called Theorem of Lagrange and 
+Cauchy on finite increments). Finally, we're given the most important theorem in differential calculus: \underline{Taylor's Formula} (the 
+reminder term could be obtained using Cauchy's Mean Value Theorem or Theorem of Cauchy on finite increments). \\
+3nd part: It's the last part of this chapter, which focuses on the applications (analyze properties of functions) of differential calculus, 
+including: monotoncity, interior extremum, convacity, and graph sketching. And the well-known L'H\^opital's Rule. Remains lots of examples 
+in Problems on Natural Science. \\
+DLC: The special (which could be called overall) point is that Zorich left a specific section for complex numbers and functions, even including 
+analyticity (or holomorphism). 
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Definition: } /differential/ $\underbrace{\underbrace{f(x+h)-f(x)}=\overbrace{A(x)\underbrace{h}}^{\text{differential}}}_{\text{increments}}+
+\underbrace{o(a;h)}_{o(h),\ h\to 0}$, $x \in E$ 
+/derivative/ $f'(x) = A(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
+\end{minipage}}
+\newline\newline
+All of beging-Most basic \\
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+/Fermat's Lemma/ \\
+$f : E \to \mathbb{R}$ is differentiable at an interior extremum $x_0 \in E$ $\implies$  $f'(x_0) = 0$.
+\end{thm}
+\end{minipage}}
+\newline\newline
+3 Mean Value Theorems \\
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+/Rolle's theorem/ \\
+$f : [a, b] \to \mathbb{R}$ is continuous on $[a, b]$ and differentiable on $(a, b)$ and $f(a) = f(b)$, then $\exists \xi \in (a, b)$ s.t. $f'(\xi) = 0$.
+\end{thm}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+/Lagrange's Mean Value Theorem/ \\
+$f : [a, b] \to \mathbb{R}$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then $\exists \xi \in (a, b)$ s.t. $f(b) - f(a) = f'(\xi)(b - a)$.
+\end{thm}
+\end{minipage}}
+\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+/Cauchy's Mean Value Theorem/ \\
+Let $x = x(t)$ and $y = y(t)$ be continuous on $[\alpha, \beta]$ and differentiable on $(\alpha, \beta)$.
+Then $\exists \tau \in [\alpha, \beta]$ s.t. $x'(\tau)(y(\beta) - y(\alpha)) = y'(\tau)(x(\beta) - x(\alpha))$. \\
+If in addition $x'(t) \neq 0$, $\forall t \in [\alpha, \beta]$, then $x(\alpha) \neq x(\beta)$ and $\frac{y(\beta) - y(\alpha)}{x(\beta) - x(\alpha)} 
+= \frac{y'(\tau)}{x'(\tau)}$.
+\end{thm}
+\end{minipage}}
+\newline\newline
+Master in differential calculus \\
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{thm}
+/Taylor's Formula/ \\
+$$F(a) = f(x_0) + f'(x_0)(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + r_n(x_0, x)$$
+\end{thm}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Remark: } /Reminder term/ \\
+$$r_n(x_0;x) = \frac{\varphi(x) - \varphi(x_0)}{\varphi'(\xi)n!} f^{(n+1)}(\xi)(x-\xi)^n.$$
+or $$\frac{r_n(x_0;x)}{\varphi(x) - \varphi(x_0)}=\frac{f^{(n+1)}(\xi)(x-\xi)^n}{\varphi'(\xi)n!} \ \ \text{/Cauchy's MVT/}$$
+/Cauchy’s formula of the remainder term/ \\
+$$r_n(x_0; x) = \frac{1}{n!} f^{(n+1)}(\xi)(x - \xi)^n(x - x_0).$$
+A particularly elegant formula results if we set $\varphi(t) = (x - t)^{n+1}$ \\
+/The Lagrange form of the remainder/ \\
+$$r_n(x_0; x) = \frac{1}{(n + 1)!} f^{(n+1)}(\xi)(x - x_0)^{n+1}.$$
+We remark that when $x_0 = 0$ Taylor's formula is often called MacLaurin's formula.
+\end{minipage}}
+
+\newpage
+\subsection{Problems Sets}
+
+%\end{document}
