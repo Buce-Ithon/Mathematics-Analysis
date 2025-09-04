@@ -96,5 +96,123 @@ We remark that when $x_0 = 0$ Taylor's formula is often called MacLaurin's formu
 
 \newpage
 \subsection{Problems Sets}
+\begin{prb}
+    (C5S1Q5) /Continuous, but nowhere derivative/ \\
+    Set $\Psi_0(x) = \begin{cases} x, & \text{if } 0 \leq x \leq \frac{1}{2}, \\ 1 - x, & \text{if } \frac{1}{2} \leq x \leq 1, \end{cases}$ and extend this 
+    function to the entire real line so as to have period 1. We denote the extended function by $\varphi_0$. Further, let $\varphi_n(x) = \frac{1}{4^n} 
+    \varphi_0(4^n x)$. The function $\varphi_n$ has period $4^{-n}$ and a derivative equal to +1 or $-1$ everywhere except at the points $x = \frac{k}{2^{n+1}}, 
+    n \in \mathbb{Z}$. Let $f(x) = \sum_{n=1}^\infty \varphi_n(x)$. \\
+    Show that the function $f$ is defined and continuous on $\mathbb{R}$, but does not have a derivative at any point.
+    (This example is due to the well-known Dutch mathematician B. L. van der Waerden (1903–1996). The first examples of continuous functions having no derivatives 
+    were constructed by Bolzano (1830) and Weierstrass (1860).)
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+1. Using Weierstrass M-test (uniform convergence of series of functions) and the uniform limit theorem (the uniform limit of any sequence of continuous functions 
+is continuous), we can show that $f \in C(\mathbb{R})$. \\
+2. Just consider $\lim_{n \to \infty} \frac{f(x\pm 4^{-n})-f(x)}{4^{-n}}=\lim_{n \to \infty} \frac{\sum_{k=0}^{\infty}\varphi_k(x\pm 4^{-n})-\sum_{k}\varphi_k(x)}
+{4^{-n}}$, and using the periodicity of $\varphi_k$.  
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\textcolor{cyan}{/Dev/} \textbf{More step problem:} \\
+Prove that the nowhere differential functions are dense in $C(\mathbb{R})$.
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q1) \\
+    Let $\alpha_0, \alpha_1, \dots , \alpha_n$ be given real numbers. Find a polynomial $P_n(x)$ of degree $n$ having the derivatives $P_n^{(k)}(x_0) = \alpha_k, 
+    k = 0, 1, \dots , n$, at a given point $x_0 \in \mathbb{R}$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+$P_n(x)=\sum_{k=0}^{n} \alpha_k(x-x_0)^k$ 
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q2) 
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $f(x)=\begin{cases} e^{-\frac{1}{x^2}} & x\neq 0 \\ 0 & x=0 \end{cases}$,$f'(x)=\begin{cases} \frac{2e^{-\frac{1}{x^2}}}{x^3} 
+        & x\neq 0 \\ 0 & x=0 \end{cases}$, $f^{(n)}(x)=\lim_{x\to\infty}\frac{f^{(n-1)}(x)-0}{x-0}=[\text{Induction}]=\lim_{x\to\infty}\frac{R_n(x)}
+        {e^{\frac{1}{x^2}}}=0$. 
+    \item[b)] $f(x)=\begin{cases} x^2\sin(\frac{1}{x}) & x\neq0 \\ 0 & x=0 \end{cases}$, $f(x)=\begin{cases} 2x\sin(\frac{1}{x})-\cos(\frac{1}{x}) & x\neq0 
+        \\ 0 & x=0 \end{cases}$ 
+    \item[c)] $f(x)=\begin{cases} e^{-\frac{1}{(1+x)^2}}\cdot e^{-\frac{1}{(1-x)^2}} & -1<x<1 \\ 0 & 1\leq|x| \end{cases}$ 
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q3) \\
+    $$\left[ {x^{n - 1} f\left( {\frac{1}{x}} \right)} \right]^{(n)} = \frac{{( - 1)^n }}{{x^{n + 1} }}f^{(n)} \left( {\frac{1}{x}} \right)$$
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+$[$Induction$]$. Assume that the base case $n=1$ is proved. \\
+Assuming that $\frac{d^n}{dx^n}\left[x^{n-1}f\left(\frac{1}{x}\right)\right]=\frac{(-1)^n}{x^{n+1}}f^{(n)}\left(\frac{1}{x}\right)$, we have $$\frac{d^{n+1}}
+{dx^{n+1}}\left[x^{n}f\left(\frac{1}{x}\right)\right]=\frac{d^n}{dx^n}\left[nx^{n-1}f\left(\frac{1}{x}\right)-x^{n-2}f'\left(\frac{1}{x}\right)\right]$$ $$
+\underbrace{=\frac{n(-1)^{n}}{n^{n+1}}f^{(n)}\left(\frac{1}{x}\right)}_\text{by asumption}-\frac{d}{dx}\left(\frac{d^{n-1}}{dx^{n-1}}\left[x^{n-2}f'\left(
+\frac{1}{x}\right)\right]\right)$$ $$=\frac{n(-1)^{n}}{n^{n+1}}f^{(n)}\left(\frac{1}{x}\right)-\frac{d}{dx}\underbrace{\left[\frac{(-1)^{n-1}}{x^n}f^{(n)}\left(
+\frac{1}{x}\right)\right]}_\text{by assumption}$$ $$=\frac{n(-1)^{n}}{n^{n+1}}f^{(n)}\left(\frac{1}{x}\right)+\frac{n(-1)^{n-1}}{x^{n+1}}f^{(n)}\left(\frac{1}{x}\right)
++\frac{(-1)^{n+1}}{x^{n+2}}f^{(n+1)}\left(\frac{1}{x}\right)$$ $$=\frac{(-1)^{n+1}}{x^{n+2}}f^{(n+1)}\left(\frac{1}{x}\right)\square$$
+And that about wraps it up. \textit{"from AOPS"}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q4) \\
+    Let $f$ be a differentiable function on $\mathbb{R}$. Show that
+    \begin{enumerate}
+        \item[a)] if $f$ is an even function, then $f'$ is an odd function;
+        \item[b)] if $f$ is an odd function, then $f'$ is an even function;
+        \item[b)] ($f'$ is odd) $\Leftrightarrow$ ($f$ is even).
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+By definition.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q5) \\
+    Show that
+    \begin{enumerate}
+        \item[a)] the function $f(x)$ is differentiable at the point $x_0$ if and only if $f(x) - f(x_0) = \varphi(x)(x - x_0)$, where $\varphi(x)$ is a function that 
+        is continuous at $x_0$ (and in that case $\varphi(x_0) = f'(x_0)$);
+        \item[b)] if $f(x) - f(x_0) = \varphi(x)(x - x_0)$ and $\varphi \in C^{(n-1)} \left( U(x_0) \right)$, where $U(x_0)$ is a neighborhood of $x_0$, then $f(x)$ has a 
+        derivative $(f^{(n)}(x_0))$ of order $n$
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+By definition.
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S2Q6) \\
+    Give an example showing that the assumption that $f^{-1}$ be continuous at $y_0$ cannot be omitted from following theorem: \\
+    \begin{thm}
+        (The derivative of an inverse function). Let the functions $f : X \to Y$ and $f^{-1} : Y \to X$ be mutually inverse and continuous at points $x_0 \in X$ and 
+        $f(x_0) = y_0 \in Y$ respectively. If $f$ is differentiable at $x_0$ and $f'(x_0) \neq 0$, then $f^{-1}$ is also differentiable at the point $y_0$, and 
+        $(f^{-1})'(y_0) = (f'(x_0))^{-1}$.
+    \end{thm}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+Let $f(x)=\begin{cases} x+x^2\sin\frac{1}{x}, & x\neq 0 \\ 0, & x=0 \end{cases}$, after calculating, we could find $f$ is continuous and differentiable, but $f^{-1}$ 
+doesn't even exist. 
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q1) \\
+\end{prb}
 
 %\end{document}
