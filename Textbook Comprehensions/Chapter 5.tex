@@ -213,6 +213,130 @@ doesn't even exist.
 
 \begin{prb}
     (C5S3Q1) \\
+    Choose numbers $a$ and $b$ so that the function $f(x) = \cos x - \frac{1+ax^2}{1+bx^2}$ is an infinitesimal of highest possible order as $x \to 0$.
 \end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+$b=0,\ a=-\frac{1}{2}$ ($\cos x = 1-\frac{1}{2!}x^2+\frac{1}{4!}x^4+\mathcal{O}(x^6)$)
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q2) 
+    $$\lim_{x \to \infty} x\left[\frac{1}{e}-(\frac{x}{x+1})^x\right]$$
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{equation*}
+\begin{split}
+    \lim_{x \to \infty} x&\left[\frac{1}{e}-(\frac{x}{x+1})^x\right] =\lim_{x \to \infty} x\left[\frac{1}{e}-e^{x\ln(\frac{x}{x+1})}\right] \ (\ln\frac{x}{x+1}=\ln(1-\frac{1}{x+1})) \\
+    =&\lim_{x \to \infty} x\left[e^{-1}-e^{x(-\frac{1}{x+1}-\frac{1}{2(x+1)^2}+\mathcal{O}(\frac{1}{x^3}))}\right] \\
+    =&\lim_{x \to \infty} x\left[e^{-1}-e^{-\frac{x}{x+1}-\frac{x}{2(x+1)^2}+\mathcal{O}(\frac{1}{x^2})}\right] \\
+    =&\lim_{x \to \infty} x\left[e^{-1}-e^{-\frac{x}{x+1}}(1-\frac{x}{2(x+1)^2}+\mathcal{O}(\frac{1}{x^2}))\right] \\
+    =&\lim_{x \to \infty} e^{-1} \left[x-xe^{\frac{1}{x+1}}+\frac{x^2}{2(x+1)^2}e^{\frac{1}{x+1}}+\mathcal{O}(\frac{1}{x})\right] \\
+    =&\lim_{x \to \infty} e^{-1} \left[x(1-(1+\frac{1}{x+1}+\mathcal{O}(\frac{1}{x^2})))+\frac{x^2}{2(x+1)^2}e^{\frac{1}{x+1}}+\mathcal{O}(\frac{1}{x})\right] \\
+    =&\lim_{x \to \infty} e^{-1} \left[\frac{x}{x+1}+\frac{x^2}{2(x+1)^2}(1+o(1))+\mathcal{O}(\frac{1}{x})\right] \\
+    =&\frac{3}{2}e^{-1}
+\end{split}
+\end{equation*}
+\end{sol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q3) 
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    $e^x=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\cdots$  
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q4) \\
+    Let $f$ be a function that is infinitelt differentiable at $0$. Show that: 
+    \begin{enumerate}
+        \item[a)] if $f$ is even, then its Taylor series at $0$ contains only even powers of $x$;
+        \item[b)] if $f$ is odd, then its Taylor series at $0$ contains only odd powers of $x$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    The parity of $f$ and $f^{\prime}$ is opposite. \& When $f(x)=-f(-x)$, $f(0)=0$. 
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q5) \\
+    Show that if $f \in C^{(\infty)}[-1, 1]$ and $f^{(n)}(0) = 0$ for $n = 0, 1, 2, \ldots$, and there $\exists$ a number $C$ s.t. $\sup_{x \in [-1, 1]} |f^{(n)}(x)| 
+    \leq n! C$ for $n \in \mathbb{N}$, then $f = 0$ on $[-1, 1]$. 
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    Taylor's formula: on $x=0$, $|f(x)| = |\frac{f^{(n+1)}(\varepsilon_n)}{(n+1)!}x^{n+1}| \leq |\frac{(n+1)!C}{(n+1)!}x^{n+1}| = |Cx^{n+1}| = \mathcal{O}(x^n)$. Since 
+    $f(0)=0$, and continuity, $f(x)\equiv 0$. 
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q6) \\
+    Let $f \in C^{(n)}(- 1, 1)$ and $\sup\limits_{-1 < x < 1} |f(x)| \leq 1$. Let $m_k(I) = \inf\limits_{x \in I} |f^{(k)}(x)|$, where $I$ is an interval contained in 
+    $(- 1, 1)$. Show that 
+    \begin{enumerate}
+        \item[a)] if $I$ is partitioned into three successive intervals $I_1, I_2,$ and $I_3$ and $\mu$ is the length of $I_2$, then $m_k(I) \leq \frac{1}{\mu} \left( 
+            m_{k-1}(I_1) + m_{k-1}(I_3) \right);$
+        \item[b)] if $I$ has length $\lambda$, then $m_k(I) \leq \frac{2^{k(k+1)/2} k^k}{\lambda^k};$
+        \item[c)] there exists a number $\alpha_n$ depending only on $n$ such that if $|f'(0)| \geq \alpha_n$, then the equation $f^{(n)}(x) = 0$ has at least $n - 1$ 
+            distinct roots in $(- 1, 1)$.
+    \end{enumerate}
+    Hint: In part b) use part a) and mathematical induction; in c) use a) and prove by induction that there exists a sequence $x_{k_1} < x_{k_2} < \cdots < x_{k_k}$ of 
+    points of the open interval $(- 1, 1)$ s.t. $f^{(k)}(x_{k_i}) \cdot f^{(k)}(x_{k_{i+1}}) < 0$ for $1 \leq i \leq k - 1$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] (Lagrange MVT) \\
+    $m_k(I)=\inf\limits_{x \in I \subset (-1,1)}|f^{(k)}(x)| \leq m_k(I_2)=\inf\limits_{x \in I_2 \subset I}|f^{(k)}(x)| \leq \forall |f^k(x)| \in \{|f^k(x)|:x \in I_2\} 
+    =[|f^k(\xi)|,\xi \in I_2]=\frac{\inf\limits_{x \in I_1 \subset I}|f^{(k-1)}(x)| - \inf\limits_{x \in I_3 \subset I}|f^{(k-1)}(x)|}{x_1-x_2} \leq \frac{m_{k-1}(I_1)+m_{k-1}(I_3)}{\mu}$ 
+    \item[b)] $m_k(I)=\inf\limits_{x \in I}|f^{(k)}(x)|,\ \mu(I)=\lambda \leq 2$ \\
+        $m_k(I)\leq \frac{1}{\mu}(m_{k-1}(I_1)+m_{k-1}(I_3)) = [\mu=\mu(I_2)\triangleq\frac{\lambda}{2}, \mu(I_1)=\mu(I_3)=\frac{\lambda}{4}] = \frac{2}{\lambda}(m_{k-1}(I_1)+m_{k-1}(I_3)) 
+        \leq \frac{2\cdot 1}{\lambda}\cdot\frac{4\cdot 2}{\lambda}\max\{m_{k-2}(I_{1,1})+m_{k-2}(I_{1,3}),m_{k-2}(I_{3,1})+m_{k-2}(I_{3,3})\} = \cdots = \frac{2^1\cdot 1}{\lambda}\cdot
+        \frac{2^2\cdot 2}{\lambda}\cdots\frac{2^k\cdot 2}{\lambda}\cdot 2\sup\limits_{-1<x<1}|f(x)| \leq \frac{2^{\frac{k(1+k)}{2}}}{\lambda^{k}}\cdot 2^k \leq \frac{2^{\frac{k(1+k)}{2}}}{\lambda^{k}}
+        \cdot k^k$, $(k\leq 2)$ 
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.32\textwidth]{"./Figures/250911_1.png"}
+\end{figure}
+\begin{enumerate}
+    \item[c)] 
+\end{enumerate}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q7) \\
+    Show that if a function $f$ is defined and differentiable on an open interval $I$ and $[a, b] \subset I$, then
+    \begin{enumerate}
+        \item[a)] the function $f'(x)$ (even if it is not continuous!) assumes on $[a, b]$ all the values between $f'(a)$ and $f'(b)$ (the theorem of Darboux);
+        \item[b)] if $f''(x)$ also exists in $(a, b)$, then there is a point $\xi \in (a, b)$ such that $f'(b) - f'(a) = f''(\xi)(b-a)$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] (Fermat's Lemma + Weierstrass Maximum Theorem) /Constructive Proof/ \\
+    Let $y$ be an arbitrary number between $f'(a)$ and $f'(b)$, and consider the function $F(x) = f(x) - yx$. Then $F'(x) = f'(x) - y$, and $F'(a) = f'(a) - y$, 
+    $F'(b) = f'(b) - y$. $F^{\prime} (a)\cdot F^{\prime} (b)<0$.
+    \item[b)] (Lagrange's MVT) \\
+    \fbox{\begin{minipage}{0.9\textwidth}
+        Lemma. $f^{\prime}$ doesn't have the 1st kind of discontinuity.
+    \end{minipage}}
+    Apply Lagrange's MVT to $f'$ on $[a,b]$, we could get the result.
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
 
 %\end{document}
