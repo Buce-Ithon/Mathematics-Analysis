@@ -312,7 +312,7 @@ $b=0,\ a=-\frac{1}{2}$ ($\cos x = 1-\frac{1}{2!}x^2+\frac{1}{4!}x^4+\mathcal{O}(
     \includegraphics[width=0.32\textwidth]{"./Figures/250911_1.png"}
 \end{figure}
 \begin{enumerate}
-    \item[c)] 
+    \item[c)] \textcolor{silkred}{(Wait to prove)}
 \end{enumerate}
 \end{minipage}}
 
@@ -334,9 +334,109 @@ $b=0,\ a=-\frac{1}{2}$ ($\cos x = 1-\frac{1}{2!}x^2+\frac{1}{4!}x^4+\mathcal{O}(
     \fbox{\begin{minipage}{0.9\textwidth}
         Lemma. $f^{\prime}$ doesn't have the 1st kind of discontinuity.
     \end{minipage}}
+    The proof for Lemma is very easy, just choose a small neibourhood of discontinuity and using a). \\
     Apply Lagrange's MVT to $f'$ on $[a,b]$, we could get the result.
 \end{enumerate}
 \end{qsol*}
 \end{minipage}}
+
+\begin{prb}
+    (C5S3Q8) \\
+    A function $f(x)$ may be differentiable on the entire real line, without having a continuous derivative $f'(x)$
+    \begin{enumerate}
+        \item[a)] Show that $f'(x)$ can have only discontinuities of second kind.
+        \item[b)] Find the flaw in the following "proof" that $f'(x)$ is continuous: \\
+        Proof. Let $x_0$ be an arbitrary point on $\mathbb{R}$ and $f'(x_0)$ the derivative of $f$ at the point $x_0$. By definition of the derivative and Lagrange's theorem
+        $f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0} f'(\xi) = \lim_{\xi \to x_0} f'(\xi)$,
+        where $\xi$ is a point between $x_0$ and $x$ and therefore tends to $x_0$ as $x \to x_0$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] Proof is aformentioned.
+    \item[b)] Lagrange's MVT requires the contimuity of function on closed interval.
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q9) \\
+    Let $f$ be twice differentiable on an interval $I$. Let $M_0 = \sup_{x \in I} |f(x)|$, $M_1 = \sup_{x \in I} |f'(x)|$ and $M_2 = \sup_{x \in I} |f''(x)|$. Show that
+    \begin{enumerate}
+        \item[a)] if $I = [-a, a]$, then $|f'(x)| \leq \frac{M_0}{a} + \frac{x^2 + a^2}{2a} M_2$;
+        \item[b)] $\begin{cases} M_1 \leq 2\sqrt{M_0M_2}, & \text{if the length of } I \text{ is not less than } 2\sqrt{M_0/M_2}, \\ M_1 \leq \sqrt{2M_0M_2}, & \text{if } I = \mathbb{R}; \end{cases}$
+        \item[c)] the numbers 2 and $\sqrt{2}$ in part b) cannot be replaced by smaller numbers;
+        \item[d)] if $f$ is differentiable $p$ times on $\mathbb{R}$ and the quantities $M_0$ and $M_p = \sup_{x \in \mathbb{R}} |f^{(p)}(x)|$ are finite, then the quantities $M_k = \sup_{x \in \mathbb{R}} 
+        |f^{(k)}(x)|$, $1 \leq k < p$, are also finite and $M_k \leq 2^{k(p-k)/2} M_0^{1-k/p} M_p^{k/p}$.
+    \end{enumerate}
+    Hint: Use Exercises 9b) and mathematical induction.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{sol*}
+\begin{enumerate}
+    \item[a)] Using Taylor's expansion: $f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(\xi)}{2}(x-x_0)^2$ at $x=a$ and $x=-a$: \\
+    $f(a)=f(x_0)+f'(x_0)(a-x_0)+\frac{f''(\xi_1)}{2}(a-x_0)^2$, $f(-a)=f(x_0)+f'(-a)(-a-x_0)+\frac{f''(\xi_2)}{2}(-a-x_0)^2$. \\
+    Then $f'(x_0)=\frac{f(a)-f(-a)}{2a}-\frac{1}{4a}f''(\xi_1)(a-x_0)^2+\frac{1}{4a}f''(\xi_2)(a+x_0)^2$, using triangle inequality gives: $|f'(x)|\leq \frac{M_0}{a}+\frac{M_2}{4a}(a-x_0)^2+\frac{M_2}{4a}(a+x_0)^2
+    =\frac{M_0}{a}+\frac{M_2}{2a}(a^2+x_0^2)$. 
+    \item[b)] i) Consider $I=[a,b]$, the method is absolutely same as a). \\
+    ii) Perform the analysis again for some intervals $[x - a, x)$, $(x, x + a]$ and we recover a similar result as above: $f(x - a) = f(x) + f'(x)(-a) + \frac{f''(c_1)}{2}(a)^2$, $f(x + a) = f(x) + f'(x)(a) + 
+    \frac{f''(c_2)}{2}(a)^2$. \\
+    Subtracting the two Taylor theorem estimates we obtain that:
+    $f'(x) = \frac{f(x + a) - f(x - a)}{2a} - \frac{f''(c_1) + f''(c_2)}{4a}a^2$
+    and we have that by triangle inequality:
+    $|f'(x)| \leq \frac{M_0}{a} + \frac{M_2a}{2}$
+    Since
+    $|f'(x)| \leq \delta(a) \quad \forall a \in \mathbb{R}$
+    it must be true that since $|f'(x)| \leq M_1$ for all $a$ as well, we must have that
+    $M_1 \leq \inf_a \delta(a)$
+    for if the opposite happens, then there will be some subset of the reals where the function violates the first inequality.
+    We compute the infimum as follows:
+    $\delta(a) = \frac{M_0}{a} + \frac{a}{2}M_2 \geq \frac{M_0}{a} + \frac{a}{2}M_2 \geq 2\sqrt{\frac{M_0M_2}{2}} = \sqrt{2M_0M_2}$
+    and the proposition is proven. The infimum happens when $a = \sqrt{\frac{2M_0}{M_2}}$.
+    \item[c)] Example: $f(x)=2x^2-1-a^2,\quad I=[a,1]$, $\forall a \in [0,1)$. 
+    \item[d)] [Induction] \\
+    $p=2$, $M_1\leq 2^{\frac{1}{2}}M_0^{\frac{1}{2}}M_2^{\frac{1}{2}}=\sqrt{2M_{0M_2}}$ \checkmark;  \\
+    $p=2$, suppose $p$ holds $\forall 1\leq k\leq p-1$: \underline{$M_k\leq 2^{\frac{k(p-K)}{2}}M_0^{1-\frac{k}{p}}M_p^{\frac{k}{p}}$}. Then for $p+1$: 
+    first, using MVT(Taylor's expansion is allright)    
+\end{enumerate}
+\end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    $\begin{cases} &f^{(p-1)}(x+h)=f^{(p-1)}(x)+hf^{p}(x)+\frac{h^2}{2}f^{(p+1)}(\xi_1) \\ &f^{(p-1)}(x+h)=f^{(p-1)}(x)+hf^{p}(x)+\frac{h^2}{2}f^{(p+1)}(\xi_1) \end{cases}$, \\
+    then $f^{p}(x) = \frac{1}{2h}(f^{(p-1)}(x+h)-f^{(p-1)}(x-h))-\frac{h}{4}[f^{(p+1)}(\xi_1)-f^{(p+1)}(\xi_2)]$, then $M_p\leq \frac{1}{h}M_{p-1}+\frac{h}{2}M_{p+1}=\left[
+    h=\sqrt{2\frac{M_{p-1}}{M_{p+1}}} \right]=\sqrt{2M_{p-1}M_{p+1}}$, i.e. \underline{$M_p\leq 2^{\frac{1}{2}}M_{p-1}^{\frac{1}{2}}M_{p+1}^{\frac{1}{2}}$}. \\
+    Using induction hypothesis, we have \underline{$M_{p-1}\leq 2^{\frac{p-1}{2}}M_0^{\frac{1}{p}}M_p^{\frac{1-p}{p}}$}, conbining 2 of them, then \underline{$M_p\leq 2^{\frac{p}{2}}M_0^
+    {\frac{1}{p+1}}M_{p+1}^{\frac{p}{p+1}}$}, then we could verify the condition for $p+1$. 
+\end{minipage}}
+
+\begin{prb}
+    (C5S3Q10) \\
+    Show that if a function $f$ has derivatives up to order $n + 1$ inclusive at a point $x_0$ and $f^{(n+1)}(x_0) \neq 0$, then in the Lagrange form of the remainder in Taylor's formula
+    $r_n(x_0; x) = \frac{1}{n!} f^{(n)} \left( x_0 + \theta (x - x_0) \right) (x - x_0)^n$,
+    where $0 < \theta < 1$ and the quantity $\theta = \theta(x)$ tends to $\frac{1}{n+1}$ as $x \to x_0$.
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    Just compare $f(x)=\sum_{k=0}^{n-1}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n)}(x_0+\theta_x(x-x_0))}{n!}(x-x_0)^n$ and $f(x)=\sum_{k=0}^{n-1}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+    +\frac{f^{(n+1)}(x_0+\phi_x(x-x_0))}{(n+1)!}(x-x_0)^{n+1}$, then we get $\frac{f^{(n)}(x_0+\theta_x(x-x_0))}{n!} =\frac{f^{(n)}(x_0)}{n!} +\frac{f^{(n+1)}(x_0+\phi_x(x-x_0))}{(n+1)!}(x-x_0)$ i.e. $\frac{f^{(n)}
+    (x_0+\theta_x(x-x_0))-f^{(n)}(x_0)}{x-x_0}=\frac{f^{(n+1)}(x_0+\phi_x(x-x_0))}{n+1}$, then $\theta_x=\frac{1}{n+1}\cdot\frac{f^{(n+1)}(x_0+\phi_x(x-x_0))}{ \dfrac{f^{(n)}(x_0+h_x)-f^{(n)}(x_0)}{h_x} }$, where 
+    $h_x=\theta_x(x-x_0)$. Thus $\lim_{X \to x_0} \theta_x = \frac{1}{n+1}$. 
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S4Q1) \\
+    Let $x = (x_1, \ldots, x_n)$ and $\alpha = (\alpha_1, \ldots, \alpha_n)$, where $x_i \geq 0$, $\alpha_i > 0$ for $i = 1, \ldots, n$ and $\sum_{i=1}^n \alpha_i = 1$. For any number $t \neq 0$ we consider the mean of order $t$ of the numbers $x_1, \ldots, x_n$ with weights $\alpha_i$: $M_t(x, \alpha) = \left( \sum_{i=1}^n \alpha_i x_i^t \right)^{1/t}$.
+    In particular, when $\alpha_1 = \cdots = \alpha_n = \frac{1}{n}$, we obtain the harmonic, arithmetic, and quadratic means for $t = -1, 1, 2$ respectively.
+    Show that
+    \begin{enumerate}
+        \item[a)] $\lim_{t \to 0} M_t(x, \alpha) = x_1^{\alpha_1} \cdots x_n^{\alpha_n}$, that is, in the limit one can obtain the geometric mean;
+        \item[b)] $\lim_{t \to +\infty} M_t(x, \alpha) = \max_{1 \leq i \leq n} x_i$;
+        \item[c)] $\lim_{t \to -\infty} M_t(x, \alpha) = \min_{1 \leq i \leq n} x_i$;
+        \item[d)] $M_t(x, \alpha)$ is a nondecreasing function of $t$ on $\mathbb{R}$ and is strictly increasing if $n > 1$ and the numbers $x_i$ are all nonzero.
+    \end{enumerate}
+\end{prb}
 
 %\end{document}
