@@ -1,0 +1,115 @@
+\newpage
+\section{Basics of order, $\mathcal{O}$ and $o$}
+\subsection{Summary/Comprehensions}
+The knowledge of orders of $2$ infinitesimal or infinite quantities and the connection between them are common for us. 
+Here we list some notes you may need to pay attention to: 
+
+1. Sometimes the "big $\mathcal{O}$ constant" in a strong function can be related to the argument, and the same is true for the small 
+"o". \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{ex*}
+        $\sin(xy) = O(1)$, $\sin(xy) = O_{y}(x)$
+    \end{ex*}
+\end{minipage}}
+
+2. The infinitesimal of 2 functions can't always keep for their inverse functions, i.e. $\varphi(x)=o(f(x)) \nRightarrow 
+\widetilde{f}(x)=o(\widetilde{\varphi}(x))$. (Here: $\varphi(x)$ and $f(x)$ are increasing functions, as $\widetilde{\varphi}(x)$ 
+and $\widetilde{f}(x)$ are their inverse functions) \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{ex*}
+        $f(x)=e^{ x },\ \ \varphi(x)=\frac{e^{ x }}{x},\ \ x\to \infty$
+    \end{ex*}
+\end{minipage}}
+
+3. The elementary of $\mathcal{O}$ and $o$ notation: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{nt*}
+        $\varphi=O(f)$ means an inequality, while $\varphi=o(g)$ express a limitation.
+    \end{nt*}
+\end{minipage}}
+
+4. 16 Rules of calculating $\mathcal{O}$ and $o$: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{enumerate}
+        \item[1.] Transitivity
+        \subitem[1] $\lim_{x\to x_0} f(x)=\infty$, $\varphi(x)=O(1)$ $\implies$ $\varphi(x)=o(f(x))$
+        \subitem[2] $f=O(\varphi)$, $\varphi=O(\psi)$ $\implies$ $f=O(\psi)$ 
+        \subitem[3] $f=O(\varphi)$, $\varphi=o(\psi)$ $\implies$ $f=o(\psi)$
+        \item[2.] $\mathcal{O}$ 
+        \subitem[4] $O(f)+O(g)=O(f+g)$ 
+        \subitem[5] $O(f)O(g)=O(fg)$
+        \item[3.] $\mathcal{O}$ \& $o$ 
+        \subitem[6] $o(1)O(f)=o(f)$ 
+        \subitem[7] $O(1)o(f)=o(f)$ 
+        \subitem[8] $O(f)+o(f)=O(f)$ 
+        \item[4.] $o$ 
+        \subitem[9] $o(f)+o(g)=o(|f|+|g|)$ 
+        \subitem[10] $o(f)o(g)=o(fg)$
+        \item[5.] Power
+        \subitem[11] $(O(f))^{k}=O_{k}(f^{k}),\ k\in\mathbb{N}$
+        \subitem[12] $(o(f))^{k}=o(f^{k})$
+        \item[6.] Equivalence $\sim$ 
+        \subitem[13] $f\sim g$, $g\sim \varphi$ $\implies$ $f\sim \varphi$  
+    \end{enumerate}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{enumerate}
+        \item[6.] Equivalence $\sim$ 
+        \subitem[14] $f=o(g)$, $g\sim \varphi$ $\implies$ $g\sim \varphi \pm kf$ 
+        \item[7.] Summation of $o$ 
+        \subitem[15] $f,\ g>0$, $f=o(g),\ x\to\infty$ $\implies$ $\int_{A}^{B}f(x)dx=o(\int_{A}^{B}g(x)dx)$, 
+        $B>A\to\infty$ \\
+        Specially, if $\exists A_0$ s.t. $\int_{A_0}^{\infty}gdx<\infty$, then $\int_{A}^{\infty}f(x)dx=
+        o(\int_{A}^{\infty}g(x)dx)$, $B>A\to\infty$
+        \subitem[16] $a_n,\ b_n>0$, $a_n=o(b_n),\ n\to\infty$ $\implies$ $\sum_{n=N}^{M}a_n=o(\sum_{n=N}
+        ^{M}b_n)$, $M>N\to\infty$ \\
+        Specially, if $\sum_{n=1}^{\infty} b_n<\infty$ , then $\sum_{n=N}^{\infty}a_n=o(\sum_{n=N}^{\infty}b_n)$, 
+        $N\to\infty$
+    \end{enumerate}
+\end{minipage}}
+
+\newpage
+\subsection{Problem Sets}
+\begin{prb*}
+    (Infinitesimal calculation) $\int_{x^{-2}}^{\infty}e^{-t}\log{t} \, dt=o(1),\ x\to \infty$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        $\int_{x^{-2}}^{\infty} e^{-t}\log{t} \, dt < \int_{x^{-2}}^{\infty} e^{-\frac{t}{2}} \, dt 
+        = -2e^{-\frac{t}{2}}|_{x^{-2}}^{\infty} = 2e^{-\frac{1}{2x^{2}}}$
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    \begin{equation*}
+        \begin{split}
+            \text{(Classical limit review)} &x^{A}=o((1+a)^{\epsilon x}),\ x\to\infty,\ \text{as}\ \epsilon, a>0\ \forall A. \\
+            \text{(Develop)} &(\log(x))^{A}=o(x^{\epsilon}),\ x\to\infty, \\
+            &(f(x))^{A}=o(e^{\epsilon f(x)}),\ x\to\infty.
+        \end{split}
+    \end{equation*}
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Let $n\triangleq [x],\ m\triangleq [A]+1$, 
+        then $(1+a)^{x} \geq (1+a)^{n} \geq C_{n}^{m+1}a^{m+1} (x\to\infty,\ \text{i.e.}\ n\to\infty,\ \text{and}\ n>2m+1) \geq 
+        \frac{(n-m)^{m+1}}{(m+1)!}a^{m+1} \geq \frac{n^{m+1}}{2^{m+1}(m+1)!}a^{m+1}$,
+        then $\frac{(1+a)^{x}}{x^{A}} \geq \frac{n^{m+1}a^{m+1}}{2^{m+1}(m+1)!(n+1)^{m}} \geq \frac{na^{m+1}}{2^{2m+1}(m+1)!}$,
+        then $\lim_{ x \to \infty } \frac{x^{A}}{(1+a)^{x}}=0,\ i.e.\ x^{A}=o((1+a)^{x}),\ x\to\infty$.
+        Since $\lim_{ x \to \infty } \frac{x^{A}}{(1+a)^{\epsilon x}}=\lim_{ x \to \infty } (\frac{x^{\frac{A}{\epsilon}}}
+        {(1+a)^{x}})^{\epsilon}=0$, then $x^{A}=o((1+a)^{\epsilon x}),\ x\to\infty$.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    /Tech tool/ \\
+    Let $a_{n}=O(b_{n}),\ n\geq 1$, and series $\sum_{n=1}^{\infty} b_{n}<\infty$, then $\exists C$, s.t. $\sum_{k=1}^{n} a_{k}
+    =C+O\left( \sum_{k=n+1}^{\infty} b_{k} \right)$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Obviously, series $\sum_{k=1}^{\infty} a_{k}$ converges, then $\exists C$ s.t. $\sum_{k=1}^{\infty} a_{k}=C$, then
+        $\sum_{k=1}^{n}a_{k}=\sum_{k=1}^{\infty}a_{k}-\sum_{k=n+1}^{\infty}a_{k}=C+O\left( \sum_{k=n+1}^{\infty}b_{k} \right)$.
+    \end{sol*}
+\end{minipage}}
