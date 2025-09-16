@@ -603,7 +603,7 @@ Let $f(x)=\sin x (\cos x)^{-\frac{1}{3}}-x$, $x \in (0,\frac{\pi}{2})$ ($x \in (
 
 \begin{prb}
     (C5S4Q8) \\
-    The Legendre transform of a function $f : I \to \mathbb{R}$ defined on an interval $I \subseteq \mathbb{R}$ is the function $f^*(t) = \sup\limits_{x \in I} (t x - f(x))$. \\
+    The Legendre transform of a function $f : I \to \mathbb{R}$ defined on an interval $I \subseteq \mathbb{R}$ is the function $f^*(t) = \sup\limits_{x \in I} (t x - f(x))$. 
     Show that
     \begin{enumerate}
         \item[a)] The set $I^*$ of values of $t \in \mathbb{R}$ for which $f^*(t) \in \mathbb{R}$ (that is, $f^*(t) \neq \infty$) is either empty or consists of a single point, 
@@ -624,11 +624,145 @@ Let $f(x)=\sin x (\cos x)^{-\frac{1}{3}}-x$, $x \in (0,\frac{\pi}{2})$ ($x \in (
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{sol*}
 \begin{enumerate}
-    \item[a)] Condition 1. $I$ is bounded, but $f$ is unbounded, or $I$ and $f$ are unbounded, but $|f|$ grows faster then $px$. \\
+    \item[a)] Condition 1. $I$ is bounded, but $f$ is unbounded, or $I$ and $f$ are unbounded, but $|f|$ grows faster then $px$, or $I$ is unbounded, but $|f|$ is bounded or grows slower 
+    than any $px$. \\
     Condition 2. $I$ and $f$ are unbounded, and $f$ grows as fast as $px$, for some $p$. \\
-    Condition 3. $I$ is 
+    Condition 3. $I$ and $|f|$ are bounded (maybe $I^{*}$ must be $(0,+\infty)$). Convacity is easy to verify. 
 \end{enumerate}    
 \end{sol*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{enumerate}
+    \item[b)] 
+    \begin{align*}
+        (f^*)^* &:= \sup_{t \in I^*}(xt - f^*(t)) = \sup_{t \in I^*}(xt - \sup_{s \in I^*}(ts - f(s))) \\
+        &= \sup_{t \in I^*}(xt + \inf_{s \in I^*} (f(s) - ts)) \\
+        &= \sup_{t \in I^*} \inf_{s \in I^*}(f(s) + t(x-s)) \ \text{/Sion's minmax theorem/}\\
+        &= \inf_{s \in I^*} \sup_{t \in I^*} (f(s) + t(x-s)) = f(x)\,.
+    \end{align*}
+    \item[c)] Manifestly, by definition of $\sup$. 
+    \item[d)] For a strictly convex function, the Legendre transformation can be interpreted as a mapping between the graph of the function and the family of tangents of the graph. 
+    \item[e)] Using result c).
+    \item[f)] Using result c).
+\end{enumerate}
+\end{minipage}}
+
+Review for Complex analysis basic:
+\begin{prb}
+    (C5S5Q1) \\
+    Using the geometric interpretation of complex numbers
+    \begin{enumerate}
+        \item[a)] explain the inequalities $|z_1 + z_2| \leq |z_1| + |z_2|$ and $|z_1 + \cdots + z_n| \leq |z_1| + \cdots + |z_n|$;
+        \item[b)] exhibit the locus of points in the plane $\mathbb{C}$ satisfying the relation $|z - 1| + |z + 1| \leq 3$;
+        \item[c)] describe all the $n$th roots of unity and find their sum;
+        \item[d)] explain the action of the transformation of the plane $\mathbb{C}$ defined by the formula $z \mapsto \bar{z}$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] 1. Triangle inequality 2. n terms ([Industrial]).
+    \item[b)] $\mathbb{C}$-plane ellipse
+    \item[c)] $x^n = 1$, $x_k = e^{i\frac{k}{n} \cdot 2\pi}$, $k = 1, 2, \cdots, n$. \\
+    (Vieta's Theorem) $\sum_{k=1}^n x_k = 0$.
+    \item[d)] $z \mapsto \overline{z}$ i.e. $\begin{pmatrix} a \\b \end{pmatrix}=a+bi \to \overline{\begin{pmatrix} a \\b \end{pmatrix}}=a-bi$, using $\begin{bmatrix} 1 & 0 \\ 0 & -1 
+    \end{bmatrix}\begin{pmatrix} a \\ b \end{pmatrix}=\overline{\begin{pmatrix} a \\ b \end{pmatrix}}$ (reverse the $i$-axis) 
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q2) 
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+\begin{enumerate}
+    \item[a)] $\sum_{k=0}^{n} q^k = \frac{1-q^{n+1}}{1-q}$ (Power series multiplication theorem/Multiplication Thm for Power Series).
+    \item[b)] 
+    \item[c)]
+    \item[d)]
+    \item[e)]
+    \item[f)]
+    \item[g)]
+    \item[h)]
+    \item[i)]
+\end{enumerate}
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q3) \\
+    Find the modulus and argument of the complex number $\lim_{n \to \infty} (1 + \frac{2}{n})^n$ and verify that this number is $e^2$. 
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q4) 
+    \begin{enumerate}
+        \item[a)] Show that the equation $e^w = z$ in $w$ has the solution $w = \ln |z| + i\arg z$. It is natural to regard $w$ as the natural 
+        logarithm of $z$. Thus $w = \ln z$ is not a functional relation, since $\arg z$ is multi-valued.
+        \item[b)] Find $\ln 1$ and $\ln i$.
+        \item[c)] Set $z^\alpha = e^{\alpha \ln z}$. Find $1^\pi$ and $i^i$.
+        \item[d)] Using the representation $w = \sin z = \frac{1}{2i} \left( e^{iz} - e^{-iz} \right)$, obtain an expression for $z = \arcsin w$.
+        \item[e)] Are there points in $\mathbb{C}$ where $|\sin z| = 2?$
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q5) 
+    \begin{enumerate}
+        \item[a)] Investigate whether the function $f(z) = \frac{1}{1+z^2}$ is continuous at all points of the plane $\mathbb{C}$.
+        \item[b)] Expand the function $\frac{1}{1+z^2}$ in a power series around $z_0 = 0$ and find its radius of convergence.
+        \item[c)] Solve parts a) and b) for the function $\frac{1}{1+\lambda^2 z^2}$, where $\lambda \in \mathbb{R}$ is a parameter.
+    \end{enumerate}
+    Can you make a conjecture as to how the radius of convergence is determined by the relative location of certain points in the plane $\mathbb{C}$? 
+    Could this relation have been understood on the basis of the real line alone, that is, by expanding the function $\frac{1}{1+\lambda^2 x^2}$, 
+    where $\lambda \in \mathbb{R}$ and $x \in \mathbb{R}$?
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q6) 
+    \begin{enumerate}
+        \item[a)] Investigate whether the Cauchy function $f(z) = \begin{cases} e^{-1/z^2}, & z \neq 0, \\ 0, & z = 0 \end{cases}$ is continuous at $z = 0$.
+        \item[b)] Is the restriction $f| _{\mathbb{R}}$ of the function $f$ in a) to the real line continuous?
+        \item[c)] Does the Taylor series of the function $f$ in a) exist at the point $z_0 = 0$?
+        \item[d)] Are there functions analytic at a point $z_0 \in \mathbb{C}$ whose Taylor series converge only at the point $z_0$?
+        \item[e)] Invent a power series $\sum{n=0}^{\infty} c_n (z - z_0)^n$ that converges only at the one point $z_0$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    
+\end{qsol*}
+\end{minipage}}
+
+\begin{prb}
+    (C5S5Q7) 
+    \begin{enumerate}
+        \item[a)] Making the formal substitution $z - a = (z - z_0) + (z_0 - a)$ in the power series $\sum_{n=0}^{\infty} A_n(z - a)^n$ and gathering like terms, obtain a series $\sum_{n=0}^{\infty} C_n(z - z_0)^n$ and expressions for its coefficients in terms of $A_k$ and $(z_0 - a)^k$, $k = 0, 1, \ldots$.
+        \item[b)] Verify that if the original series converges in the disk $|z - a| < R$ and $|z_0 - a| = r < R$, then the series defining $C_n$, $n = 0, 1, \ldots$, converge absolutely and the series $\sum_{n=0}^{\infty} C_n(z - z_0)^n$ converges for $|z - z_0| < R - r$.
+        \item[c)] Show that if $f(z) = \sum_{n=0}^{\infty} A_n(z - a)^n$ in the disk $|z - a| < R$ and $|z_0 - a| < R$, then in the disk $|z - z_0| < R - |z_0 - a|$ the function $f$ admits the representation $f(z) = \sum_{n=0}^{\infty} C_n(z - z_0)^n$.
+    \end{enumerate}
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{qsol*}
+    
+\end{qsol*}
 \end{minipage}}
 
 %\end{document}
