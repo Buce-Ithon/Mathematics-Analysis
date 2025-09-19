@@ -679,14 +679,16 @@ Review for Complex analysis basic:
 \begin{qsol*}
 \begin{enumerate}
     \item[a)] $\sum_{k=0}^{n} q^k = \frac{1-q^{n+1}}{1-q}$ (Power series multiplication theorem/Multiplication Thm for Power Series).
-    \item[b)] 
-    \item[c)]
-    \item[d)]
-    \item[e)]
-    \item[f)]
-    \item[g)]
-    \item[h)]
-    \item[i)]
+    \item[b)] $\sum_{k=0}^{\infty} q^k = \begin{cases} \frac{1}{1-q} \quad |q|<1 \\ \infty \ \text{or} \ \nexists \quad |q|\geq 1 \end{cases}$ 
+    \item[c)] $\sum_{k=0}^{n} e^{ik\varphi}=\sum_{k=0}^{\infty}(e^{i\varphi})^k=\frac{1-(e^{i\varphi})^{n+1}}{1-e^{i\varphi}} $ 
+    \item[d)] $\sum_{k=0}^{n} r^k e^{ik\varphi} = \sum_{k=0}^{n} (re^{i\varphi})^k = \frac{1-(re^{i\varphi})^{n+1}}{1-re^{i\varphi}}$
+    \item[e)] $\sum_{k=0}^{n} r^k e^{ik\varphi} = \begin{cases} \frac{1}{|1-re^{i\varphi}|} & |r| < 1 \\ +\infty\ \text{or}\ \nexists & |r| \geq 1 \end{cases}$
+    \item[f)] $\sum_{k=0}^\infty r^k \cos k\varphi = \sum\limits_{k=0}^\infty r^k \frac{e^{ik\varphi} + e^{-ik\varphi}}{2} = \frac{1}{2}\left( \frac{1-(re^{i\varphi})^{n+1}}{1-re^{i\varphi}} + 
+    \frac{1-(re^{-i\varphi})^{n+1}}{1-re^{-i\varphi}} \right)$ 
+    \item[g)] $\sum_{k=0}^{\infty} r^k\cos k\varphi = \begin{cases} \frac{1}{2}\left(\frac{1}{1-re^{i\varphi}}+\frac{1}{1-re^{-i\varphi}}\right) \, |r|<1 \\ \neq \, |r|\geq 1 \end{cases}$ 
+    \item[h)] $\sum_{k=0}^\infty r^k \sin k\varphi = \sum\limits_{k=0}^\infty r^k \frac{e^{ik\varphi} i e^{-ik\varphi}}{2i} = \frac{1}{2i}\left( \frac{1-(re^{i\varphi})^{n+1}}{1-re^{i\varphi}} - 
+    \frac{1-(re^{-i\varphi})^{n+1}}{1-re^{-i\varphi}} \right)$
+    \item[i)] $\sum_{k=0}^{\infty} r^k\sin k\varphi = \begin{cases} \frac{1}{2i}\left(\frac{1}{1-re^{i\varphi}}-\frac{1}{1-re^{-i\varphi}}\right) \, |r|<1 \\ \neq \, |r|\geq 1 \end{cases}$ 
 \end{enumerate}
 \end{qsol*}
 \end{minipage}}
@@ -697,8 +699,17 @@ Review for Complex analysis basic:
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{qsol*}
-    
+Let $z = a + bi = \sqrt{a^2 + b^2} (\cos\varphi + i\sin\varphi)$, $\frac{\cos \varphi}{\sin \varphi}=\frac{a}{b}$ \\
+$\lim_{n \to \infty} (1 + \frac{z}{n})^n = \lim_{n \to \infty} (1 + \frac{a + ib}{n})^n$
+$= \lim_{n \to \infty} (\sqrt{(1+\frac{a}{n})^2+(\frac{b}{n})^2})^n \cdot (\cos(n\psi) + i\sin(n\psi))$, \\
+$r = \lim_{n \to \infty} (\sqrt{1+\frac{2a}{n}+\frac{a^2+b^2}{n^2}})^n = e^a$. \\
+$\theta = \lim_{n \to \infty} n\varphi = \lim_{n \to \infty} n \arctan \frac{b}{n + a} = \lim_{n \to \infty} \frac{b}{1 + a/n} = b$.
+i.e.
+$\lim_{n \to \infty} (1 + \frac{z}{n})^n = e^a \cdot (\cos b + i\sin b) = e^{a + ib} = e^z$.
 \end{qsol*}
+\fbox{\begin{minipage}{0.45\textwidth}
+    $z = a+bi = r(\cos \varphi + i \sin \varphi)$ 
+\end{minipage}}
 \end{minipage}}
 
 \begin{prb}
@@ -714,7 +725,17 @@ Review for Complex analysis basic:
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{qsol*}
-    
+\begin{enumerate}
+    \item[a)] $w = \ln z = \ln|z| + i \text{Arg} z$, where $e^w = e^{\ln|z| + i \arg z} = e^{\ln|z|} \cdot e^{i(\arg z + 2k\pi)} = |z|e^{i\text{Arg}z} = z$.
+    \item[b)] $\text{Ln} 1 = \ln|1| + i \arg 1 = i \cdot 2k\pi, k \in \mathbb{Z}$.
+    $\text{Ln} i = \ln|i| + i \arg i = i \cdot (\frac{\pi}{2} + 2k\pi), k \in \mathbb{Z}$.
+    \item[c)] $z^\alpha = e^{\alpha \ln z}$: $1^\pi = e^{\pi \ln 1} = e^{\pi (i \cdot 2k\pi)} = e^{i 2k\pi^2}, k \in \mathbb{Z}$.
+    $i^i = e^{i \ln i} = e^{i \cdot i (\frac{\pi}{2} + 2k\pi)} = e^{-(\frac{\pi}{2} + 2k\pi)}, k \in \mathbb{Z}$
+    \item[d)] $w = \sin z = \frac{1}{2i} (e^{iz} - e^{-iz})$, $\sqrt{1 - w^2} = \cos z = \frac{1}{2} (e^{iz} + e^{-iz})$, 
+    then $e^{iz} = iw + \sqrt{1 - w^2}$, i.e. $z = \frac{1}{i} \text{Ln} (iw + \sqrt{1 - w^2}) = -i \text{Ln} (iw + \sqrt{1 - w^2})$.
+    \item[e)] $w = \sin z = \frac{e^{iz} - e^{-iz}}{2i}$, $|w| = |\sin z| = \frac{|e^{iz} e^{-iz}|}{|2i|} = \frac{|(e^{iz})^2 - 1|}{|e^{iz}|} = 2$, 
+    then find $z$.
+\end{enumerate}
 \end{qsol*}
 \end{minipage}}
 
@@ -731,7 +752,15 @@ Review for Complex analysis basic:
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{qsol*}
-    
+\begin{enumerate}
+    \item[a)] $z^2 \in C_{\mathbb{C}} \to 1 + z^2 \in C_{\mathbb{C}} \to \frac{1}{1 + z^2} \in C_{\mathbb{C} / \{\pm i\}}$.
+    \item[b)] $\frac{1}{1 + z^2} = 1 - z^2 + z^4 - z^6 + z^8 + \cdots = \sum_{k=0}^{\infty} (-1)^k z^{2k}$.
+    By Cauchy-Hadamard formula, radius of convergence $R = \frac{1}{\overline{\lim}_{n \to \infty} (|c_n|)^{\frac{1}{n}}} = 1$.
+    \item[c)] Given $\frac{1}{1 + \lambda^2 z^2}$, $\lambda \in \mathbb{R}$: \\
+    a) 1. $\lambda = 0$, $f(z) = 1$, $f(z) \in C_{\mathbb{C}}$. \\ 2. $\lambda \neq 0$, $f(z) = \frac{1}{1 + (\lambda z)^2}$, $f(z) \in C_{\mathbb{C} / \{\pm \lambda^{-1} i\}}$. \\
+    b) $\frac{1}{1 + \lambda^2 z^2} = 1 - \lambda^2 z^2 + \lambda^4 z^4 - \lambda^6 z^6 + \cdots = \sum_{k=0}^{\infty} (-1)^k \lambda^{2k} \cdot z^{2k}$.
+    Radius of convergence $R = \frac{1}{\overline{\lim}_{n \to \infty} (|c_n|)^{\frac{1}{n}}} = \frac{1}{|\lambda|^2}$, depending on $|z-z_0| = |z| < \frac{1}{|\lambda|^2}$. 
+\end{enumerate}
 \end{qsol*}
 \end{minipage}}
 
@@ -742,12 +771,21 @@ Review for Complex analysis basic:
         \item[b)] Is the restriction $f| _{\mathbb{R}}$ of the function $f$ in a) to the real line continuous?
         \item[c)] Does the Taylor series of the function $f$ in a) exist at the point $z_0 = 0$?
         \item[d)] Are there functions analytic at a point $z_0 \in \mathbb{C}$ whose Taylor series converge only at the point $z_0$?
-        \item[e)] Invent a power series $\sum{n=0}^{\infty} c_n (z - z_0)^n$ that converges only at the one point $z_0$.
+        \item[e)] Invent a power series $\sum_{n=0}^{\infty} c_n (z - z_0)^n$ that converges only at the one point $z_0$.
     \end{enumerate}
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{qsol*}
-    
+d) is need to note for comprehension.
+\begin{enumerate}
+    \item[a)] $\lim\limits_{z \in \mathbb{C} \to 0} |e^{-\frac{1}{z^2}}| = [z=a+bi] = \lim\limits_{|a^2+b^2|\to 0}|e^{-\frac{(a^2-b^2)-(2ab)i}{(a^2+b^2)^2}}| = \lim\limits_{|a^2+b^2|\to 0} e^{-\frac{a^2-b^2}{(a^2+b^2)^2}}$ 
+    1. $z=a (b=0) \to 0, \quad \lim_{z \to 0} |e^{-\frac{1}{z^2}}| = 0$. \\
+    2. $z_n=\frac{1}{n}+\frac{1}{n}i \to 0, \quad \lim_{n \to \infty} |e^{-\frac{1}{z_n^2}}| = 1$.
+    \item[b)] $f|_{\mathbb{R}}$ is continuous on $\mathbb{R}$ 
+    \item[c)] No. But the Lourent's Series on $z_0=0$ is: $e^{-\frac{1}{z^n}} = \sum_{k=0}^{\infty} \frac{(-1)^k}{k!} \cdot \frac{1}{z^2k}$.
+    \item[d)] No. (Corollary on P234). $f$ is analytic at $z_0 \in \mathbb{C}$ $\Leftrightarrow$ $\exists\ \delta$, s.t. $z \in U(z_0;\delta),\ f(z)=\sum_{n=0}^{\infty} c_n (z-z_0)^n$. 
+    \item[e)] $\sum_{n=0}^{\infty}c_n(z-z_0)^n$, $c_n = n^n$. 
+\end{enumerate}
 \end{qsol*}
 \end{minipage}}
 
@@ -761,7 +799,15 @@ Review for Complex analysis basic:
 \end{prb}
 \fbox{\begin{minipage}{0.95\textwidth}
 \begin{qsol*}
-    
+\begin{enumerate}
+    \item[a)] $\sum_{n=0}^{\infty} A_n(z-a)^n = \sum_{n=0}^{\infty} A_n[(z-z_0)+(z_0-a)]^n = \sum_{n=0}^{\infty} A_n[\sum_{k=0}^{n}C_n^k(z-z_0)^k(z_0-a)^{n-k}] = \sum_{n=0}^{\infty} C_n(z-z_0)^n$, $C_n=\sum_{k=n}^{\infty} A_k C_k^n (z_0-a)^{k-n}$. 
+    %\item[b)] Since $|z_0 - a| = r < R$, the original series converges absolutely at $z = z_0$, so $\sum_{k=0}^{\infty} |A_k| |z_0 - a|^k$ converges. For fixed $n$, consider the series $\sum_{k=n}^{\infty} |A_k| \binom{k}{n} |z_0 - a|^{k-n}$. Note that $\binom{k}{n} |z_0 - a|^{k-n} = \frac{\binom{k}{n}}{|z_0 - a|^n} |z_0 - a|^k$. 
+    %Since $\binom{k}{n} \sim \frac{k^n}{n!}$ as $k \to \infty$, and $|A_k| |z_0 - a|^k$ decays exponentially (because $\limsup_{k \to \infty} |A_k|^{1/k} |z_0 - a| < 1$), the terms $|A_k| \binom{k}{n} |z_0 - a|^{k-n}$ are dominated by a convergent series multiplied by a polynomial, hence the series converges absolutely. \\ Now, define 
+    %$g(w) = f(w + z_0) = \sum_{k=0}^{\infty} A_k (w + z_0 - a)^k$. For $|w| < R - r$, we have $|w + z_0 - a| \leq |w| + |z_0 - a| < (R - r) + r = R$, so $g(w)$ converges and is analytic in $|w| < R - r$. Thus, $g(w)$ can be expanded as a power series $\sum_{n=0}^{\infty} C_n w^n$, where $C_n = \frac{g^{(n)}(0)}{n!} = \sum_{k=n}^{\infty} 
+    %A_k \binom{k}{n} (z_0 - a)^{k-n}$, and this series converges for $|w| < R - r$, i.e., for $|z - z_0| < R - r$.
+    %\item[c)] If $f(z) = \sum_{n=0}^{\infty} A_n (z - a)^n$ in $|z - a| < R$ and $|z_0 - a| < R$, then for $|z - z_0| < R - |z_0 - a|$, we have $|z - a| \leq |z - z_0| + |z_0 - a| < (R - |z_0 - a|) + |z_0 - a| = R$, so the original series converges at $z$. By part b), the series $\sum_{n=0}^{\infty} C_n (z - z_0)^n$ converges to $f(z)$ 
+    %in this disk, since it is the Taylor series of $f$ around $z_0$ derived from the original representation.
+\end{enumerate}   
 \end{qsol*}
 \end{minipage}}
 
