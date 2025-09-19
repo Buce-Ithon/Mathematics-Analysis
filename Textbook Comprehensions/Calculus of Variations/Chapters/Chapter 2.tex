@@ -1,0 +1,20 @@
+\newpage
+\section{Euler-Lagrange Equation}
+\subsection{Summary and comprehension}
+Similiar with the derivation process of the necessary conditions for the extreme value of function, we could get almost same progress for functional. And since the variant of target functional now is function, so we should introduce a Lemma (du Bois-Reymond) to deal with it, and after that the necessity of extreme value of functional is appeared. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{lem}
+        (du Bois-Reymond) \\
+        If $\psi\in C[t_0,t_1]$, and 
+        $$\int_{J} \psi(t)\cdot\lambda'(t) dt = 0,\quad \forall \lambda\in C_0^1(J),\ J=[t_0,t_1],$$ 
+        $C_0^1(J)=C_0^1(J,R^1)=\{u\in C^1(J) : u(t_0)=u(t_1)=0\}$, then $\psi = \text{const}$
+    \end{lem}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{pf*}
+        \textcolor{skycyan}{/Tech toolkit/} (Wonderful substitution!) \\
+        Let $c=\frac{1}{|J|}\int_{J}\psi(t) dt$, $\lambda(t)=\int_{t_0}^{t}(\psi(s)-c) ds$. \\
+        Then consider $\int_{J} (\psi(t)-c)^2 dt = \int_{J} \psi(t)(\psi(t)-c) dt = \int_{J} \psi(t)\lambda'(t) dt = 0$, thus $\psi(t)\equiv c$. 
+    \end{pf*}
+\end{minipage}}

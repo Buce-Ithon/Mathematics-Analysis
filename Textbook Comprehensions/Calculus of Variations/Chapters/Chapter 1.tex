@@ -1,0 +1,44 @@
+\newpage
+\section{Introduction to variations}
+In this section, we first introduce some basic concepts which are indispensable for our concerned subjects and related problems. And then giving a typical problem example to help readers understand preliminarily what kind of problem are we studying. So be relaxed, and enjoy this section:
+
+\subsection{Basics summary}
+The objects what we mainly studies throught out the book: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df*}
+    Given a set $M$ of functions, the map $I : M \to \mathbb{C}$ is called a \textbf{functional}.
+    \end{df*}
+\end{minipage}}
+\newline\newline
+Some example to tell if it a map is a functional: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{ex*}
+        $I_1(u) = \max_{x\in\Omega}|u(x)|$, $I_2(u) = u(x_0)$, $I_3(u)=\int_{\Omega}[|\nabla u(x)|^2-F(u(x))]dx$ are all functional.
+    \end{ex*}
+    \begin{ex*}
+        $\forall M \ \text{and} \ f : \mathbb{R}\to\mathbb{R}$, $I_4(u) = f(u(x))$ is not functional.
+    \end{ex*}
+\end{minipage}}
+\newline\newline
+A typical example problem to introduce the subject what we studies: 
+\begin{prb}
+    (Brachistochrone) Given two points $A = (x_1, y_1)$ and $B = (x_2, y_2)$ in a vertical plane, where $x_1 < x_2$, $y_1 > y_2$. A particle slides along a smooth curve connecting these two points under gravity alone. Assuming initial velocity is zero, ask along which curve the sliding time is the shortest
+\end{prb}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Let $u \in C^1[x_1, x_2]$, ${(x, u(x)) \mid x \in [x_1, x_2], u(x_i) = y_i, i = 1, 2}$ is a curve connecting $A, B$. Since we have
+        $\begin{cases} \frac{1}{2} mv^2 = mgh, \\ v = \frac{ds}{dt}, \end{cases}$
+        so
+        $v = \sqrt{2g(y_1 - u(x))}$,
+        and
+        $dt = \frac{ds}{v} = \sqrt{\frac{1 + |u'(x)|^2}{2g(y_1 - u(x))}} dx$,
+        total time
+        $T = \int_{x_0}^{x_1} dt = \frac{1}{\sqrt{2g}} \int_{x_0}^{x_1} \sqrt{\frac{1 + |u'(x)|^2}{y_1 - u(x)}} dx$.
+
+        Let
+        $M = {u \in C^1([x_1, x_2]) \mid u(x_i) = y_i, i = 1, 2}$,
+        then the mapping
+        $M \to \mathbb{R}, \quad u \mapsto T$
+        is a "functional". Here $u$ is the independent variable, $T = T(u)$ is the dependent variable. We want to find $u$ in $M$ such that $T$ is minimized.
+    \end{sol*}
+\end{minipage}}
