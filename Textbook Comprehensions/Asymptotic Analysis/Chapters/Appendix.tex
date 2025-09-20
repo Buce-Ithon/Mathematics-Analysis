@@ -1,0 +1,51 @@
+\newpage
+\section{Appendix}
+
+\subsection{Extending tests for convergence of number series}
+% Cauchy Condensation Test
+\subsubsection{Talking from Cauchy Condensation Test}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Caucy Condensation Test) \textcolor{skycyan}{Tech toolkit} \\
+        $\{a_n\}_{n}^{\infty} \searrow^{+}$ (i.e. $\cdots \geq a_n \geq a_{n-1} \geq \cdots \geq a_1 \geq 0$), then $\sum_{n=1}^{\infty} a_n$ and $\sum_{k=1}^{\infty} 2^k a_{2^k}$ have same convergence.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+Connections betwwen \underline{Condensation test} and \underline{Integral test}: \\
+\begin{equation*}
+    \begin{split}
+        \sum_{n=1}^{\infty} a_n < \infty &\iff \int_{1}^{\infty} f(x) dx = \infty \ \text{substitute with: } x=2^y \\
+        &\iff \int_{1}^{\infty} 2^y f(2^y) dy < \infty \iff \sum_{k=1}^{\infty} 2^k a_{2^k} < \infty
+    \end{split}
+\end{equation*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Maclaurin-Cauchy Integral Test) \textcolor{skycyan}{Tech toolkit} \\
+        $f \searrow^{+}$ on $[1, +\infty)$, then $\sum_{n=1}^{\infty} f(n)$ and $\int_{1}^{\infty} f(x) dx$ have same convergence.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+Here are some examples we could use Condensation test to solve: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{enumerate}
+        \item $\sum_{n=1}^{\infty} \frac{1}{n^p}$, $\sum_{n=2}^{\infty} \frac{1}{n\log^p n}$, $\sum_{n=2}^{\infty} \frac{1}{(\log n)^p}$ (combine Cauchy root test), $\sum_{n=2}^{\infty} \frac{\log n}{n^2}$
+        \item $\sum_{n=16}^{\infty} \frac{1}{n(\log n)(\log\log n)(\log\log\log n)^p}$
+        \item More general, let's consider $f(x) := n^{-a}(\log n)^{-b}(\log\log n)^{-c}$, $\sum f(n) < \infty, \ a>1$, when $a=1$ condensation transformation gives $\sum n^{-b}(\log n)^{-c}$ (seems like the logarithms "shift to the left") so when $a=1$, it converges as $b>1$. When $b=1$, the value of $c$ enters. \\
+        This result readily generalizes: the condensation test, applied repeatedly, can be used to show that for $k=1,2,3,\cdots$, the generalized Bertrand series $\sum _{n\geq N}{\frac {1}{n\cdot \log n\cdot \log \log n\cdots \log ^{\circ (k-1)}n\cdot (\log ^{\circ k}n)^{\alpha }}}\quad \quad (N=\lfloor \exp ^{\circ k}(0)\rfloor +1)$ converges for $\alpha>1$ and diverges for $0 \leq \alpha \leq 1$. \\
+        from Wikipedia: \href{https://en.wikipedia.org/wiki/Cauchy_condensation_test}{Cauchy Condensation Test}
+    \end{enumerate}
+\end{minipage}}
+\newline\newline
+Besides, the Cauchy condensation test is a partial case of following classical result deu to Schlomilch: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Schlomilch) \\
+        $\{a_n\}_{n}^{\infty} \searrow^{+}$, $\{u_n\}_{0}^{\infty} : u_0<u_1<\cdots\ \text{and}\ \frac{\Delta u_n}{\Delta u_{n-1}}\leq C$, then $\sum_{n=1}^{\infty} a_n$ and $\sum_{n=1}^{\infty} \Delta u_n a_{u_n} = \sum_{n=1}^{\infty} (u_{n+1}-u_n)a_{u_k}$ have same convergence. 
+    \end{thm}
+\end{minipage}}
+\begin{nt*}
+    1. You may note it that let $u_n = 2^n$, it's Cauchy condensation test. Moreover, you could also use $u_n = p^n,\ p>1$.
+\end{nt*}
+
+% Review the History of the tests for convergence of number series - their monotonicity assumption
+\subsection{Recall history of tests with monotonicity assumption for sequence}
