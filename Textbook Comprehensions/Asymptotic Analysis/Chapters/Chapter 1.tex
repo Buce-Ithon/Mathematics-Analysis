@@ -68,6 +68,7 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
         $N\to\infty$
     \end{enumerate}
 \end{minipage}}
+\newline\newline
 
 5. Extension for Taylor's formula: \textcolor{skycyan}{/Tech/} 
 \begin{thm}
@@ -102,6 +103,37 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
     \end{cor}
 \end{minipage}}
 
+6. Abel type theorem: \textcolor{skycyan}{/Tech/} 
+\begin{thm}
+    \textcolor{skycyan}{/Tech/} \\
+    \marginpar{\footnotesize $<$Abel type Theorem - 1$>$: \\(dicrete) $<$Stolz's Theorem$>$}
+    Given $b_n>0$, $\sum_{n=1}^{\infty} b_n = \infty$, $a_n = o(b_n), n\to\infty$, then $$\sum_{n=1}^{N} a_n = o(\sum_{n=1}^{n} b_n),\ N\to\infty.$$
+\end{thm}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Denote $K_n$: the greatest $k$ s.t. $\sum_{i=1}^{k} b_i < \sqrt{\sum_{i=1}^{n} b_i}$ holds, then $K_n\to\infty, n\to\infty$. \\
+        Then $\left\vert \sum_{i=1}^{n} a_i \right\vert = O(1) \sum_{i=1}^{K_n} b_i + o(1) \sum_{i=K_n}^{n} b_i = O(1) \sqrt{\sum_{i=1}^{n} b_i} + o(1) \sum_{i=1}^{n} b_i = o(1) \sum_{i=1}^{n} b_i$.
+    \end{sol*}
+\end{minipage}}
+\begin{nt*}
+    1. Comparing with ordinary $\epsilon-N$ method, the oder estimation proof method is concise and elegent.
+\end{nt*}
+\begin{thm}
+    \textcolor{skycyan}{/Tech/} \\
+    \marginpar{\footnotesize (continue) $<$L'Hospital Theorem$>$}
+    Given $g(x)>0$,$\int_{a}^{\infty} g(x)dx$, $f(x)=o(g(x)), x\to\infty$, then $$\int_{a}^{x} f(t)dt = o(\int_{a}^{x} g(t)dt),\ x\to\infty.$$
+\end{thm}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Proof idea is same with dicrete form.
+    \end{sol*}
+\end{minipage}}
+\begin{thm}
+    \textcolor{skycyan}{/Tech/} \\
+    \marginpar{\footnotesize $<$Abel type Theorem - 2$>$}
+    \marginpar{\footnotesize $<$Abel's Limits Theorem$>$}
+    Given $b_n>0$, $a_n=o(b_n)$, $f(x)=\sum_{n=0}^\infty a_n x^n,\ g(x)=\sum_{n=0}^\infty b_n x^n$, and $g(x) = \begin{cases} <\infty \quad o\leq x< 1, \\ \to\infty\quad x\to 1^{-} \end{cases}$ then $$f(x) = o(g(x)),\ x\to 1^{-}.$$
+\end{thm}
 
 \newpage
 \subsection{Problem Sets}
@@ -148,16 +180,16 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
     \end{sol*}
 \end{minipage}}
 
-\begin{pro*}
+\begin{prb*}
     \textcolor{skycyan}{/Tech tip/} \\
     The 1st principle of order evaluating (specially need using Taylor's series to evaluate) is paying more attension on and catching the infinitesimal or infinite quantities which those are not so good to distinguish directly "by eyes". 
-\end{pro*}
+\end{prb*}
     Here are some useful techs and interesting examples: \\
 \fbox{\begin{minipage}{0.95\textwidth}
     \begin{enumerate}
         \item \textcolor{skycyan}{/Tech tool/} $\sqrt[n]{n} = e^{\frac{\log n}{n}} = 1 + \frac{\log n}{n} + O(\frac{\log^2 n}{n^2})$, $n \to \infty$ 
         \item Using 1, you could get $(n+a)^{n+b} = n^{n+b}e^a(1+\frac{a(b-\frac{a}{2})}{n}+O(\frac{1}{n^2}))$ $\implies$ $(1+\frac{a}{n})^{n+b} = e^a(1+\frac{a(b-\frac{a}{2})}{n}+O(\frac{1}{n^2}))$ (development of $\lim_{n\to\infty} (1+\frac{1}{n})^n = e$). 
-        \item Layer-by-layer 
+        \item Layer-by-layer (from the outside in)
         \begin{equation*}
             \begin{split}
                 (x+(x+(x^{\frac{\alpha}{2}}))^{\frac{1}{2}})^{\frac{1}{2}} &= x^{\frac{1}{2}} (1+(x^{-1}+x^{\frac{\alpha}{2}-2})^{\frac{1}{2}})^{\frac{1}{2}} \ (0<\alpha<2) \\
@@ -174,5 +206,26 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
         \setcounter{enumi}{3} % continue formal fbox-enumerate (3 items) from item 4
         \item $\lim_{n\to\infty} \cos^{n} \frac{x}{\sqrt{n}} = \lim_{n\to\infty} e^{n\log (1-\frac{x^2}{2n}+O_x(\frac{1}{n^2}))} = e^{-\frac{x^2}{2}}(1+O_x(\frac{1}{n}))$ \\
         Related (just form): Wallis' integral $W_n = \int_{0}^{\frac{\pi}{2}} (\cos x)^n dx = \int_{0}^{\frac{\pi}{2}} (\sin x)^n dx = \frac{n-1}{n} W_{n-2} = \frac{(n-1)!!}{n!!}(\frac{\pi}{2})^{\delta_{(n(mod 2))0}} = \sqrt{\frac{\pi}{2n}}(1+o(1))$, $(n\to\infty)$
+        \item Using [15], [16] of 16 rules, we could test convergence of some infinite integral or series: \\
+        (1) $\int_{1}^{\infty}\frac{\left(e^{\frac{1}{2x}}-1\right)^{a}}{\log^{b}\left(1+\frac{1}{x}\right)}dx$; 
+        (2) $\sum_{n=1}^{\infty}\frac{1}{\log(1+n)}\sin\frac{1}{n^{\beta}}$, $\beta>0$; 
+        (3) $\int_{1}^{\infty}\frac{\log\left(1+\sin\frac{1}{x^{\alpha}}\right)}{x^{\beta}\log\cos\frac{1}{x}}dx$, $\alpha>0$; 
+        (4) $\sum_{n=1}^{\infty}\frac{\left(1-\cos\frac{1}{n}\right)^{\beta}}{\log^{\gamma}(1+n)}$; 
+        (5) $\int_{1}^{\infty}\frac{\log\left(1+\frac{1}{x^{p}}\right)}{x\sqrt[p]{1+x^{2}}}dx$, $p\in\mathbb{R}$; 
+        (6) $\int_{1}^{\infty}\frac{x^{m}\arctan x}{2+x^{n}}dx$, $n>0$;
+        (7) $\int_{0}^{1}\frac{\log x}{(1-x^{2})^{a}(\sin x)^{p}}dx$, $p\in\mathbb{R}$
     \end{enumerate}
 \end{minipage}}
+
+\begin{prb*}
+    \textcolor{green}{/Basic/} \textcolor{skycyan}{/Tech/} \\
+    \marginpar{\footnotesize $\frac{a+o(1)}{b+o(1)} = \frac{a}{b}+o(1)$}
+    Given $f(x) = o(1)$, $g(x) = o(1)$, $b\neq 0$, then 
+    \begin{equation*}
+        \begin{aligned}
+                \frac{a + f(x)}{b + g(x)} &= \frac{a + f(x)}{b} \left(1 + \frac{g(x)}{b}\right)^{-1} = \frac{a + f(x)}{b} \left(1 - \frac{g(x)}{b} + O(g^2(x))\right) \\
+                &= \frac{a}{b} + \frac{f(x)}{b} - \frac{ag(x)}{b^2} + O(f(x)g(x)) + O(g^2(x)).
+        \end{aligned}
+    \end{equation*}
+\end{prb*}
+

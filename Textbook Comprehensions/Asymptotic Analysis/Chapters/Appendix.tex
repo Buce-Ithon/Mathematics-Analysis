@@ -48,4 +48,206 @@ Besides, the Cauchy condensation test is a partial case of following classical r
 \end{nt*}
 
 % Review the History of the tests for convergence of number series - their monotonicity assumption
-\subsection{Recall history of tests with monotonicity assumption for sequence}
+\subsubsection{History of tests with monotonicity assumption for sequence}
+Let's recall some convergence tests with monotonicity assumption for sequence: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Ermakov) \\
+        Given $f \searrow_{\geq 0} \in C(1,\infty)$, if $\lim_{t\to\infty} \frac{e^tf(e^t)}{f(t)} \leq q < 1$, then $\sum_{n=1}^{\infty} f(n) < \infty$; if $\lim_{t\to\infty} \frac{e^tf(e^t)}{f(t)} \geq 1$, then $\sum_{n=1}^{\infty} f(n)$ diverges.
+    \end{thm}
+    \begin{nt*}
+        1. You could replace $e^t$ with an arbitrary $\varphi(t) \nearrow_{\geq 0}$ to get a family of tests. 
+    \end{nt*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Abel-Olivier) \\
+        Given $\{a_n\}_{n}^{\infty} : a_n \searrow_{\geq 0} \to 0$ (monotone null), if $\sum_{n=1}^{\infty} a_n < \infty$, then $na_n = o(1),\ n\to\infty$.
+    \end{thm}
+    \begin{nt*}
+        1. Proof idea: Cauchy convergence criterion. \\
+        2. The inverse is not ture: $a_n = \frac{1}{n\log n}$. 
+    \end{nt*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Sapogov) \\
+        Given $\{a_n\}_{n}^{\infty} : a_n \searrow_{\geq 0}$, then $\lim_{n\to\infty} a_n = 0$ i.f.f. $\sum_{n=1}^{\infty} (1-\frac{a_n}{a_{n+1}})$ as well as $\sum_{n=1}^{\infty} (\frac{a_{n+1}}{a_n}-1)$ diverges.
+    \end{thm}
+    \begin{nt*}
+        1. Proof idea: $\sum_{n=1}^{\infty} b_n$ and $\sum_{n=1}^{\infty} \log(1-b_n)$ has same convergence. 
+        2. It's a simple test for $n$-th term of a series apporoach to $0$. 
+        3. Other Description: \\
+        Given $\{a_n\}_{n}^{\infty} : a_n \nearrow_{\geq 0}$, if $\sum_{n=1}^{\infty} (1-\frac{a_n}{a_{n+1}})$ as well as $\sum_{n=1}^{\infty} (\frac{a_{n+1}}{a_n}-1)$ converges, then $a_n$ is bounded or diverges otherwise. 
+    \end{nt*}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Deddkind-du Bois Reymond) \\
+        Def: $\{a_n\}_{n}^{\infty} \in \text{BV(bounded variation)} : \sum_{n=1}^{\infty} |a_{n+1}-a_n| < \infty$. \\
+        1. Given $\{a_n\}_{n}^{\infty} \in \text{BV}$ also $a_n = o(1)$ and $\sum_{k=1}^{n}b_k < C,\ \forall n\in\mathbb{N}$, then $\sum_{n=1}^{\infty} a_nb_n < \infty$. \\
+        2. Given $\{a_n\}_{n}^{\infty} \in \text{BV}$ and $\sum_{n=1}^{\infty}b_n < \infty$, then $\sum_{n=1}^{\infty} a_nb_n < \infty$. 
+    \end{thm}
+    \begin{cor}
+        1. (Dirichlet) \\
+        Given $a_n$ is monotone null and $\sum_{k=1}^{n}b_k < C,\ \forall n\in\mathbb{N}$, then $\sum_{n=1}^{\infty} a_nb_n < \infty$. \\
+        Corillary. (Leibniz) \\
+        Given $a_n$ is monotone null, then $\sum_{n=1}^{\infty} (-1)^{n}a_n < \infty$. \\
+        2. (Abel) \\
+        Given $a_n$ is bounded monotone and $\sum_{n=1}^{\infty} b_n < \infty$, then $\sum_{n=1}^{\infty} a_nb_n < \infty$. 
+    \end{cor}
+\end{minipage}}
+\newline\newline
+Before our formal work, let's introduce some basic more general monotonicity definitions: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        We call a non-negative null (that is, tending to zero at infinity) sequence ${a_k}$ weak monotone, written \textbf{WMS}, if for some positive absolute constant $C$ it satisfies $a_k \leq C a_n \ \forall k \in [n, 2n]$.
+    \end{df}
+\end{minipage}}
+\newline\newline
+To introduce a counterpart for functions, we will assume all functions to be defined on $(0, \infty)$, locally of bounded variation, and vanishing at infinity. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        We say that a non-negative function $f$ defined on $(0, \infty)$, is weak monotone, written \textbf{WM}, if $f(t) \leq Cf(x) \ \forall t \in [x, 2x]$.
+    \end{df}
+\end{minipage}}
+\newline\newline
+Denote $\Delta a_k = a_{k+1} - a_k$. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        A positive null sequence ${a_k}$ is called general monotone, written \textbf{GMS}, if it satisfies $\sum_{k=n}^{2n} |\Delta a_k| \leq C a_n$, for any $n$ and some absolute constant $C$.
+    \end{df}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        We say that a non-negative function $f$ is general monotone, \textbf{GM}, if $\forall x \in (0, \infty)$, $\int_{x}^{2x} |df(t)| \leq Cf(x)$.
+    \end{df}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{nt*}
+        1. The class of quasi-monotone sequences, that is, ${a_k}$ such that there exists $\tau > 0$ so that $k^{-\tau} a_k \downarrow$, is a proper subclass of $GMS$. \\
+        2. One of the simple basic properties of $GMS$ is $GMS \subsetneq WMS$. \\
+        3. We just remark that if $f(\cdot)$ is a $GM$ function, then for $a_k = f(k)$ there holds ${a_k} \in GMS$. \\
+        4. Also $GM \subsetneq WM$.
+    \end{nt*}
+\end{minipage}}
+
+% Extension of the "monotone" tests
+\subsubsection{Extension of the "monotone" tests}
+Now, let's extend those aforementioned "monotone" tests for sequences of numbers and functions: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Maclaurin-Cauchy $\uparrow$) \\
+        Let $f$ be a WM function. Then the series $\sum_{k=1}^\infty f(k)$ and integral $\int_1^\infty f(t) dt$ converge or diverge simultaneously.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Ermakov $\uparrow$) \\
+        Let $f$ be a WM function and let $\varphi(t)$ be a monotone increasing, positive function having a continuous derivative and satisfying $\varphi(t) > t$ for all $t$ large enough. \\
+        If for $t$ large enough $\frac{f(\varphi(t))\varphi'(t)}{f(t)} \leq q < 1$, then series $\sum_{n=1}^{\infty} f(n)$ converges, while if $\frac{f(\varphi(t))\varphi'(t)}{f(t)} \geq 1$, then series $\sum_{n=1}^{\infty} f(n)$ diverges.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Schlomilch $\uparrow$) \\
+        Let ${u_k}$ be an increasing sequence of positive numbers such that $u_{k+1} = O(u_k)$ and $u_k \to \infty$. \\
+        Let $f$ be a WM function. Then both series $\sum_{k=1}^{\infty} f(u_k) \Delta u_k$ and $\sum_{k=1}^{\infty} f(u_{k+1}) \Delta u_k$ converge (or diverge) with $\int_1^{\infty} f(t) dt$. \\
+        Let ${a_k}$ be a WMS. Then $\sum_{n=1}^{\infty} a_n$ converges if and only if the series $\sum_{k=1}^{\infty} \Delta u_k a_{u_k} = \sum_{k=1}^{\infty} (u_{k+1} - u_k) a_{u_k}$ converges.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Abel-Olivier $\uparrow$) \\
+        Let ${a_k}$ be a WMS. If series $\sum_{n=1}^{\infty} a_n$ converges, then $k a_k$ is a null sequence.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+Analyzing one Dvoretzky’s result and its proof, we obtain the following statement: \\
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        If ${a_k}, {b_k} \in WMS$, and the series are convergent and divergent respectively, then $\forall M > 1$ there $\exists$ infinitely many $R_j$,
+        $R_j \to \infty$, s.t. $\forall k$ with $R_j \leq k \leq M R_j$, we have $a_k < b_k$.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+Our next result is "dual" to the above Schlömlich-type extensions. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        An increasing sequence ${u_k}$ is called \textbf{lacunary} if $u_{k+1}/u_k \geq q > 1$.
+    \end{df}
+\end{minipage}}
+\newline\newline
+A more general class of sequences is the one in which each sequence can be split into finitely-many lacunary sequences, which we will write ${u_k} \in \Lambda$. (This is true i.f.f. $\sum_{j=1}^k u_j \leq C u_k$.) \\
+In different terms, ${u_k} \in \Lambda$ is true i.f.f. there $\exists r \in \mathbb{N}$ s.t. $\frac{u_{k+r}}{u_k} \geq q > 1, \ k \in \mathbb{N}$. \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{df}
+        $\Delta a_{u_k} := a_{u_k} - a_{u_{k+1}}$
+    \end{df}
+\end{minipage}}
+\newline\newline
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        Let ${a_k}$ be a non-negative WMS, and let a sequence ${u_k}$ be s.t. ${u_k} \in \Lambda$ and $u_{k+1} = O(u_k)$. Then $\sum_{k=1}^{\infty} a_k$,
+        $\sum_{k=1}^{\infty} u_k |\Delta a_{u_k}|$, and $\sum_{k=1}^{\infty} u_k a_{u_k}$ converge or diverge simultaneously.
+    \end{thm}
+\end{minipage}}
+\newline\newline
+It's also possible to get equiconvergence results for an important case $u_n = n$, where the lacunarity is not suitable. (we need to proceed a smaller class than WMS)\\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        Let ${a_k}$ be a GMS. Then series $\sum_{n=1}^{\infty} a_n$ and $\sum_k k| \Delta a_k|$ converge or diverge simultaneously.
+    \end{thm}
+    \begin{thm}
+        Let $f$ be a $GM$ function. Then the integrals $\int_1^\infty f(t) dt \text{ and } \int_1^\infty t|df(t)| \text{ converge or diverge simultaneously}$.
+    \end{thm}
+\end{minipage}}
+\begin{nt*}
+    Negative type results: \\
+    1. Sapogov type test cannot be true if ${b_k}$ (as well as ${1/b_k}$) is WMS. (A counterexample can be constructed against generalization of Abel's test.) \\
+    2. As for extending the Leibniz test, it cannot hold without additional assumption of the boundedness of variation: just take $a_k = 1/\ln k$ everywhere except $n = 2^k$ where $a_n = 2/\ln n$. \\
+    3. Is there exists a wider class that those tests could hold? (see below problem)
+\end{nt*}
+\begin{prb*}
+    WMS is, in a sense, the widest class for which such tests are still valid.
+\end{prb*}
+We give some examples to show you the problem is seemly true. 
+\begin{ex*}
+    \begin{enumerate}
+        \item An immediate natural extension of $WMS$ is the class defined by $a_k \leq C \sum_{n=k/2}^k \frac{a_n}{n}$, or a bit more general $a_k \leq C \sum_{n=[k/c]}^{[ck]} \frac{a_n}{n},\ c > 1$. \\
+        The principle difference between $WMS$ and these classes is that the latter two allow certain amount of zero members, unlike $WMS$ that forbid even a single zero, i.e., $a_{n_0} = 0$ implies $a_n = 0$ for $n \geq n_0$. \\
+        Putting zeros on certain positions, say $k = 2^n$, we easily construct a counterexample to show that the Cauchy condensation test cannot be valid for these classes nor its extensions. \\
+        In a similar way, just letting a function $f$ to take non-zero values only close to integer points, one sees that the Maclaurin-Cauchy integral test may fail as well. 
+        \item In conclusion, note that $WMS$ is a subclass of the broadly used $\Delta_2$-class: for which the doubling condition $a_{2k} \leq C a_k$ holds $\forall k \in \mathbb{N}$. \\
+        We observe that assuming the doubling condition by no means can guarantee the above tests to be extended: \\
+        To illustrate this, the easiest way is to consider Cauchy's condensation test. Take ${a_k}$ such that $a_k = \begin{cases} 2^{-k}, & k \neq 2^n; \\ n^{-2}, & k = 2^n. \end{cases}$ This sequence is doubling but not $WMS$. Obviously, $\sum_{n=1}^\infty 2^n a_{2^n} = \sum_{n=1}^\infty \frac{2^n}{n^2}$ diverges. 
+    \end{enumerate}
+\end{ex*}
+
+% Overview
+\subsubsection{Summary}
+The main results may be summarized as the following statement: \\
+\fbox{\begin{minipage}{1.00\textwidth}
+    \begin{thm}
+        Let $f(\cdot) \in WM$. Then the following series and integrals converge or diverge simultaneously:
+        $$\int_{1}^{\infty} f(t) dt, \quad \sum_{k} f(k);$$
+        $$\sum_{k} (u_{k+1} - u_k)f(u_k), \quad \text{provided} \quad u_k \uparrow, \quad u_{k+1} = O(u_k);$$
+        $$\sum_{k} u_k f(u_k), \quad \sum_{k} u_k |f(u_{k+1}) - f(u_k)|, \quad \text{with} \quad u_k \text{ lacunary}, \quad u_{k+1} = O(u_k);$$
+        $$\sum_{k} k |f(k + 1) - f(k)|, \quad \int_{1}^{\infty} t |df(t)|, \quad \text{provided} \quad f(\cdot) \text{ is } GM.$$
+    \end{thm}
+\end{minipage}}
+\begin{ex*}
+    Besov space: \\
+    For $k > r$, $\theta, r > 0$ and $p \geq 1$ $\|f\|_{B^r_{p,\theta}} = \left( \int_0^1 t^{-r\theta-1} \omega_k^\theta (f;t)_p \frac{dt}{t} \right)^{1/\theta}$. \\
+    Equivalent form: $\|f\|_{B^r_{p,\theta}} = \left( \int_1^\infty t^{r\theta+1} \omega_k^\theta (f;1/t)_p \frac{dt}{t} \right)^{1/\theta}$. \\
+    Since $\omega_k(f; t)p \uparrow$, the function under the integral sign is $WM$. Applying generalized Maclaurin-Cauchy and Cauchy condensation tests, we obtain convenient equivalent form: $\left( \sum_{\nu=0}^{\infty} \left[ 2^{r\nu} \omega_k(f; 2^{-\nu})_p \right]^{\theta} \right)^{1/\theta}$.
+\end{ex*}
