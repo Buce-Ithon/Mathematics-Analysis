@@ -105,21 +105,20 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
 
 6. Abel type theorem: \textcolor{skycyan}{/Tech/} 
 \begin{thm}
-    \textcolor{skycyan}{/Tech/} \\
     \marginpar{\footnotesize $<$Abel type Theorem - 1$>$: \\(dicrete) $<$Stolz's Theorem$>$}
-    Given $b_n>0$, $\sum_{n=1}^{\infty} b_n = \infty$, $a_n = o(b_n), n\to\infty$, then $$\sum_{n=1}^{N} a_n = o(\sum_{n=1}^{n} b_n),\ N\to\infty.$$
+    Given $b_n>0$, $\sum_{n=1}^{\infty} b_n = \infty$, $a_n = o(b_n), n\to\infty$, then $$\sum_{n=1}^{N} a_n = o(\sum_{n=1}^{N} b_n),\ N\to\infty.$$
 \end{thm}
 \fbox{\begin{minipage}{0.95\textwidth}
     \begin{sol*}
         Denote $K_n$: the greatest $k$ s.t. $\sum_{i=1}^{k} b_i < \sqrt{\sum_{i=1}^{n} b_i}$ holds, then $K_n\to\infty, n\to\infty$. \\
         Then $\left\vert \sum_{i=1}^{n} a_i \right\vert = O(1) \sum_{i=1}^{K_n} b_i + o(1) \sum_{i=K_n}^{n} b_i = O(1) \sqrt{\sum_{i=1}^{n} b_i} + o(1) \sum_{i=1}^{n} b_i = o(1) \sum_{i=1}^{n} b_i$.
     \end{sol*}
+    \begin{nt*}
+        1. Comparing with ordinary $\epsilon-N$ method, the oder estimation proof method is concise and elegent. \\
+        2. The commutive of $\sum$ and $o$.
+    \end{nt*}
 \end{minipage}}
-\begin{nt*}
-    1. Comparing with ordinary $\epsilon-N$ method, the oder estimation proof method is concise and elegent.
-\end{nt*}
 \begin{thm}
-    \textcolor{skycyan}{/Tech/} \\
     \marginpar{\footnotesize (continue) $<$L'Hospital Theorem$>$}
     Given $g(x)>0$,$\int_{a}^{\infty} g(x)dx$, $f(x)=o(g(x)), x\to\infty$, then $$\int_{a}^{x} f(t)dt = o(\int_{a}^{x} g(t)dt),\ x\to\infty.$$
 \end{thm}
@@ -129,11 +128,103 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
     \end{sol*}
 \end{minipage}}
 \begin{thm}
-    \textcolor{skycyan}{/Tech/} \\
     \marginpar{\footnotesize $<$Abel type Theorem - 2$>$}
     \marginpar{\footnotesize $<$Abel's Limits Theorem$>$}
     Given $b_n>0$, $a_n=o(b_n)$, $f(x)=\sum_{n=0}^\infty a_n x^n,\ g(x)=\sum_{n=0}^\infty b_n x^n$, and $g(x) = \begin{cases} <\infty \quad o\leq x< 1, \\ \to\infty\quad x\to 1^{-} \end{cases}$ then $$f(x) = o(g(x)),\ x\to 1^{-}.$$
 \end{thm}
+\begin{cor}
+    Given $f(x)$ and $g(x)$ satisfying the conditions of Thm 1.4, and $a_n = b_n(1+o(1)), n\to\infty$, then $$f(x) = g(x)(1+o(1)),\ x\to1^{-}.$$
+\end{cor}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Proof idea: consider $c_n = a_n-b_n$ and $f(x)-g(x)$.
+    \end{sol*}
+\end{minipage}}
+\begin{cor}
+    \marginpar{\footnotesize $<$Abel type Theorem - 3$>$}
+    \marginpar{\footnotesize (Weak version of AtT - 2)}
+    Given $f(x)$ and $g(x)$ satisfying the conditions of Thm 1.4, and converging on $[0,1)$. Let $s_n = \sum_{k=0}^{n} a_k$ and $t_n = \sum_{k=0}^{n} b_k$ satisfy: (1) $t_n > 0$; (2) $\sum_{n=1}^{\infty} t_nx^{n}\to\infty, x\to 1^{-}$; (3) $s_n = o(t_n), n\to\infty$, then $$f(x) = o(g(x)),\ x\to 1^{-}.$$
+\end{cor}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        \textcolor{skycyan}{/Tech tool/}: Power Series Multiplication Theorem \\
+        $F(x)=\frac{1}{1-x}f(x)=\sum_{n=0}^{\infty}s_{n}x^{n},\ G(x)=\frac{1}{1-x}g(x)=\sum_{n=0}^{\infty}t_{n}x^{n},\ 0\leq x<1$.
+    \end{sol*}
+\end{minipage}}
+\begin{cor}
+    \marginpar{\footnotesize (Weak version of AtT - 2)}
+    Given $f(x)$ and $g(x)$ satisfying the conditions of Thm 1.4, and converging on $[0,1)$. Let $s_n = \sum_{k=0}^{n} a_k$ and $t_n = \sum_{k=0}^{n} b_k$ satisfy: (1) $t_n > 0$; (2) $\sum_{n=1}^{\infty} t_nx^{n}\to\infty, x\to 1^{-}$; (3) $s_n \sim t_n, n\to\infty$, then $$f(x) \sim g(x),\ x\to 1^{-}.$$
+\end{cor}
+
+\newpage
+7. $\Gamma$-function and Stirling's Formula. 
+\begin{df}
+    Given $x\in\mathbb{C}$, $\Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt,\ Re(x)>0$.
+\end{df}
+5 properties of $\Gamma(x)$: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{enumerate}
+        \item $\Gamma(x) = (x-1)\Gamma(x-1) = \cdots = (x-1)\cdots(x-n)\Gamma(x-n)$ \\
+        Specially, $\Gamma(n+1) = n!$.
+        \item \textcolor{skycyan}{/Tech tool/} \\
+        Lemma1. $\forall \alpha, \beta>0$, $\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} = \int_0^\infty \frac{t^{\beta-1}}{(1+t)^{\alpha+\beta}} dt = \int_0^1 y^{\alpha-1}(1-y)^{\beta-1} dy$.
+        \fbox{\begin{minipage}{0.90\textwidth}
+            Pre-Lemma 1. If $\forall b > a$, we have $$\int_a^b dx \int_\alpha^\beta f(x,y) dy = \int_\alpha^\beta dy \int_a^b f(x,y) dx,$$ where $a, \beta<\infty$, all are proper integrals; and if $\int_a^\infty f(x,y) dx$ converges uniformly for $\alpha \leq y \leq \beta$, then $$\int_a^\infty dx \int_\alpha^\beta f(x,y) dy = \int_\alpha^\beta dy \int_a^\infty f(x,y) dx.$$ \\
+            Pre-Lemma 2. Suppose $f(x,y) \geq 0$. If $\forall c < b$ and $\gamma < \beta$, we have $$\int_a^c dx \int_\alpha^\beta f(x,y) dy = \int_\alpha^\beta dy \int_a^c f(x,y) dx$$ and $$\int_a^b dx \int_\alpha^\gamma f(x,y) dy = \int_\alpha^\gamma dy \int_a^b f(x,y) dx,$$ then when one of the following expressions exists, we have $$\int_a^b dx \int_\alpha^\beta f(x,y) dy = \int_\alpha^\beta dy \int_a^b f(x,y) dx;$$ when $b$ or $\beta$ is infinite, the above conclusion still holds.
+        \end{minipage}}
+        \item \textcolor{skycyan}{/Tech tool/} (Legendre duplication formula) \\
+        Lemma 2. $\Gamma(2x)\Gamma\left(\frac{1}{2}\right) = 2^{2x-1}\Gamma(x)\Gamma\left(x + \frac{1}{2}\right)$, where $\Gamma(\frac{1}{2}) = \sqrt{\pi}$.
+        \item \textcolor{skycyan}{/Tech tool/} \\
+        Lemma 3. $\exists C$, s.t. $\log \Gamma(n) = (n-\frac{1}{2})\log n - n + C + O(\frac{1}{n})$. 
+        \item \textcolor{skycyan}{/Tech tool/} \\
+        Lemma 4. $\frac{\Gamma(x)}{\Gamma(x+a)} = x^{-a}+O(x^{-a-1})$.
+    \end{enumerate}
+\end{minipage}}
+\newline\newline
+The proof of some important of them will be displayed at the end of this chapter, hope you could try to feel and understand them, or even prove them by yourself.
+\begin{thm}
+    \textcolor{skycyan}{/Tech/} $$\Gamma(x) = x^{x-\frac{1}{2}}e^{-x}\sqrt{2\pi}(1+O(\frac{1}{x})),\ x>0.$$
+\end{thm}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Just condier $x\in\mathbb{R}/\mathbb{Z}$, since $\Gamma(x) \in C[0,\infty)$. Let $x = n + a$, where $n\in\mathbb{Z}, 0 < a < 1$, then
+        \begin{equation*}
+            \begin{split}
+            \log \Gamma(x) &= \log \Gamma(n + a) = \log \Gamma(n) + a \log n + O(\frac{1}{n}) \ \text{(Lemma 4)}\\
+            &= (n - \frac{1}{2}) \log n - n + C + a \log n + O(\frac{1}{n}) \ \text{(Lemma 3)}\\
+            &= (x - a - \frac{1}{2}) \log (x - a) - x + a + C + a \log (x - a) + O(\frac{1}{x}) \\
+            &= [x'\triangleq x-a] = (x - \frac{1}{2}) \log x - x + C + O(\frac{1}{x}) \ \text{(1)}
+            \end{split}
+        \end{equation*}
+        Also $\log \Gamma(2x) + \log \Gamma(\frac{1}{2}) = (2x - 1) \log 2 + \log \Gamma(x) + \log \Gamma(x + \frac{1}{2})$ (Lemma 2), take the $\log \Gamma(x)$ expression (1) into LHS: 
+        \begin{equation*}
+            \begin{split}
+            (2x - \frac{1}{2}) &\log (2x) - 2x + C + \log \Gamma(\frac{1}{2}) + O(\frac{1}{x}) \\
+            &= (2x - 1) \log 2 + (x - \frac{1}{2}) \log x + x \log (x + \frac{1}{2}) \\
+            &-2x - \frac{1}{2} + 2C + O(\frac{1}{x})
+            \end{split}
+        \end{equation*}
+        Equating the constant terms on both sides, we get $C = \log \sqrt{2\pi}$, substituting into (1), we obtain the conclusion of the theorem.
+    \end{sol*}
+\end{minipage}}
+\begin{cor}
+    (Stirling's Formula) \textcolor{skycyan}{/Tech/} $$n! = n^{n + \frac{1}{2}} e^{-n} \sqrt{2\pi} (1 + O(\frac{1}{n})) = \sqrt{2\pi n} (\frac{n}{e})^n (1 + O(\frac{1}{n})).$$
+\end{cor}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        $n! = \Gamma(n+1) = (n+1)^{n + \frac{1}{2}} e^{-(n+1)} \sqrt{2\pi} \left(1 + O\left(\frac{1}{n}\right)\right)$ (Thm 1.5) and
+        \begin{align*}
+            (n+1)^{n+\frac{1}{2}} &= n^{n+\frac{1}{2}} (1 + \frac{1}{n})^{n+\frac{1}{2}} = n^{n+\frac{1}{2}} (1 + \frac{1}{n})^n (1 + O(\frac{1}{n})) \\
+            &= n^{n+\frac{1}{2}} e^{n \log(1+\frac{1}{n})} (1 + O(\frac{1}{n})) \\
+            &= n^{n+\frac{1}{2}} e^{n (\frac{1}{n} + O(\frac{1}{n^2}))} (1 + O(\frac{1}{n})) \\
+            &= n^{n+\frac{1}{2}} e^{1 + O(\frac{1}{n})} (1 + O(\frac{1}{n})) = n^{n+\frac{1}{2}} e (1 + O(\frac{1}{n})) 
+    \end{align*}
+    \end{sol*}
+\end{minipage}}
+\begin{nt*}
+    1. Observing Stirling's Formula and previous estimation experience, we just need to estimate part $(n+1)^{n+\frac{1}{2}} = n^{n+\frac{1}{2}} (1+\frac{1}{n})^{n+\frac{1}{2}}$. (This kind of trick will be encountered many times.) \\
+    2. Tips: $1^{\circ}.$ $(1+O(\frac{1}{n})+O(\frac{1}{n^2})) = 1+O(\frac{1}{n})$; $2^{\circ}.$ $(1+O(\frac{1}{n}))^k = 1+O(\frac{1}{n}),\ k\in\mathbb{Z}^{+}$; $3^{\circ}.$ $O(\frac{1}{n}) = o(1), n\to\infty$.
+\end{nt*}
 
 \newpage
 \subsection{Problem Sets}
@@ -229,3 +320,25 @@ and $\widetilde{f}(x)$ are their inverse functions) \\
     \end{equation*}
 \end{prb*}
 
+\begin{prb*}
+    Applications of Abel type Theorem. 
+    \begin{enumerate}
+        \item Given $y_{n+1}>y_n$, $y_n\to\infty$, then $\lim_{n\to\infty} \frac{x_n}{y_n} = \lim_{n\to\infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}}$. (Assume LHS limit exists.)
+        \item Given $a_n\sim\log n, n\to\infty$, then $\sum_{n=0}^{\infty} a_n x^n \sim \frac{1}{1 - x} \log \frac{1}{1 - x},\ x \to 1^{-}$. 
+    \end{enumerate}
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        \begin{enumerate}
+            \item Let $\lim_{n\to\infty} \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = a<\infty$ (If LHS limit is $\infty$, then consider LHS$^{-1}$), using Abel type Theorem - 1(dicrete): 
+            \begin{equation*}
+                \begin{split}
+                    x_k - x_{k-1} &= a(y_k - y_{k-1}) + o(y_k - y_{k-1}), \\
+                    x_n - x_1 &= \sum_{k=2}^{n} (x_k - x_{k-1}) = a \sum_{k=2}^{n} (y_k - y_{k-1}) + \sum_{k=2}^{n} o(y_k - y_{k-1}) \\
+                    &= a(y_n - y_1) + o\left(\sum_{k=2}^{n} (y_k - y_{k-1})\right) = a(y_n - y_1) + o(y_n)
+                \end{split}
+            \end{equation*}
+            \item Due to $\frac{1}{1-x}\log\frac{1}{1-x} = \sum_{n=0}^{\infty}x^n\sum_{n=1}^{\infty}\frac{x^n}{n} = \sum_{n=0}^{\infty}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right)x^n$ and $\sum_{k=1}^{n}\frac{1}{k} \sim \log n$, use Abel type Theorem - 2(Limits) Corollary 1.
+        \end{enumerate}
+    \end{sol*}
+\end{minipage}}
