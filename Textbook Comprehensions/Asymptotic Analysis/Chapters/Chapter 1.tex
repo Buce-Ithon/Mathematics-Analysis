@@ -225,6 +225,15 @@ The proof of some important of them will be displayed at the end of this chapter
     1. Observing Stirling's Formula and previous estimation experience, we just need to estimate part $(n+1)^{n+\frac{1}{2}} = n^{n+\frac{1}{2}} (1+\frac{1}{n})^{n+\frac{1}{2}}$. (This kind of trick will be encountered many times.) \\
     2. Tips: $1^{\circ}.$ $(1+O(\frac{1}{n})+O(\frac{1}{n^2})) = 1+O(\frac{1}{n})$; $2^{\circ}.$ $(1+O(\frac{1}{n}))^k = 1+O(\frac{1}{n}),\ k\in\mathbb{Z}^{+}$; $3^{\circ}.$ $O(\frac{1}{n}) = o(1), n\to\infty$.
 \end{nt*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    Application of Corollary 1.6 (Stirling's Formula): \\
+    Estimate the binomial coeffecient: $C_n^k = \frac{n!}{k!(n - k)!} \quad (k = 0, 1, \cdots, n)$.
+    Substitute with Stirling's formula: $C_n^k = (\frac{n}{2\pi k(n-k)})^{\frac{1}{2}}(\frac{n}{k})^k(\frac{n}{n-k})^{n-k}(1+O(\frac{1}{k}))$. \\
+    Let $k=\frac{n}{2}-l$, study the condition $l=o(n)$: \\
+    since $(\frac{n}{k(n-k)})^{\frac{1}{2}} = (\frac{n}{(\frac{n}{2})^2 - l^2})^{\frac{1}{2}} = 2 (\frac{1}{n})^{\frac{1}{2}} (1 + O(\frac{l^2}{n^2}))$ and $(\frac{n}{k})^k (\frac{n}{n-k})^{n-k} = 2^n (1 - \frac{2l}{n})^{l - \frac{n}{2}} (1 + \frac{2l}{n})^{-l - \frac{n}{2}}$, then $C_n^k \sim ( \frac{2}{n\pi} )^{\frac{1}{2}} 2^n ( 1 + \frac{2l}{n} )^{-l - \frac{n}{2}} ( 1 - \frac{2l}{n} )^{l - \frac{n}{2}}$; 
+    also $(1 - \frac{2l}{n})^{l - \frac{n}{2}} = e^(l - \frac{l^2}{n} + O (\frac{l^3}{n^2}))$ and $(1 + \frac{2l}{n})^{-l - \frac{n}{2}} = e^{(-l - \frac{l^2}{n} + O (\frac{l^3}{n^2}))}$, then $C_n^k \sim ( \frac{2}{n\pi} )^{\frac{1}{2}} 2^n e^{(-\frac{2l^2}{n} + O(\frac{l^3}{n^2}))}$. 
+    In short, $C_n^k \begin{cases} \sim (\frac{2}{n\pi})^{\frac{1}{2}} 2^n ,\ l=0 \\ \sim C_n^{\frac{n}{2}} e^(-\frac{2l^2}{n} + O(\frac{l^3}{n^2})) ,\ l=o(n)\end{cases}$.
+\end{minipage}}
 
 \newpage
 \subsection{Problem Sets}

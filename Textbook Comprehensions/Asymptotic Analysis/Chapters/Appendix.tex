@@ -251,3 +251,210 @@ The main results may be summarized as the following statement: \\
     Equivalent form: $\|f\|_{B^r_{p,\theta}} = \left( \int_1^\infty t^{r\theta+1} \omega_k^\theta (f;1/t)_p \frac{dt}{t} \right)^{1/\theta}$. \\
     Since $\omega_k(f; t)p \uparrow$, the function under the integral sign is $WM$. Applying generalized Maclaurin-Cauchy and Cauchy condensation tests, we obtain convenient equivalent form: $\left( \sum_{\nu=0}^{\infty} \left[ 2^{r\nu} \omega_k(f; 2^{-\nu})_p \right]^{\theta} \right)^{1/\theta}$.
 \end{ex*}
+
+\newpage
+\subsection{Review number series through exercises}
+\subsubsection{Basic simple problems}
+First we talk about some basic concepts of number series, some results could be used in the following exercises and most of them is the basics of complex and difficult problems. \\
+\begin{prb*}
+    1. Given $\sum a_n$ and $\sum b_n$ converge at same time, consider convergence of following series: 
+    $$\sum (a_n\pm b_n),\quad \sum a_nb_n,\quad \sum \frac{a_n}{b_n}(b_n\neq 0),\quad \sum \max\{a_n,b_n\},\quad \sum \min\{a_n,b_n\}$$
+    What happens if the series is all positive? \\
+    2. If $\sum (a_n+a_{n+1})$ con., could we get $\sum a_n$ con.? What happens if $\sum a_n$ is all positive?
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. Easy, just check for a warm-up every time. \\
+        Here are some ideas or directions provided: 1). consider positive series and alternating series 2). consider the oder of terms of series (ex: $\sum \frac{1}{n^p}$) 3). in the process of constructing a series, some divergent series terms can be inserted into the convergent series, or vice versa. \\
+        2. 1). $\sum (-1)^n$ (idea: $\sum a_{2k}\to\infty$, $\sum a_{2k+1}\to-\infty$, $a_{2k}\sim a_{2k+1}$) 2). $\sum a_n < \sum a_n+a_{n+1}$
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    If $\forall p\in\mathbb{Z}^+$, $\lim_{n\to\infty} (a_{n+1}+a_{n+2}+\cdots+a_{n+p}) = 0$, then what about $\sum a_n$?
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Core: the $N_p$ is different from $N_\varepsilon$ of Cauchy's convergence criterion. \\
+        Example: $\sum \frac{1}{n}$ div. $\sum \frac{1}{n^2}$ con.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given $a_n \leq c_n \leq b_n$, $\sum a_n$ and $\sum b_n$ both con. or div. $\nRightarrow$ $\sum c_n$ con. or div.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Core: the condition of the squeeze theorem of a sequence is the order relationship of the terms of the sequence, but the terms of a series are different from the terms of a partial sum sequence. \\
+        Example: 1. $\sum \frac{(-1)^n}{n}$ con. and $\sum \frac{(-1)^{n+1}}{n}$ con. $\nRightarrow$ $\sum \frac{1}{n}$ 2. $\sum \frac{1}{n}$ div. and $\sum -\frac{1}{n}$ div. $\nRightarrow$ $\sum 0$ con.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    1. Given $\sum a_n \to S$ con., if $\forall n$ exchange position of $a_{2n-1}$ and $a_{2n}$, prove the new series con. \\
+    2. What happens if we exchange $a_{pn-p+1}, \cdots, a_{pn}$?
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. Note new series as $T_n$, then $|T_n-S|=|T_n-S_n+S_n-S|\leq|T_n-S_n|+|S_n-S|\leq|a_{n}|+|a_{n_1}|+o(1) = o(1)$. \\
+        2. Prove is similiar (almost same). Note: actually the inequality is loose.
+    \end{sol*}
+\end{minipage}}
+
+\subsubsection{Positive series}
+\begin{prb*}
+    1. Given positive-term $\sum \frac{1}{a_n}$ con., then $\sum \frac{n}{a_1+\cdots+a_n}$ con. \\
+    2. (Carleman) Given positive-term $\sum a_n$ con., then $\sum \sqrt[n]{a_1\cdots a_n} \leq e\sum a_n$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. \textcolor{skycyan}{/Tech idea/: Monotonicity} \\
+        1) Suppose $\{a_n\} \uparrow$, then $a_1+\cdots+a_{2n} \geq na_n \implies \frac{2n-1}{a_1+\cdots+a_{2n-1}}+\frac{2n}{a_1+\cdots+a_{2n}}\leq \frac{2n-1}{na_n}+\frac{2n}{na_n} < \frac{4}{a_n}$ \\
+        2) Rearrange $\{a_n\}$ to $\{b_n\} \uparrow$, $\sum \frac{n}{a_1+\cdots+a_n} \leq \sum \frac{n}{b_1+\cdots+b_n}$ con. \\
+        2. \begin{align*}
+        \sum_{n=1}^{N} \sqrt[n]{a_1 a_2 \cdots a_n} &= \sum_{n=1}^{N} \frac{\sqrt[n]{(a_1)(2a_2)\cdots(na_n)}}{\sqrt[n]{n!}} \leqslant \sum_{n=1}^{N} \frac{a_1 + 2a_2 + \cdots + na_n}{n \sqrt[n]{n!}} \\
+        &\leqslant e \sum_{n=1}^{N} \frac{a_1 + 2a_2 + \cdots + na_n}{n(n+1)} = e \sum_{n=1}^{N} \frac{1}{n(n+1)} \sum_{k=1}^{n} k a_k \\
+        &= e \sum_{k=1}^{N} k a_k \sum_{n=k}^{N} \frac{1}{n(n+1)} = e \sum_{k=1}^{N} k a_k \left( \frac{1}{k} - \frac{1}{N+1} \right) \\
+        &\leqslant e \sum_{k=1}^{N} a_k
+        \end{align*}
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given 2 +-term $\sum a_n$ and $\sum b_n$, partial sum $S_n$ and $S'_n$, remainder $R_n$ and $R'_n$, satisfies: $a_n \sim b_n$, prove: \\
+    1. If $\sum a_n$ and $\sum b_n$ con., then $R_n \sim R'_n$; 
+    2. If $\sum a_n$ and $\sum b_n$ div., then $S_n \sim S'_n$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. $\frac{R_n}{R'_n} = \frac{\sum_{n=N}^{M} a_n + \sum_{n=M}^{\infty} a_n}{\sum_{n=N}^{M} b_n + \sum_{n=M}^{\infty} b_n} (M>N, N\to\infty)$: $\sum_{n=N}^{M} a_n \sim \sum_{n=N}^{M} b_n,\ \sum_{n=M}^{\infty} a_n, \sum_{n=M}^{\infty} b_n = o(1)$, using Cauchy's convergence Crite: we could choose $M>N$, s.t. $\sum_{n=M}^{\infty} a_n = \sum_{n=N}^{M} a_n (1+o(1)), \sum_{n=M}^{\infty} b_n = \sum_{n=N}^{M} b_n (1+o(1))$. \\
+        2. (Abel type THeorem - 1)
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Calculation: 
+    \begin{enumerate}
+        \item $\sum \frac{1}{2^{\sqrt{n}}}$: $\frac{1}{3^{\sqrt{n}}} < \frac{1}{3^{\log n}} = \frac{1}{n^{\log 3}},\ n\to\infty$ con.
+        \item $\sum \frac{1}{n^{1+\frac{1}{n}}}$: $\frac{1}{n^{1+\frac{1}{n}}} \sim \frac{1}{n}\ (n^{\frac{1}{n}}),\ n\to\infty$ div.
+        \item $\sum [\frac{1}{n}-\log(1+\frac{1}{n})]$: $\log(1+\frac{1}{n}) = \frac{1}{n}+O(\frac{1}{n^2})$ con.
+        \item $\sum \frac{n^{n-1}}{(2n^2+n+1)^{\frac{n-1}{2}}}$: $\frac{n^{n-1}}{(2n^2+n+1)^{\frac{n-1}{2}}} = (\frac{n^2}{2n^2+n+1})^{\frac{n-1}{2}} = (\frac{1}{2})^{\frac{n-1}{2}}(1+o(1))$ con.
+        \item \checkmark $\sum \frac{n^{\log n}}{(\log n)^n}$: $\frac{n^{\log n}}{(\log n)^n}<\frac{1}{n^2}\ (n>13) \iff (\log n)^2+2\log n-n\log(\log n)<0$ use function and derivative. con. 
+        \item $\sum \frac{e^{-(1+\frac{1}{2}+\cdots+\frac{1}{n})}}{n^p}$: $\sum_{k=1}^{n} \frac{1}{k} = \log n + \gamma + O(\frac{1}{n})$ then $p>0$ con., $p\leq 0$ div.
+        \item \checkmark $\sum (a^{\frac{1}{n}} -\frac{b^{\frac{1}{n}}+c^{\frac{1}{n}}}{2})\ (a,b,c>0)$: $a^{\frac{1}{n}} -\frac{b^{\frac{1}{n}}+c^{\frac{1}{n}}}{2} = e^{\frac{\log a}{n}} - \frac{1}{2}(e^{\frac{\log b}{n}}+e^{\frac{\log c}{n}}) = \frac{1}{2} [\frac{\log(a^2-bc)}{n}+O(\frac{1}{n^2})]$ then $a^2-bc \neq 1$ div., $a^2-bc \neq 1 > 0$ con.
+        \item $\sum (1-\frac{\log n}{n})^n$: $e^{n\log(1-\frac{\log n}{n})} = n^{-1}(1+o(1))$ div.
+    \end{enumerate}
+\end{prb*}
+
+\begin{prb*}
+    Following problems could be proved using Stirling's formula($n! = \sqrt{2\pi n}(\frac{n}{e})^n(1+O(\frac{1}{n}))$) or Sapagof test($\lim a_n = 0 \iff \sum 1-\frac{a_{n+1}}{a_n}$ div.): \\
+    1. $\lim \frac{(2n)!}{4^n(n!)^2} = 0 \quad$ 
+    2. $\lim \frac{n^n}{e^n n!} = 0 \quad$ 
+    3. $\lim \frac{n!}{(x+1)\cdots(x+n)}=0\ (x>0)$
+\end{prb*}
+
+\begin{prb*}
+    \checkmark 1. Given +-term $\sum a_n$ con., then it's possible that $\limsup na_n \geq 1$; 
+    2.If $a_n$ also is monotonic, then $\limsup na_n = 0$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. Core idea: previous section 1st problem solution 1.3). \\
+        $a_n = \begin{cases} \frac{1}{2^n}\ n \neq k^2 \\ \frac{1}{n}\ n = k^2 \end{cases}$, $\limsup na_n = 1,\ \sum a_n < \infty$; 
+        $a_n = \begin{cases} \frac{1}{2^n}\ n \neq k^3 \\ \frac{1}{\sqrt{n}}\ n = k^3 \end{cases}$, $\limsup na_n = \infty,\ \sum a_n < \infty$ (compared with $\sum \frac{1}{2^n}+\sum \frac{1}{n^p}\ (p>1)$); \\
+        2. Using Cauchy's condensation Theorem/Cauchy's convergence Theorem.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given +-term $\sum a_n$ con., $p>1$, then $\sum a_n^p$ con. If it's not +-term. does it still hold?
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        A good example to illustrate Comparison Test is only applicable to +-term series. CounterExample: $\sum (-1)^n \frac{1}{\sqrt{n}}$. 
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    \checkmark Given $\{a_n\} \downarrow \to 0$, $b_n = a_n-2a_{n+1}+a_{n+2} \geq 0$, then $\sum nb_n = a_1$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Observing that $b_n = (a_n-a_{n+1})-(a_{n+1}-a_{n+2})$ and $\sum nb_n = \sum_{n=1}^{\infty} \sum_{k=n}^{\infty} b_k = a_1-\lim a_{n+1}-\lim n(a_{n+1}-a_{n+2})$, then i.e. problem is to prove $a_{n+1}-a_{n+2} = o(\frac{1}{n}),\ n\to\infty$ ($\Leftarrow$ $(a_n-a_{n+1}) \downarrow$ and $\sum (a_n-a_{n+1})$ con.) (Application of precious \checkmark problem)
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    If $\forall n,\ 0<a_n<a_{2n}+a_{2n+1}$, then $\sum a_n$ div.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        $0<a_n<a_{2n}+a_{2n+1}<a_{4n}+a_{4n+1}+a_{4n+2}+a_{4n+3}<\cdots<a_{2^mn}+\cdots+a_{2^m(n+1)-1}$ against to Cauchy's convergence Theorem.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given $x>0$, then $\sum \frac{x^n}{(1+x)\cdots(1+x^n)}$ con.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        Easy: $S=\sum [\frac{1}{(1+x)\cdots(1+x^{n-1})}-\frac{1}{(1+x)\cdots(1+x^{n})}]=\frac{1}{1+x}+o(1)$
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    \checkmark Given $x>0$, test convergence of $\sum (2-x)(2-x^{\frac{1}{2}})\cdots(2-x^{\frac{1}{n}})$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        1. $0<x\leq 1$, $(2-x)(2-x^{\frac{1}{2}})\cdots(2-x^{\frac{1}{n}}) \geq 1$ div. \\
+        2. $x>1$, $\log \frac{a_{n}}{a_{n-1}} = \log (2-x^{\frac{1}{n}}) = \log (2-e^{\frac{\log x}{n}}) = -\frac{\log x}{n}+O(\frac{1}{n^2})$ $\Sigma: \log a_n = -\log x\log n+O(1)$ then $a_n = (\frac{1}{n})^{\log x}\cdot O(1)$: 1) $x>e$ con. 2) $x \leq e$ div.
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given +-term $\sum a_n$, $k\in\mathbb{Z}^{+}$, if $\lim \frac{a_{n+k}}{a_n} = l$, then $l<1$, $\sum a_n$ con.; $l>1$, $\sum a_n$ div. (Developement of d'Alembert Test)
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        By definition, $\forall \varepsilon>0, \exists N_{\varepsilon}>0$ s.t. $\forall n \geq N_{\varepsilon}:\ l-\varepsilon<\frac{a_{n+k}}{a_n}<l+\varepsilon,\ l-\varepsilon<\frac{a_{n+(k+1)}}{a_{n+1}}<l+\varepsilon,\cdots,\ l-\varepsilon<\frac{a_{n+(2k-1)}}{a_{n+k-1}}<l+\varepsilon$, then 
+        \begin{align*}
+            \sum a_n &= \sum_{n=1}^{N} a_n + \sum_{i=0}^{k-1}\sum_{j=1}^{\infty} a_{n+jk+i} \\
+            &> \sum_{n=1}^{N} a_n + \sum_{i=0}^{k-1}\sum_{j=1}^{\infty} (l-\varepsilon)^ja_{n+i} \\
+            &< \sum_{n=1}^{N} a_n + \sum_{i=0}^{k-1}\sum_{j=1}^{\infty} (l+\varepsilon)^ja_{n+i}
+        \end{align*}
+    \end{sol*}
+\end{minipage}}
+
+\begin{prb*}
+    Given $0<a_1<\frac{\pi}{2}$, $a_n=\sin a_{n-1}$, then test the convergence of $\sum a_n^p$.
+\end{prb*}
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{sol*}
+        \fbox{\begin{minipage}{0.78\textwidth}
+            Lemma. Let $x_{0}\in(0,\pi)$, $x_n=\sin x_{n-1}$, then $x_{n}=\frac{3^{1/2}}{n^{1/2}}-\frac{3^{3/2}\ln n}{10n^{3/2}}+\mathcal O(n^{-3/2})$.
+        \end{minipage}}
+        Then $p>2$, $\sum a_n^p$ con.; $p<2$, $\sum a_n^p$ div.
+    \end{sol*}
+\end{minipage}}
+\newline\newline
+\begin{nt*}
+    Readers could try to prove the Lemma.
+\end{nt*}
+
+\subsubsection{General term Series}
+Strategies of study general term series: \\
+1. we could first study +-term $\sum |a_n|$; \\
+2. from simple to complex, try various of Tests: Leibniz, Dirichlet, Abel, so on; \\
+3. the equivalence test (order estimation) is usually not valid for series with changing signs (of course it still holds when there is abs. con.), but we can still use it to roughly analyze the asymptotic behavior of the general term of the series. With the help of the rearrangement properties of the general term series that meet the conditions, such as Riemann's rearrangement theorem, we can still partially use the method of estimating order; \\
+4. if the above methods do not work, please make use of various trigonometric function conversion formulas, when dealing with summation problems involving trigonometric functions. \\
+Here we first introduce some theorems and tips/tools, then dive into problem solving: \\
+\fbox{\begin{minipage}{0.95\textwidth}
+    \begin{thm}
+        (Riemann Seires Theorem) \\
+        Given $\{a_n\}$, and $\sum_{n=1}^{\infty} a_n$ is con. con., $M>0$, then there $\exists$ a permutation $\sigma$ s.t. $\sum_{n=1}^{\infty} a_{\sigma(n)} = M$.
+        There also $\exists$ a permutation $\sigma$ s.t. $\sum_{n=1}^{\infty} a_{\sigma(n)} = \infty$.
+        The sum can also be rearranged to diverge to $-\infty$ or to fail to approach any limit, finite or infinite.
+    \end{thm}
+\end{minipage}}
+\newline\newline
